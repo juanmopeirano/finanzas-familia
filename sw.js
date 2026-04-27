@@ -1,6 +1,7 @@
 // Service worker mínimo — cache-first para shell, network-first para datos
-const CACHE = 'finanzas-v4';
-const SHELL = ['./','./index.html','./styles.css','./app.js','./icon.svg','./manifest.json'];
+const CACHE = 'finanzas-v5';
+const SHELL = ['./','./index.html','./styles.css','./app.js','./icon.svg',
+               './icon-192.png','./icon-512.png','./apple-touch-icon.png','./manifest.json'];
 
 self.addEventListener('install', e => {
   e.waitUntil(caches.open(CACHE).then(c => c.addAll(SHELL)).then(() => self.skipWaiting()));
