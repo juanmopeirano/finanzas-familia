@@ -1,0 +1,12 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Carpetas operativas (datos sensibles, no se suben)
+NUEVOS del banco/
+PROCESADOS/
+
+# Excel temporales
+~$*.xlsx
+~$*.xls

@@ -1,59 +1,99 @@
 """
-actualizar.py — script principal. Hace todo el ciclo:
-  1. (opcional) importa nuevo archivo del banco al Excel maestro
-  2. corre el clasificador ML sobre filas sin categoría
-  3. exporta data/finanzas.json para el dashboard
+actualizar.py — script principal del pipeline mensual.
+
+Flujo:
+  1. Mira la carpeta 'NUEVOS del banco/' por archivos para importar.
+  2. Importa cada archivo → agrega movs nuevos al Excel + auto-clasifica.
+  3. Mueve los archivos procesados a 'PROCESADOS/' con timestamp.
+  4. Regenera data/finanzas.json para el dashboard.
 
 Uso:
-  python actualizar.py                     # solo clasifica + exporta JSON
-  python actualizar.py archivo_banco.xlsx  # importa + clasifica + exporta
-  python actualizar.py --solo-export       # solo regenera el JSON
+  python actualizar.py                # corre el ciclo completo
+  python actualizar.py --solo-export  # solo regenera el JSON
 """
 
 import sys
+import shutil
 import argparse
+from datetime import datetime
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
-from config import EXCEL_PATH
+from config import PROJECT_DIR
+
+CARPETA_NUEVOS    = PROJECT_DIR / "NUEVOS del banco"
+CARPETA_PROCESADO = PROJECT_DIR / "PROCESADOS"
+EXTENSIONES_OK    = {".xlsx", ".xls", ".xlsm", ".csv"}
+
+
+def _archivos_nuevos():
+    if not CARPETA_NUEVOS.exists():
+        return []
+    return sorted([
+        f for f in CARPETA_NUEVOS.iterdir()
+        if f.is_file() and f.suffix.lower() in EXTENSIONES_OK
+    ])
+
+
+def _mover_a_procesado(archivo: Path):
+    CARPETA_PROCESADO.mkdir(exist_ok=True)
+    ts = datetime.now().strftime("%Y%m%d_%H%M%S")
+    destino = CARPETA_PROCESADO / f"{ts}_{archivo.name}"
+    shutil.move(str(archivo), str(destino))
+    return destino
 
 
 def main():
-    parser = argparse.ArgumentParser(description="Pipeline finanzas: importar + clasificar + exportar")
-    parser.add_argument("archivo", nargs="?", help="Ruta al CSV/Excel del banco (opcional)")
-    parser.add_argument("--solo-export", action="store_true", help="Solo regenerar el JSON")
-    parser.add_argument("--no-clasificar", action="store_true", help="Saltear paso ML")
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--solo-export", action="store_true")
     args = parser.parse_args()
 
-    if args.solo_export:
-        print("─── Solo exportar JSON ───")
-        from export_json import export_json
-        export_json()
-        return
+    total_nuevos     = 0
+    total_sin_clasif = 0
 
-    # 1) Importar
-    if args.archivo:
-        print("─── 1. Importar banco ───")
-        from import_bank import import_bank
-        added = import_bank(args.archivo)
-        if added == 0:
-            print("(sin nuevos movimientos)")
-    else:
-        print("(sin archivo del banco para importar)")
+    if not args.solo_export:
+        archivos = _archivos_nuevos()
+        if not archivos:
+            print("Sin archivos nuevos en 'NUEVOS del banco/'.")
+            print("(Si vas a re-publicar correcciones manuales del Excel, esta bien.)")
+        else:
+            from import_bank import import_bank
+            for arch in archivos:
+                print(f"\n--- Importando: {arch.name} ---")
+                try:
+                    added, sin_c = import_bank(arch)
+                    total_nuevos     += added
+                    total_sin_clasif += sin_c
+                    if added > 0:
+                        destino = _mover_a_procesado(arch)
+                        print(f"  -> movido a PROCESADOS/{destino.name}")
+                    else:
+                        # nada nuevo: igual lo movemos para no reprocesar siempre
+                        destino = _mover_a_procesado(arch)
+                        print(f"  -> movido a PROCESADOS/{destino.name} (sin cambios)")
+                except Exception as e:
+                    print(f"  ERROR procesando {arch.name}: {e}")
 
-    # 2) Clasificar
-    if not args.no_clasificar:
-        print("\n─── 2. Clasificar con ML ───")
-        from classify import classify
-        classify()
-
-    # 3) Exportar JSON
-    print("\n─── 3. Exportar JSON ───")
+    # Generar JSON
+    print("\n--- Regenerando JSON del dashboard ---")
     from export_json import export_json
     export_json()
 
-    print("\n✓ Listo. Hacé commit y push del JSON al repo de GitHub para actualizar el dashboard.")
+    # Resumen
+    print("\n" + "=" * 50)
+    if total_nuevos:
+        print(f"OK: {total_nuevos} movimientos nuevos importados.")
+        if total_sin_clasif:
+            print(f"!!  {total_sin_clasif} requieren revision manual en el Excel (amarillo).")
+        else:
+            print(f"    Todos clasificados automaticamente.")
+    else:
+        print("OK: dashboard regenerado.")
+    print("=" * 50)
+
+    # Devolver código según haya sin clasificar
+    return 1 if total_sin_clasif else 0
 
 
 if __name__ == "__main__":
-    main()
+    sys.exit(main())

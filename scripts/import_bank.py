@@ -23,6 +23,12 @@ from openpyxl import load_workbook
 
 sys.path.insert(0, str(Path(__file__).parent))
 from config import EXCEL_PATH, SHEET_CA
+from reglas import clasificar, cargar_reglas
+
+# Categorías de ingreso "indudables" (sueldo, etc).
+# Crédito de otra categoría (REDIVA, reintegros, etc.) NO es ingreso → es gasto neteado.
+INGRESO_CATS = {"Sueldo JM", "Sueldo Pili", "Otros ingresos", "Ahorros"}
+SISTEMA_CATS = {"No va", "Traspaso"}
 
 
 # ── normalización de nombres de columna ──────────────────────────────────────
@@ -117,13 +123,28 @@ def read_bank_file(path, sheet=None):
             df[col] = 0.0
 
     df = df.dropna(subset=["fecha"])
-    return df
+
+    # Filtrar filas tipo "SALDO ANTERIOR" / "SALDO FINAL" / "TOTAL" / etc.
+    if "concepto" in df.columns:
+        excluir = ["SALDO ANTERIOR", "SALDO FINAL", "SALDO INICIAL", "TOTAL"]
+        df = df[~df["concepto"].astype(str).str.upper().str.strip().isin(excluir)]
+
+    return df.reset_index(drop=True)
 
 
 # ── deduplicación ─────────────────────────────────────────────────────────────
 
 def _row_key(fecha, concepto, debito, credito):
-    raw = f"{str(fecha)[:10]}|{str(concepto).strip().upper()}|{round(float(debito),2)}|{round(float(credito),2)}"
+    """Clave única para deduplicar movimientos. Trata NaN y 0 como equivalentes."""
+    def num(x):
+        try:
+            v = float(x)
+            return 0.0 if pd.isna(v) else round(v, 2)
+        except Exception:
+            return 0.0
+    f = str(fecha)[:10]  # YYYY-MM-DD
+    c = str(concepto).strip().upper() if concepto is not None else ""
+    raw = f"{f}|{c}|{num(debito)}|{num(credito)}"
     return hashlib.md5(raw.encode()).hexdigest()[:12]
 
 
@@ -142,38 +163,99 @@ def build_existing_keys(ws_df):
 
 # ── escritura al Excel maestro ────────────────────────────────────────────────
 
+def _is_color(cell, hex6):
+    """Devuelve True si la celda tiene fondo del color indicado."""
+    try:
+        if cell.fill is None or cell.fill.fgColor is None: return False
+        v = cell.fill.fgColor.value
+        if v is None: return False
+        return str(v).upper().endswith(hex6.upper())
+    except Exception:
+        return False
+
+
 def append_to_master(new_rows: pd.DataFrame, excel_path=EXCEL_PATH, sheet_name=SHEET_CA, origen="Caja de Ahorro"):
+    """
+    Agrega filas nuevas al Excel maestro, auto-clasificando con reglas.
+    Pinta las filas nuevas en celeste; las nuevas-de-runs-anteriores se despintan.
+    Categoría/Subcategoría quedan amarillas si hay 'Sin clasificar'.
+    Devuelve (added, sin_clasificar).
+    """
+    from openpyxl.styles import PatternFill
+    cargar_reglas()
+
+    LIGHT_BLUE = "DCEBFF"   # filas nuevas de este import
+    YELLOW     = "FEF3C7"   # categoría sin clasificar
+
     wb   = load_workbook(excel_path)
     ws   = wb[sheet_name]
 
     headers = [ws.cell(1, c).value for c in range(1, ws.max_column + 1)]
     col_idx = {h: i + 1 for i, h in enumerate(headers) if h}
 
-    next_row = ws.max_row + 1
+    # 1) Limpiar el celeste de imports previos (mantiene amarillo)
+    blue_fill = PatternFill("solid", fgColor=LIGHT_BLUE)
+    no_fill   = PatternFill(fill_type=None)
+    for row_num in range(2, ws.max_row + 1):
+        for col_num in range(1, ws.max_column + 1):
+            cell = ws.cell(row_num, col_num)
+            if _is_color(cell, LIGHT_BLUE):
+                cell.fill = no_fill
 
-    added = 0
+    next_row = ws.max_row + 1
+    yellow_fill = PatternFill("solid", fgColor=YELLOW)
+    added    = 0
+    sin_clas = 0
+
     for _, r in new_rows.iterrows():
+        concepto = str(r.get("concepto", "") or "").strip()
+        cat, sub = clasificar(concepto)
+        es_sin = (cat == "Sin clasificar")
+        sin_clas += int(es_sin)
+
+        # Débito/Crédito limpios (None si vacíos)
+        debito  = r["debito"]  if r["debito"]  > 0 else None
+        credito = r["credito"] if r["credito"] > 0 else None
+
+        # Tipo automático según CATEGORÍA (no según columna del banco)
+        # Un crédito puede ser un reintegro/REDIVA que netea un gasto, NO un ingreso.
+        if cat == "Sin clasificar":
+            tipo = ""                # vos decidís cuando lo revises
+        elif cat in INGRESO_CATS:
+            tipo = "Ingresos"
+        elif cat in SISTEMA_CATS:
+            tipo = ""                # No va / Traspaso
+        else:
+            tipo = "Gastos"          # default: incluye créditos que netean gastos
+
         row_data = {
-            "Tipo":          "",          # usuario o ML lo completa
+            "Tipo":          tipo,
             "Origen":        origen,
-            "Descripción":   "",          # ML lo completará
-            "Descripción 2": "",
+            "Categoría":     cat,
+            "Subcategoría":  sub,
             "Fecha":         r["fecha"].date() if pd.notna(r["fecha"]) else "",
-            "Concepto":      r.get("concepto", ""),
-            "Débito":        r["debito"] if r["debito"] > 0 else None,
-            "Crédito":       r["credito"] if r["credito"] > 0 else None,
+            "Concepto":      concepto,
+            "Débito":        debito,
+            "Crédito":       credito,
             "Saldo":         r.get("saldo") or None,
             "Referencia":    r.get("referencia", "") or "",
             "Destino":       "",
+            "ML_Revisar":    es_sin,
         }
         for field, col_num in col_idx.items():
             if field in row_data:
-                ws.cell(next_row, col_num).value = row_data[field]
+                cell = ws.cell(next_row, col_num)
+                cell.value = row_data[field]
+                # Por defecto: celeste (fila nueva en este import)
+                cell.fill = blue_fill
+                # Override: amarillo en Categoría/Subcategoría si requiere revisión
+                if es_sin and field in ("Categoría", "Subcategoría"):
+                    cell.fill = yellow_fill
         next_row += 1
         added += 1
 
     wb.save(excel_path)
-    return added
+    return added, sin_clas
 
 
 # ── función principal ─────────────────────────────────────────────────────────
@@ -202,13 +284,16 @@ def import_bank(bank_file, sheet=None, excel_path=EXCEL_PATH, master_sheet=SHEET
 
     if len(to_add) == 0:
         if verbose:
-            print("  ✓ No hay movimientos nuevos para agregar.")
-        return 0
+            print("  ya estaban todos importados (0 nuevos)")
+        return 0, 0
 
-    added = append_to_master(to_add, excel_path, master_sheet)
+    added, sin_clas = append_to_master(to_add, excel_path, master_sheet)
     if verbose:
-        print(f"  ✓ {added} movimientos nuevos agregados al Excel.")
-    return added
+        print(f"  + {added} movimientos nuevos agregados")
+        print(f"  - {added - sin_clas} clasificados automaticamente")
+        if sin_clas:
+            print(f"  ! {sin_clas} requieren revision manual (amarillo en Excel)")
+    return added, sin_clas
 
 
 if __name__ == "__main__":
