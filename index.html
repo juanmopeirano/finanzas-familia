@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Finanzas JM &amp; Pili</title>
+  <meta name="description" content="Tablero familiar de finanzas — gastos, ingresos y ahorros." />
+  <meta name="theme-color" content="#064e3b" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="Finanzas" />
+
+  <link rel="icon" type="image/svg+xml" href="icon.svg" />
+  <link rel="apple-touch-icon" href="icon.svg" />
+  <link rel="manifest" href="manifest.json" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="styles.css" />
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <div class="brand">
+      <span class="brand-icon">$</span>
+      <div>
+        <div class="brand-title">Finanzas Familia</div>
+        <div class="brand-sub" id="generado">cargando…</div>
+      </div>
+    </div>
+    <button class="icon-btn" id="btnReload" title="Recargar">↻</button>
+  </div>
+  <nav class="tabs">
+    <button class="tab active" data-tab="resumen">Mes</button>
+    <button class="tab" data-tab="historico">Histórico</button>
+    <button class="tab" data-tab="cuadro">Cuadro</button>
+  </nav>
+</header>
+
+<main id="app">
+
+  <!-- ─── TAB: RESUMEN MES ─────────────────────────────── -->
+  <section class="view" data-view="resumen">
+
+    <div class="card hero saldo-card">
+      <div class="hero-label">Saldo Caja de Ahorro</div>
+      <div class="hero-amount" id="saldoActual">$ 0</div>
+      <div class="hero-meta" id="saldoActualMeta"></div>
+    </div>
+
+    <div class="month-nav">
+      <button class="nav-btn" id="prevMes">‹</button>
+      <select id="mesSelect" class="mes-select"></select>
+      <button class="nav-btn" id="nextMes">›</button>
+    </div>
+
+    <div class="card hero">
+      <div class="hero-label">Gastos del mes</div>
+      <div class="hero-amount" id="heroAmount">$ 0</div>
+      <div class="hero-meta" id="heroMeta"></div>
+      <div class="hero-bar"><div class="hero-bar-fill" id="heroBarFill"></div></div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Últimos 12 meses</div>
+      <div class="chart-wrap"><canvas id="chartMini"></canvas></div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Categorías del mes
+        <span class="card-sub">vs promedio histórico</span>
+      </div>
+      <div id="catList" class="cat-list"></div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Top movimientos del mes</div>
+      <div id="topMovs" class="movs-list"></div>
+    </div>
+
+  </section>
+
+  <!-- ─── TAB: HISTÓRICO ─────────────────────────────── -->
+  <section class="view hidden" data-view="historico">
+    <div class="card">
+      <div class="card-title">Gastos vs Ingresos</div>
+      <div class="chart-wrap big"><canvas id="chartHist"></canvas></div>
+    </div>
+    <div class="card">
+      <div class="card-title">Top categorías en el tiempo</div>
+      <div class="chart-wrap big"><canvas id="chartCats"></canvas></div>
+      <div id="catsLegend" class="legend"></div>
+    </div>
+    <div class="card">
+      <div class="card-title">Resumen general</div>
+      <div id="statsGrid" class="stats-grid"></div>
+    </div>
+  </section>
+
+  <!-- ─── TAB: CUADRO MENSUAL ─────────────────────────────── -->
+  <section class="view hidden" data-view="cuadro">
+    <div class="cuadro-controls">
+      <div class="ctrl-group">
+        <label>Cuenta</label>
+        <select id="cuadroCuenta">
+          <option value="ca">Caja de Ahorro</option>
+          <option value="cc">Cuenta Corriente</option>
+        </select>
+      </div>
+      <div class="ctrl-group">
+        <label>Período</label>
+        <select id="cuadroAno"></select>
+      </div>
+    </div>
+    <div class="cuadro-wrap">
+      <table class="cuadro-table" id="cuadroTable"></table>
+    </div>
+    <div class="cuadro-hint">💡 Tocá una categoría para ver/ocultar sus subcategorías</div>
+  </section>
+
+</main>
+
+<div id="loader" class="loader"><div class="spinner"></div></div>
+
+</body>
+</html>

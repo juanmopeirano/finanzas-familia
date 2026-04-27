@@ -1,0 +1,18 @@
+{
+  "name": "Finanzas JM & Pili",
+  "short_name": "Finanzas",
+  "description": "Tablero familiar de gastos, ingresos y ahorros",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#064e3b",
+  "theme_color": "#064e3b",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
