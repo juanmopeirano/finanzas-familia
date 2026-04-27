@@ -6,7 +6,18 @@
     </linearGradient>
   </defs>
   <rect width="512" height="512" rx="96" fill="url(#bg)"/>
-  <g fill="#ecfdf5" font-family="Inter, system-ui, sans-serif" font-weight="800">
-    <text x="256" y="340" font-size="280" text-anchor="middle">$</text>
+
+  <!-- Casita -->
+  <g fill="#ffffff">
+    <!-- Techo -->
+    <polygon points="256,95 412,240 100,240"/>
+    <!-- Cuerpo -->
+    <rect x="135" y="232" width="242" height="200" rx="6"/>
   </g>
+
+  <!-- Símbolo $ adentro -->
+  <text x="256" y="392"
+        font-family="Inter, system-ui, sans-serif"
+        font-weight="900" font-size="180"
+        text-anchor="middle" fill="#064e3b">$</text>
 </svg>
