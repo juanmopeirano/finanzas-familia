@@ -4,6 +4,45 @@ const FMT = new Intl.NumberFormat('es-UY', { style: 'currency', currency: 'UYU',
 const FMT_CMP = new Intl.NumberFormat('es-UY', { maximumFractionDigits: 0 });
 const PALETTE = ['#059669','#0ea5e9','#f59e0b','#dc2626','#7c3aed','#0284c7','#ea580c','#be123c','#15803d','#1d4ed8'];
 
+// Íconos por categoría (emojis simples, paleta del theme se aplica al fondo)
+const ICONS = {
+  // Gastos fijos
+  'Supermercado':         '🛒',
+  'Servicios':            '⚡',
+  'Cuotas':               '💳',
+  'Gastos comunes':       '📋',
+  'Niñera':               '👶',
+  'Jardín':               '🌿',
+  'Seguro de vida':       '🛡️',
+  'Mapfre':               '🛡️',
+  'CJPPU':                '💼',
+  // Variables esenciales
+  'Salud':                '💊',
+  'Estación de servicio': '⛽',
+  'Comida trabajo':       '🍴',
+  // Variables discrecionales
+  'Social / Amigos':      '👥',
+  'Regalos':              '🎁',
+  'Viajes':               '✈️',
+  'Hogar - Mejoras':      '🏠',
+  'Ropa':                 '👕',
+  'Cosmética':            '✨',
+  'Deportes / Gym':       '🏋️',
+  'Delivery / Pedidos':   '🍔',
+  'Entretenimiento':      '🎬',
+  'Varios':               '🔹',
+  'Ahorros':              '🏦',
+  // Ingresos
+  'Sueldo JM':            '💰',
+  'Sueldo Pili':          '💵',
+  'Otros ingresos':       '💎',
+  // Sistema
+  'No va':                '⏸️',
+  'Traspaso':             '↔️',
+  'Sin clasificar':       '❓',
+};
+const iconFor = cat => ICONS[cat] || '🔹';
+
 let DATA = null;
 let mesActualIdx = 0;
 let charts = {};
@@ -39,22 +78,48 @@ function init() {
   // recargar
   document.getElementById('btnReload').onclick = () => location.reload();
 
-  renderSaldoActual();
   renderResumen();
   renderHistorico();
   renderCuadro();
 }
 
-function renderSaldoActual() {
-  const ca = DATA.cuadro.ca;
-  // último saldo final no nulo
-  let saldo = null, mesIdx = -1;
-  for (let i = ca.saldo_final.length - 1; i >= 0; i--) {
-    if (ca.saldo_final[i] != null) { saldo = ca.saldo_final[i]; mesIdx = i; break; }
+// Devuelve el índice en cuadro.ca.meses para el mes seleccionado en DATA.meses
+function cuadroIdxFor(mesId) {
+  return DATA.cuadro.ca.meses.indexOf(mesId);
+}
+
+function renderSaldoActual(mesIdx) {
+  const ca       = DATA.cuadro.ca;
+  const mesData  = DATA.meses[mesIdx];
+  const cuadroIdx = cuadroIdxFor(mesData.id);
+  const esUltimo  = mesIdx === DATA.meses.length - 1;
+
+  let saldo = null, label = '';
+  if (cuadroIdx >= 0 && ca.saldo_final[cuadroIdx] != null) {
+    saldo = ca.saldo_final[cuadroIdx];
+    label = esUltimo ? 'Saldo Caja de Ahorro' : `Saldo al cierre de ${mesData.label}`;
+  } else {
+    // fallback al último saldo conocido
+    for (let i = ca.saldo_final.length - 1; i >= 0; i--) {
+      if (ca.saldo_final[i] != null) { saldo = ca.saldo_final[i]; break; }
+    }
+    label = 'Saldo Caja de Ahorro';
   }
+
+  document.getElementById('saldoLabel').textContent = label;
   document.getElementById('saldoActual').textContent = saldo != null ? FMT.format(saldo) : '—';
-  if (mesIdx >= 0) {
-    document.getElementById('saldoActualMeta').textContent = `al cierre de ${ca.labels[mesIdx]}`;
+
+  // Meta: si es el mes actual, mostrar fecha; si es histórico, delta vs mes anterior
+  const metaEl = document.getElementById('saldoActualMeta');
+  if (esUltimo) {
+    metaEl.textContent = 'al día de hoy';
+  } else if (cuadroIdx > 0 && ca.saldo_final[cuadroIdx - 1] != null && saldo != null) {
+    const delta = saldo - ca.saldo_final[cuadroIdx - 1];
+    const sign = delta >= 0 ? '+' : '−';
+    const cls  = delta >= 0 ? 'pos' : 'neg';
+    metaEl.innerHTML = `<span class="${cls}">${sign}${FMT.format(Math.abs(delta))}</span> vs ${ca.labels[cuadroIdx - 1]}`;
+  } else {
+    metaEl.textContent = '';
   }
 }
 
@@ -68,36 +133,101 @@ function renderResumen() {
   const mes = DATA.meses[mesActualIdx];
   const promTotal = mediaUlt(DATA.meses, 12, 'gastos_total', mesActualIdx);
 
-  // Hero
-  document.getElementById('heroAmount').textContent = FMT.format(mes.gastos_total);
+  // Saldo (contextual al mes seleccionado)
+  renderSaldoActual(mesActualIdx);
 
-  const delta = mes.gastos_total - promTotal;
-  const pct = promTotal > 0 ? Math.round((delta / promTotal) * 100) : 0;
-  let deltaClass = 'delta-good', deltaTxt = `${pct}% bajo el promedio`;
-  if (pct > 0)  { deltaClass = pct > 10 ? 'delta-bad' : 'delta-warn'; deltaTxt = `${pct}% sobre el promedio`; }
+  // ─ Scorecard: Ingresos / Gastos / Resultado neto ─
+  const ingresos = mes.ingresos_total || 0;
+  const gastos   = mes.gastos_total || 0;
+  const neto     = ingresos - gastos;
+
+  document.getElementById('scIngresos').textContent = '+ ' + FMT.format(ingresos);
+  document.getElementById('scGastos').textContent   = '− ' + FMT.format(gastos);
+
+  const netoEl = document.getElementById('scNeto');
+  const labelEl = document.getElementById('scNetoLabel');
+  const metaEl = document.getElementById('scNetoMeta');
+
+  netoEl.classList.remove('pos', 'neg');
+  if (neto >= 0) {
+    netoEl.textContent = '+ ' + FMT.format(neto);
+    netoEl.classList.add('pos');
+    labelEl.textContent = 'Ahorro';
+    metaEl.innerHTML = ingresos > 0
+      ? `<span class="pos">✓</span> ahorraron ${Math.round((neto/ingresos)*100)}% de los ingresos`
+      : `<span class="pos">✓</span> resultado positivo`;
+  } else {
+    netoEl.textContent = '− ' + FMT.format(Math.abs(neto));
+    netoEl.classList.add('neg');
+    labelEl.textContent = 'Déficit';
+    metaEl.innerHTML = `<span class="neg">⚠</span> tiraron del saldo este mes`;
+  }
+
+  // ─ Barra: gastos vs promedio histórico ─
+  const ratio = promTotal > 0 ? gastos / promTotal : 0;
+  const ratioClamp = Math.min(ratio, 1.5);
+  const fillW = (ratioClamp / 1.5) * 100;
+  const markerL = (1 / 1.5) * 100;  // promedio = 1.0 ratio → 66.6%
+
+  const fill = document.getElementById('scBarFill');
+  fill.style.width = fillW + '%';
+  fill.classList.remove('warn', 'bad');
+  if (ratio > 1.1)      fill.classList.add('bad');
+  else if (ratio > 1.0) fill.classList.add('warn');
+
+  document.getElementById('scBarMarker').style.left = markerL + '%';
+
+  const pct = promTotal > 0 ? Math.round(((gastos - promTotal) / promTotal) * 100) : 0;
+  let deltaTxt = pct > 0 ? `+${pct}% vs prom.` : `${pct}% vs prom.`;
   if (pct === 0) deltaTxt = 'igual al promedio';
-  document.getElementById('heroMeta').innerHTML =
-    `Promedio últ. 12 meses: <b>${FMT.format(promTotal)}</b> · <span class="${deltaClass}">${deltaTxt}</span>`;
+  document.getElementById('scBarLegend').innerHTML =
+    `<span>${FMT.format(gastos)} gastados</span><span>${deltaTxt}</span>`;
 
-  const ratio = promTotal > 0 ? Math.min(mes.gastos_total / promTotal, 1.5) : 0;
-  const fill = document.getElementById('heroBarFill');
-  fill.style.width = (Math.min(ratio, 1) * 100) + '%';
-  fill.classList.remove('warn','bad');
-  if (ratio > 1.1) fill.classList.add('bad');
-  else if (ratio > 1)  fill.classList.add('warn');
-
-  // Mini chart
+  // Mini chart (últimos 12 meses, mes seleccionado destacado, línea de promedio)
   const last12 = DATA.meses.slice(-12);
-  drawBar('chartMini', last12.map(m => m.label.split(' ')[0]), last12.map(m => m.gastos_total), mesActualIdx - (DATA.meses.length - last12.length));
+  const last12Avg = last12.reduce((s, m) => s + (m.gastos_total || 0), 0) / last12.length;
+  drawBarConPromedio(
+    'chartMini',
+    last12.map(m => m.label.split(' ')[0]),
+    last12.map(m => m.gastos_total),
+    mesActualIdx - (DATA.meses.length - last12.length),
+    last12Avg
+  );
 
-  // Categorías
-  renderCats(mes);
+  // Categorías + sparklines
+  renderCats(mes, mesActualIdx);
 
   // Top movs
   renderTopMovs(mes);
 }
 
-function renderCats(mes) {
+// Helper: serie de últimos N meses para una categoría dada
+function serieCategoria(catName, beforeIdx, n = 6) {
+  const start = Math.max(0, beforeIdx - n + 1);
+  const out = [];
+  for (let i = start; i <= beforeIdx; i++) {
+    out.push(DATA.meses[i]?.categorias?.[catName]?.total || 0);
+  }
+  return out;
+}
+
+// Mini SVG sparkline para inline (sin Chart.js, super liviano)
+function sparklineSVG(values, w = 60, h = 18) {
+  if (!values.length) return '';
+  const max = Math.max(...values, 1);
+  const min = 0;
+  const xStep = w / Math.max(values.length - 1, 1);
+  const pts = values.map((v, i) => {
+    const x = i * xStep;
+    const y = h - ((v - min) / (max - min || 1)) * (h - 2) - 1;
+    return `${x.toFixed(1)},${y.toFixed(1)}`;
+  }).join(' ');
+  return `<svg class="spark" width="${w}" height="${h}" viewBox="0 0 ${w} ${h}" preserveAspectRatio="none">
+    <polyline points="${pts}" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  </svg>`;
+}
+
+function renderCats(mes, mesIdx) {
   const list = document.getElementById('catList');
   const cats = Object.entries(mes.categorias)
     .map(([nombre, d]) => ({ nombre, ...d, prom: DATA.promedios[nombre] || 0 }))
@@ -112,20 +242,38 @@ function renderCats(mes) {
     const markerL = c.prom > 0 ? (1 / 1.5) * 100 : 0;
 
     const subTxt = Object.keys(c.sub || {}).length
-      ? Object.entries(c.sub).sort((a,b)=>b[1]-a[1]).map(([k,v]) => `${k}: ${FMT.format(v)}`).join(' · ')
+      ? Object.entries(c.sub).sort((a,b)=>b[1]-a[1]).map(([k,v]) => `${escapeHtml(k)}: ${FMT.format(v)}`).join(' · ')
       : '';
 
     const movsHtml = (c.movs || []).slice(0, 30).map(m => `
       <div class="cat-mov">
-        <div class="m-info">${m.f.slice(8,10)}/${m.f.slice(5,7)} — ${m.d2 || m.c || ''}</div>
+        <div class="m-info">${m.f.slice(8,10)}/${m.f.slice(5,7)} — ${escapeHtml(m.d2 || m.c || '')}</div>
         <div class="m-amt ${m.m > 0 ? 'cred' : ''}">${FMT.format(Math.abs(m.m))}</div>
       </div>
     `).join('');
 
+    // Sparkline + tendencia
+    const serie = serieCategoria(c.nombre, mesIdx, 6);
+    const spark = sparklineSVG(serie, 56, 16);
+    const tendencia = (() => {
+      if (serie.length < 3) return '';
+      const recent = serie.slice(-3).reduce((s,v)=>s+v,0) / 3;
+      const older  = serie.slice(0, -3).reduce((s,v)=>s+v,0) / Math.max(serie.length - 3, 1);
+      if (older === 0) return '';
+      const diff = (recent - older) / older;
+      if (diff > 0.15) return '<span class="trend up" title="creciendo">↗</span>';
+      if (diff < -0.15) return '<span class="trend down" title="bajando">↘</span>';
+      return '<span class="trend flat" title="estable">→</span>';
+    })();
+
     return `
       <div class="cat-row expandable" data-cat="${escapeHtml(c.nombre)}">
         <div class="cat-row-head">
-          <div class="cat-name">${escapeHtml(c.nombre)}</div>
+          <span class="cat-icon">${iconFor(c.nombre)}</span>
+          <div class="cat-name-wrap">
+            <div class="cat-name">${escapeHtml(c.nombre)} ${tendencia}</div>
+          </div>
+          <div class="cat-spark">${spark}</div>
           <div class="cat-amount">${FMT.format(c.total)}</div>
         </div>
         <div class="cat-bar">
@@ -136,7 +284,7 @@ function renderCats(mes) {
           ${c.prom > 0 ? `prom. ${FMT.format(c.prom)}` : 'sin promedio histórico'}
           ${(c.movs || []).length ? ` · ${c.movs.length} mov.` : ''}
         </div>
-        ${subTxt ? `<div class="cat-sub">${escapeHtml(subTxt)}</div>` : ''}
+        ${subTxt ? `<div class="cat-sub">${subTxt}</div>` : ''}
         <div class="cat-detail">${movsHtml}</div>
       </div>
     `;
@@ -145,6 +293,55 @@ function renderCats(mes) {
   // expand on click
   list.querySelectorAll('.cat-row.expandable').forEach(row => {
     row.onclick = () => row.classList.toggle('open');
+  });
+}
+
+// Bar chart con línea horizontal de promedio + barra del mes seleccionado destacada
+function drawBarConPromedio(canvasId, labels, data, highlightIdx, promedio) {
+  if (charts[canvasId]) charts[canvasId].destroy();
+  const ctx = document.getElementById(canvasId);
+  const colors = data.map((v, i) => {
+    if (i === highlightIdx) return '#059669';
+    return v > promedio ? 'rgba(220,38,38,.35)' : 'rgba(5,150,105,.30)';
+  });
+  charts[canvasId] = new Chart(ctx, {
+    type: 'bar',
+    data: { labels, datasets: [{ data, backgroundColor: colors, borderRadius: 6 }] },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      animation: { duration: 350 },
+      plugins: {
+        legend: { display: false },
+        tooltip: { callbacks: { label: c => FMT.format(c.raw) } },
+        annotation: undefined
+      },
+      scales: {
+        x: { grid: { display: false }, ticks: { font: { size: 11 } } },
+        y: { grid: { color: 'rgba(148,163,184,.15)' }, ticks: { font: { size: 11 }, callback: v => '$' + FMT_CMP.format(v) } }
+      }
+    },
+    plugins: [{
+      id: 'avg-line',
+      afterDatasetsDraw(chart) {
+        if (!promedio) return;
+        const { ctx: c, scales: { y } } = chart;
+        const yPos = y.getPixelForValue(promedio);
+        c.save();
+        c.beginPath();
+        c.setLineDash([4, 4]);
+        c.strokeStyle = 'rgba(100,116,139,.55)';
+        c.lineWidth = 1.2;
+        c.moveTo(chart.chartArea.left, yPos);
+        c.lineTo(chart.chartArea.right, yPos);
+        c.stroke();
+        c.setLineDash([]);
+        c.fillStyle = 'rgba(100,116,139,.85)';
+        c.font = '600 10px Inter, system-ui';
+        c.textAlign = 'right';
+        c.fillText('prom.', chart.chartArea.right - 4, yPos - 4);
+        c.restore();
+      }
+    }]
   });
 }
 
@@ -203,6 +400,8 @@ function renderHistorico() {
 }
 
 // ── tab CUADRO ─────────────────────────────────────────────────
+let cuadroViewMode = window.matchMedia('(max-width: 768px)').matches ? 'lista' : 'tabla';
+
 function renderCuadro() {
   const selCuenta = document.getElementById('cuadroCuenta');
   const selAno    = document.getElementById('cuadroAno');
@@ -215,10 +414,116 @@ function renderCuadro() {
     anosList.map(a => `<option value="${a}">${a}</option>`).join('');
   selAno.value = anosList[anosList.length - 1] || 'all';
 
-  const draw = () => drawCuadro(selCuenta.value, selAno.value);
+  // Toggle vista Tabla/Lista
+  document.querySelectorAll('.vt-btn').forEach(btn => {
+    btn.classList.toggle('active', btn.dataset.viewMode === cuadroViewMode);
+    btn.onclick = () => {
+      cuadroViewMode = btn.dataset.viewMode;
+      document.querySelectorAll('.vt-btn').forEach(b => b.classList.toggle('active', b === btn));
+      draw();
+    };
+  });
+
+  const draw = () => {
+    const wrapTabla = document.getElementById('cuadroTablaWrap');
+    const wrapLista = document.getElementById('cuadroLista');
+    if (cuadroViewMode === 'lista') {
+      wrapTabla.hidden = true;
+      wrapLista.hidden = false;
+      drawCuadroLista(selCuenta.value, selAno.value);
+    } else {
+      wrapTabla.hidden = false;
+      wrapLista.hidden = true;
+      drawCuadro(selCuenta.value, selAno.value);
+    }
+  };
+
   selCuenta.onchange = draw;
   selAno.onchange    = draw;
   draw();
+}
+
+// Vista Lista: una tarjeta por categoría con sparkline + total + tap para detalle
+function drawCuadroLista(cuenta, ano) {
+  const c = DATA.cuadro[cuenta];
+  const idxs = c.meses.map((m, i) => ({m, i})).filter(o => ano === 'all' || o.m.startsWith(ano));
+  const colIdx = idxs.map(o => o.i);
+  const labels = idxs.map(o => c.labels[o.i]);
+  const slice = arr => colIdx.map(i => arr[i]);
+
+  const sumArr = arr => arr.reduce((s, v) => s + (v || 0), 0);
+  const fmtCell = v => {
+    if (v == null || v === 0) return '<span class="amt-zero">—</span>';
+    return FMT_CMP.format(Math.round(Math.abs(v)));
+  };
+
+  const renderItem = (entry, kind) => {
+    const vals = slice(entry.valores);
+    if (!vals.some(v => v && v !== 0)) return '';
+    const total = sumArr(vals);
+    const ico = iconFor(entry.cat);
+    const spark = sparklineSVG(vals, 70, 22);
+    const cls = kind === 'ing' ? 'amt-pos' : 'amt-neg';
+
+    // Detalle expandible: subcats + tabla mes a mes
+    const subs = Object.entries(entry.subcats || {})
+      .filter(([_, v]) => slice(v).some(x => x && x !== 0))
+      .map(([sub, v]) => {
+        const tot = sumArr(slice(v));
+        return `<div class="li-sub"><span>${escapeHtml(sub)}</span><span>${FMT.format(Math.abs(tot))}</span></div>`;
+      }).join('');
+
+    const detalleMeses = labels.map((l, j) => {
+      const v = vals[j];
+      if (!v) return '';
+      return `<div class="li-mes"><span>${l}</span><span class="${cls}">${FMT.format(Math.abs(v))}</span></div>`;
+    }).join('');
+
+    return `
+      <div class="li-row" data-kind="${kind}">
+        <div class="li-head">
+          <span class="li-icon">${ico}</span>
+          <div class="li-title">
+            <div class="li-name">${escapeHtml(entry.cat)}</div>
+            <div class="li-sub-text">${labels.length} ${labels.length === 1 ? 'mes' : 'meses'}</div>
+          </div>
+          <div class="li-spark ${cls}">${spark}</div>
+          <div class="li-total ${cls}">${FMT.format(Math.abs(total))}</div>
+        </div>
+        <div class="li-detail">
+          ${subs ? `<div class="li-block"><div class="li-block-title">Subcategorías</div>${subs}</div>` : ''}
+          <div class="li-block"><div class="li-block-title">Mes a mes</div>${detalleMeses}</div>
+        </div>
+      </div>
+    `;
+  };
+
+  // Saldos resumen
+  const saldoIni = c.saldo_inicial[colIdx[0]];
+  const saldoFin = c.saldo_final[colIdx[colIdx.length - 1]];
+  const totalIng = sumArr(slice(c.ingresos_total));
+  const totalGas = sumArr(slice(c.gastos_total));
+
+  let html = `
+    <div class="li-summary">
+      <div class="li-sum-row"><span>Saldo inicial</span><span>${saldoIni != null ? FMT.format(saldoIni) : '—'}</span></div>
+      <div class="li-sum-row"><span>Total ingresos</span><span class="amt-pos">+${FMT.format(totalIng)}</span></div>
+      <div class="li-sum-row"><span>Total gastos</span><span class="amt-neg">−${FMT.format(totalGas)}</span></div>
+      <div class="li-sum-row strong"><span>Saldo final</span><span>${saldoFin != null ? FMT.format(saldoFin) : '—'}</span></div>
+    </div>
+    <div class="li-section-title">Ingresos</div>
+  `;
+
+  c.ingresos.forEach(ing => html += renderItem(ing, 'ing'));
+  html += `<div class="li-section-title">Gastos</div>`;
+  c.gastos.forEach(g => html += renderItem(g, 'gas'));
+
+  document.getElementById('cuadroLista').innerHTML = html;
+
+  // expand on tap
+  document.querySelectorAll('.li-row').forEach(row => {
+    row.onclick = () => row.classList.toggle('open');
+  });
 }
 
 function drawCuadro(cuenta, ano) {

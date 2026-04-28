@@ -10,3 +10,15 @@ PROCESADOS/
 # Excel temporales
 ~$*.xlsx
 ~$*.xls
+
+# Credenciales / secretos (NUNCA subir esto a un repo)
+*credenciales*
+*credentials*
+*.secret
+*secret*.txt
+Cloudflareaccess.txt
+.env
+.env.*
+google-oauth*.txt
+*-secret.txt
+*-secrets.txt
