@@ -349,7 +349,7 @@ function renderHistorico() {
 }
 
 // ── tab CUADRO ─────────────────────────────────────────────────
-let cuadroViewMode = window.matchMedia('(max-width: 768px)').matches ? 'lista' : 'tabla';
+let cuadroViewMode = 'tabla';   // default siempre Tabla; el usuario puede pasar a Lista
 
 function renderCuadro() {
   const selCuenta = document.getElementById('cuadroCuenta');
