@@ -40,8 +40,8 @@
   </div>
   <nav class="tabs">
     <button class="tab active" data-tab="resumen">Mes</button>
-    <button class="tab" data-tab="historico">Histórico</button>
     <button class="tab" data-tab="cuadro">Cuadro</button>
+    <button class="tab" data-tab="historico">Histórico</button>
   </nav>
 </header>
 
@@ -62,32 +62,10 @@
       <button class="nav-btn" id="nextMes" aria-label="Mes siguiente">›</button>
     </div>
 
-    <div class="card scorecard">
-      <div class="sc-row sc-ing">
-        <span class="sc-label">Ingresos</span>
-        <span class="sc-amount" id="scIngresos">$ 0</span>
-      </div>
-      <div class="sc-row sc-gas">
-        <span class="sc-label">Gastos</span>
-        <span class="sc-amount" id="scGastos">$ 0</span>
-      </div>
-      <div class="sc-divider"></div>
-      <div class="sc-row sc-neto">
-        <span class="sc-label" id="scNetoLabel">Resultado</span>
-        <span class="sc-amount sc-neto-amount" id="scNeto">$ 0</span>
-      </div>
-      <div class="sc-meta" id="scNetoMeta"></div>
-      <div class="sc-bar-wrap">
-        <div class="sc-bar-track">
-          <div class="sc-bar-fill" id="scBarFill"></div>
-          <div class="sc-bar-marker" id="scBarMarker" title="Promedio histórico"></div>
-        </div>
-        <div class="sc-bar-legend" id="scBarLegend"></div>
-      </div>
-    </div>
-
     <div class="card">
-      <div class="card-title">Últimos 12 meses</div>
+      <div class="card-title">Últimos 12 meses
+        <span class="card-sub">gastos mensuales</span>
+      </div>
       <div class="chart-wrap"><canvas id="chartMini"></canvas></div>
     </div>
 
@@ -103,23 +81,6 @@
       <div id="topMovs" class="movs-list"></div>
     </div>
 
-  </section>
-
-  <!-- ─── TAB: HISTÓRICO ─────────────────────────────── -->
-  <section class="view hidden" data-view="historico">
-    <div class="card">
-      <div class="card-title">Gastos vs Ingresos</div>
-      <div class="chart-wrap big"><canvas id="chartHist"></canvas></div>
-    </div>
-    <div class="card">
-      <div class="card-title">Top categorías en el tiempo</div>
-      <div class="chart-wrap big"><canvas id="chartCats"></canvas></div>
-      <div id="catsLegend" class="legend"></div>
-    </div>
-    <div class="card">
-      <div class="card-title">Resumen general</div>
-      <div id="statsGrid" class="stats-grid"></div>
-    </div>
   </section>
 
   <!-- ─── TAB: CUADRO MENSUAL ─────────────────────────────── -->
@@ -149,6 +110,23 @@
     </div>
     <div class="cuadro-lista" id="cuadroLista" hidden></div>
     <div class="cuadro-hint">💡 Tocá una categoría para ver el detalle</div>
+  </section>
+
+  <!-- ─── TAB: HISTÓRICO ─────────────────────────────── -->
+  <section class="view hidden" data-view="historico">
+    <div class="card">
+      <div class="card-title">Gastos vs Ingresos</div>
+      <div class="chart-wrap big"><canvas id="chartHist"></canvas></div>
+    </div>
+    <div class="card">
+      <div class="card-title">Top categorías en el tiempo</div>
+      <div class="chart-wrap big"><canvas id="chartCats"></canvas></div>
+      <div id="catsLegend" class="legend"></div>
+    </div>
+    <div class="card">
+      <div class="card-title">Resumen general</div>
+      <div id="statsGrid" class="stats-grid"></div>
+    </div>
   </section>
 
 </main>

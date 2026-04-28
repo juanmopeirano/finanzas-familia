@@ -131,67 +131,17 @@ function switchTab(name) {
 // ── tab RESUMEN ─────────────────────────────────────────────────
 function renderResumen() {
   const mes = DATA.meses[mesActualIdx];
-  const promTotal = mediaUlt(DATA.meses, 12, 'gastos_total', mesActualIdx);
 
   // Saldo (contextual al mes seleccionado)
   renderSaldoActual(mesActualIdx);
 
-  // ─ Scorecard: Ingresos / Gastos / Resultado neto ─
-  const ingresos = mes.ingresos_total || 0;
-  const gastos   = mes.gastos_total || 0;
-  const neto     = ingresos - gastos;
-
-  document.getElementById('scIngresos').textContent = '+ ' + FMT.format(ingresos);
-  document.getElementById('scGastos').textContent   = '− ' + FMT.format(gastos);
-
-  const netoEl = document.getElementById('scNeto');
-  const labelEl = document.getElementById('scNetoLabel');
-  const metaEl = document.getElementById('scNetoMeta');
-
-  netoEl.classList.remove('pos', 'neg');
-  if (neto >= 0) {
-    netoEl.textContent = '+ ' + FMT.format(neto);
-    netoEl.classList.add('pos');
-    labelEl.textContent = 'Ahorro';
-    metaEl.innerHTML = ingresos > 0
-      ? `<span class="pos">✓</span> ahorraron ${Math.round((neto/ingresos)*100)}% de los ingresos`
-      : `<span class="pos">✓</span> resultado positivo`;
-  } else {
-    netoEl.textContent = '− ' + FMT.format(Math.abs(neto));
-    netoEl.classList.add('neg');
-    labelEl.textContent = 'Déficit';
-    metaEl.innerHTML = `<span class="neg">⚠</span> tiraron del saldo este mes`;
-  }
-
-  // ─ Barra: gastos vs promedio histórico ─
-  const ratio = promTotal > 0 ? gastos / promTotal : 0;
-  const ratioClamp = Math.min(ratio, 1.5);
-  const fillW = (ratioClamp / 1.5) * 100;
-  const markerL = (1 / 1.5) * 100;  // promedio = 1.0 ratio → 66.6%
-
-  const fill = document.getElementById('scBarFill');
-  fill.style.width = fillW + '%';
-  fill.classList.remove('warn', 'bad');
-  if (ratio > 1.1)      fill.classList.add('bad');
-  else if (ratio > 1.0) fill.classList.add('warn');
-
-  document.getElementById('scBarMarker').style.left = markerL + '%';
-
-  const pct = promTotal > 0 ? Math.round(((gastos - promTotal) / promTotal) * 100) : 0;
-  let deltaTxt = pct > 0 ? `+${pct}% vs prom.` : `${pct}% vs prom.`;
-  if (pct === 0) deltaTxt = 'igual al promedio';
-  document.getElementById('scBarLegend').innerHTML =
-    `<span>${FMT.format(gastos)} gastados</span><span>${deltaTxt}</span>`;
-
-  // Mini chart (últimos 12 meses, mes seleccionado destacado, línea de promedio)
+  // Mini chart (últimos 12 meses, mes seleccionado destacado, solo gastos)
   const last12 = DATA.meses.slice(-12);
-  const last12Avg = last12.reduce((s, m) => s + (m.gastos_total || 0), 0) / last12.length;
-  drawBarConPromedio(
+  drawBar(
     'chartMini',
     last12.map(m => m.label.split(' ')[0]),
     last12.map(m => m.gastos_total),
-    mesActualIdx - (DATA.meses.length - last12.length),
-    last12Avg
+    mesActualIdx - (DATA.meses.length - last12.length)
   );
 
   // Categorías + sparklines
@@ -394,7 +344,6 @@ function renderHistorico() {
     <div class="stat"><div class="stat-label">Promedio ingresos</div><div class="stat-value">${FMT.format(promI)}</div></div>
     <div class="stat"><div class="stat-label">Mes más caro</div><div class="stat-value">${FMT.format(maxMes.gastos_total)}<br><span style="font-size:.7rem;color:var(--muted)">${maxMes.label}</span></div></div>
     <div class="stat"><div class="stat-label">Mes más barato</div><div class="stat-value">${FMT.format(minMes.gastos_total)}<br><span style="font-size:.7rem;color:var(--muted)">${minMes.label}</span></div></div>
-    <div class="stat"><div class="stat-label">Total acumulado</div><div class="stat-value">${FMT.format(totalGastos)}</div></div>
     <div class="stat"><div class="stat-label">Meses registrados</div><div class="stat-value">${DATA.meses.length}</div></div>
   `;
 }

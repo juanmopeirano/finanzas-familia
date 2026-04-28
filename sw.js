@@ -1,5 +1,5 @@
 // Service worker mínimo — cache-first para shell, network-first para datos
-const CACHE = 'finanzas-v7';
+const CACHE = 'finanzas-v8';
 const SHELL = ['./','./index.html','./styles.css','./app.js','./icon.svg',
                './icon-192.png','./icon-512.png','./apple-touch-icon.png','./manifest.json'];
 
