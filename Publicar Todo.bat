@@ -32,9 +32,10 @@ git add -A
 git diff --cached --quiet
 if errorlevel 1 (
     git commit -m "Actualizacion %date% %time%" >nul
-    git push
+    REM Auto-responder "n" a los prompts de cleanup (OneDrive locks)
+    (for /L %%i in (1,1,300) do @echo n) | git push 2>&1 | findstr /V "Deletion of directory"
     if errorlevel 1 (
-        echo  !! ERROR al hacer push.
+        echo  !! Verifica con git status si subio bien.
     ) else (
         echo  OK Subido. Cloudflare redespliega en 1-2 min.
         echo  Link: https://finanzas-familia.pages.dev/

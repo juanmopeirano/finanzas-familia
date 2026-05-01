@@ -36,12 +36,13 @@ git add -A
 git diff --cached --quiet
 if errorlevel 1 (
     git commit -m "Actualizacion %date% %time%" >nul
-    git push
+    REM Auto-responder "n" a los prompts de cleanup (OneDrive locks)
+    (for /L %%i in (1,1,300) do @echo n) | git push 2>&1 | findstr /V "Deletion of directory"
     if errorlevel 1 (
-        echo  !! ERROR al hacer push. Revisa la conexion.
+        echo  !! Verifica con git status si subio bien.
     ) else (
         echo  OK Dashboard online actualizado
-        echo  Link: https://juanmopeirano.github.io/finanzas-familia/
+        echo  Link: https://finanzas-familia.pages.dev/
     )
 ) else (
     echo  Sin cambios para publicar.
