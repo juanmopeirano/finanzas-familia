@@ -209,28 +209,24 @@ def append_to_master(new_rows: pd.DataFrame, excel_path=EXCEL_PATH, sheet_name=S
 
     for _, r in new_rows.iterrows():
         concepto = str(r.get("concepto", "") or "").strip()
-        cat, sub = clasificar(concepto)
-        es_sin = (cat == "Sin clasificar")
-        sin_clas += int(es_sin)
 
         # Débito/Crédito limpios (None si vacíos)
         debito  = r["debito"]  if r["debito"]  > 0 else None
         credito = r["credito"] if r["credito"] > 0 else None
 
-        # Tipo automático según CATEGORÍA (no según columna del banco)
-        # Un crédito puede ser un reintegro/REDIVA que netea un gasto, NO un ingreso.
-        if cat == "Sin clasificar":
-            tipo = ""                # vos decidís cuando lo revises
-        elif cat in INGRESO_CATS:
-            tipo = "Ingresos"
-        elif cat in SISTEMA_CATS:
-            tipo = ""                # No va / Traspaso
-        else:
-            tipo = "Gastos"          # default: incluye créditos que netean gastos
+        # Clasificar pasando montos para reglas con rango
+        cat, sub, rule_origen, rule_tipo = clasificar(concepto, debito or 0, credito or 0)
+        es_sin = (cat == "Sin clasificar")
+        sin_clas += int(es_sin)
+
+        # Origen y Tipo: usar valor de la regla si está, sino dejar vacío
+        # (el usuario lo completa a mano cuando hace falta)
+        origen_final = rule_origen if rule_origen else ""
+        tipo_final   = rule_tipo   if rule_tipo   else ""
 
         row_data = {
-            "Tipo":          tipo,
-            "Origen":        origen,
+            "Tipo":          tipo_final,
+            "Origen":        origen_final,
             "Categoría":     cat,
             "Subcategoría":  sub,
             "Fecha":         r["fecha"].date() if pd.notna(r["fecha"]) else "",
