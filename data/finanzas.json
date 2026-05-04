@@ -1,5 +1,5 @@
 {
-  "generado": "2026-05-04T10:35:36",
+  "generado": "2026-05-04T10:38:40",
   "n_revisar": 22,
   "meses": [
     {
@@ -13411,74 +13411,6 @@
             }
           ]
         },
-        "Delivery / Pedidos": {
-          "total": 4208.3,
-          "sub": {
-            "Pedidos Ya": 4208.3
-          },
-          "movs": [
-            {
-              "f": "2026-01-31",
-              "c": "PEDIDOSYA*PEDIDOSYA*",
-              "m": -2780.0,
-              "d2": "Pedidos Ya"
-            },
-            {
-              "f": "2026-01-12",
-              "c": "COMPRA      DLO*PEDIDOSY",
-              "m": -2561.02,
-              "d2": "Pedidos Ya"
-            },
-            {
-              "f": "2026-01-12",
-              "c": "COMPRA      DLO*PEDIDOSY",
-              "m": -1287.46,
-              "d2": "Pedidos Ya"
-            },
-            {
-              "f": "2026-01-12",
-              "c": "COMPRA      PEDIDOSYA*PE",
-              "m": -81.0,
-              "d2": "Pedidos Ya"
-            },
-            {
-              "f": "2026-01-31",
-              "c": "PEDIDOSYA*PEDIDOSYA",
-              "m": -71.0,
-              "d2": "Pedidos Ya"
-            },
-            {
-              "f": "2026-01-12",
-              "c": "COMPRA      PEDIDOSYA*PE",
-              "m": -71.0,
-              "d2": "Pedidos Ya"
-            },
-            {
-              "f": "2026-01-12",
-              "c": "REDIVA 19210PEDIDOSYA*PE",
-              "m": 1.16,
-              "d2": "Pedidos Ya"
-            },
-            {
-              "f": "2026-01-12",
-              "c": "REDIVA 19210PEDIDOSYA*PE",
-              "m": 1.43,
-              "d2": "Pedidos Ya"
-            },
-            {
-              "f": "2026-01-14",
-              "c": "CRE.VARIOS   PEDIDOSYA(C",
-              "m": 79.57,
-              "d2": "Pedidos Ya"
-            },
-            {
-              "f": "2026-01-12",
-              "c": "DEVOLUCION  DLO*PEDIDOSY",
-              "m": 2561.02,
-              "d2": "Pedidos Ya"
-            }
-          ]
-        },
         "Estación de servicio": {
           "total": 3277.0,
           "sub": {
@@ -13961,10 +13893,11 @@
           ]
         },
         "Social / Amigos": {
-          "total": 6495.83,
+          "total": 10704.13,
           "sub": {
             "Bautismo fran": 4400.0,
-            "Peaje": 648.0
+            "Peaje": 648.0,
+            "Pedidos Ya": 4208.3
           },
           "movs": [
             {
@@ -13980,6 +13913,18 @@
               "d2": "Bautismo fran"
             },
             {
+              "f": "2026-01-31",
+              "c": "PEDIDOSYA*PEDIDOSYA*",
+              "m": -2780.0,
+              "d2": "Pedidos Ya"
+            },
+            {
+              "f": "2026-01-12",
+              "c": "COMPRA      DLO*PEDIDOSY",
+              "m": -2561.02,
+              "d2": "Pedidos Ya"
+            },
+            {
               "f": "2026-01-21",
               "c": "COMPRA      RUDY",
               "m": -1565.62,
@@ -13990,6 +13935,12 @@
               "c": "COMPRA      RUDY",
               "m": -1358.0,
               "d2": ""
+            },
+            {
+              "f": "2026-01-12",
+              "c": "COMPRA      DLO*PEDIDOSY",
+              "m": -1287.46,
+              "d2": "Pedidos Ya"
             },
             {
               "f": "2026-01-19",
@@ -14028,10 +13979,46 @@
               "d2": "Peaje"
             },
             {
+              "f": "2026-01-12",
+              "c": "COMPRA      PEDIDOSYA*PE",
+              "m": -81.0,
+              "d2": "Pedidos Ya"
+            },
+            {
+              "f": "2026-01-12",
+              "c": "COMPRA      PEDIDOSYA*PE",
+              "m": -71.0,
+              "d2": "Pedidos Ya"
+            },
+            {
+              "f": "2026-01-31",
+              "c": "PEDIDOSYA*PEDIDOSYA",
+              "m": -71.0,
+              "d2": "Pedidos Ya"
+            },
+            {
+              "f": "2026-01-12",
+              "c": "REDIVA 19210PEDIDOSYA*PE",
+              "m": 1.16,
+              "d2": "Pedidos Ya"
+            },
+            {
+              "f": "2026-01-12",
+              "c": "REDIVA 19210PEDIDOSYA*PE",
+              "m": 1.43,
+              "d2": "Pedidos Ya"
+            },
+            {
               "f": "2026-01-19",
               "c": "REDIVA 17934CAFE VD",
               "m": 56.07,
               "d2": ""
+            },
+            {
+              "f": "2026-01-14",
+              "c": "CRE.VARIOS   PEDIDOSYA(C",
+              "m": 79.57,
+              "d2": "Pedidos Ya"
             },
             {
               "f": "2026-01-02",
@@ -14052,20 +14039,20 @@
               "d2": ""
             },
             {
-              "f": "2026-01-05",
-              "c": "CRE. CAMBIOSTOLC17563738",
-              "m": 250.0,
-              "d2": ""
-            },
-            {
               "f": "2026-01-02",
               "c": "CRE. CAMBIOSOP....759519",
               "m": 250.0,
               "d2": ""
             },
             {
-              "f": "2026-01-21",
-              "c": "TRASPASO DE 8364275ILINK",
+              "f": "2026-01-05",
+              "c": "CRE. CAMBIOSTOLC17563738",
+              "m": 250.0,
+              "d2": ""
+            },
+            {
+              "f": "2026-01-19",
+              "c": "TRASPASO DE 6750087ILINK",
               "m": 300.0,
               "d2": ""
             },
@@ -14077,61 +14064,7 @@
             },
             {
               "f": "2026-01-19",
-              "c": "TRASPASO DE 2888662ILINK",
-              "m": 300.0,
-              "d2": ""
-            },
-            {
-              "f": "2026-01-19",
-              "c": "TRASPASO DE 6750087ILINK",
-              "m": 300.0,
-              "d2": ""
-            },
-            {
-              "f": "2026-01-20",
-              "c": "CRE. CAMBIOSTOLC18023866",
-              "m": 300.0,
-              "d2": ""
-            },
-            {
-              "f": "2026-01-19",
-              "c": "CRE. CAMBIOSTOLC17987797",
-              "m": 300.0,
-              "d2": ""
-            },
-            {
-              "f": "2026-01-21",
-              "c": "CRE. CAMBIOSTOLC18051640",
-              "m": 300.0,
-              "d2": ""
-            },
-            {
-              "f": "2026-01-19",
-              "c": "TRASPASO DE 3124951ILINK",
-              "m": 300.0,
-              "d2": ""
-            },
-            {
-              "f": "2026-01-26",
-              "c": "TRASPASO DE 8304771ILINK",
-              "m": 300.0,
-              "d2": ""
-            },
-            {
-              "f": "2026-01-22",
-              "c": "TRASPASO DE 0630592ILINK",
-              "m": 300.0,
-              "d2": ""
-            },
-            {
-              "f": "2026-01-26",
-              "c": "CRE. CAMBIOSOP....202036",
-              "m": 300.0,
-              "d2": ""
-            },
-            {
-              "f": "2026-01-19",
-              "c": "TRASPASO DE 7600885ILINK",
+              "c": "CRE. CAMBIOSOP....096208",
               "m": 300.0,
               "d2": ""
             },
@@ -14155,7 +14088,7 @@
             },
             {
               "f": "2026-01-19",
-              "c": "CRE. CAMBIOSOP....096208",
+              "c": "TRASPASO DE 7600885ILINK",
               "m": 300.0,
               "d2": ""
             },
@@ -14166,8 +14099,44 @@
               "d2": ""
             },
             {
-              "f": "2026-01-30",
-              "c": "TRASPASO DE 9628861ILINK",
+              "f": "2026-01-26",
+              "c": "CRE. CAMBIOSOP....202036",
+              "m": 300.0,
+              "d2": ""
+            },
+            {
+              "f": "2026-01-21",
+              "c": "TRASPASO DE 8364275ILINK",
+              "m": 300.0,
+              "d2": ""
+            },
+            {
+              "f": "2026-01-21",
+              "c": "CRE. CAMBIOSTOLC18051640",
+              "m": 300.0,
+              "d2": ""
+            },
+            {
+              "f": "2026-01-19",
+              "c": "TRASPASO DE 3124951ILINK",
+              "m": 300.0,
+              "d2": ""
+            },
+            {
+              "f": "2026-01-19",
+              "c": "TRASPASO DE 2888662ILINK",
+              "m": 300.0,
+              "d2": ""
+            },
+            {
+              "f": "2026-01-19",
+              "c": "CRE. CAMBIOSTOLC17987797",
+              "m": 300.0,
+              "d2": ""
+            },
+            {
+              "f": "2026-01-20",
+              "c": "CRE. CAMBIOSTOLC18023866",
               "m": 300.0,
               "d2": ""
             },
@@ -14178,8 +14147,26 @@
               "d2": ""
             },
             {
+              "f": "2026-01-30",
+              "c": "TRASPASO DE 9628861ILINK",
+              "m": 300.0,
+              "d2": ""
+            },
+            {
               "f": "2026-01-26",
               "c": "TRASPASO DE 3505443ILINK",
+              "m": 300.0,
+              "d2": ""
+            },
+            {
+              "f": "2026-01-26",
+              "c": "TRASPASO DE 8304771ILINK",
+              "m": 300.0,
+              "d2": ""
+            },
+            {
+              "f": "2026-01-22",
+              "c": "TRASPASO DE 0630592ILINK",
               "m": 300.0,
               "d2": ""
             },
@@ -14200,6 +14187,12 @@
               "c": "TRASPASO DE 2253370ILINK",
               "m": 1425.0,
               "d2": ""
+            },
+            {
+              "f": "2026-01-12",
+              "c": "DEVOLUCION  DLO*PEDIDOSY",
+              "m": 2561.02,
+              "d2": "Pedidos Ya"
             }
           ]
         },
@@ -14596,7 +14589,7 @@
         },
         {
           "f": "2026-01-31",
-          "desc": "Delivery / Pedidos",
+          "desc": "Social / Amigos",
           "d2": "Pedidos Ya",
           "c": "PEDIDOSYA*PEDIDOSYA*",
           "m": -2780.0
@@ -14683,26 +14676,6 @@
               "c": "TRASPASO A  2777619ILINK",
               "m": -660.0,
               "d2": ""
-            }
-          ]
-        },
-        "Delivery / Pedidos": {
-          "total": 440.33,
-          "sub": {
-            "Pedidos Ya": 440.33
-          },
-          "movs": [
-            {
-              "f": "2026-02-26",
-              "c": "COMPRA      DLO*PEDIDOSY",
-              "m": -370.49,
-              "d2": "Pedidos Ya"
-            },
-            {
-              "f": "2026-02-26",
-              "c": "COMPRA      DLO*PEDIDOSY",
-              "m": -69.84,
-              "d2": "Pedidos Ya"
             }
           ]
         },
@@ -15182,12 +15155,13 @@
           ]
         },
         "Social / Amigos": {
-          "total": 7517.66,
+          "total": 7957.99,
           "sub": {
             "Cabify/Uber": 492.95,
             "Café Misterio": 2370.0,
             "Massey": 2131.24,
-            "Peaje": 648.0
+            "Peaje": 648.0,
+            "Pedidos Ya": 440.33
           },
           "movs": [
             {
@@ -15239,6 +15213,12 @@
               "d2": ""
             },
             {
+              "f": "2026-02-26",
+              "c": "COMPRA      DLO*PEDIDOSY",
+              "m": -370.49,
+              "d2": "Pedidos Ya"
+            },
+            {
               "f": "2026-02-19",
               "c": "DEB. CAMBIOSTOLD28178117",
               "m": -250.0,
@@ -15269,6 +15249,12 @@
               "d2": "Peaje"
             },
             {
+              "f": "2026-02-26",
+              "c": "COMPRA      DLO*PEDIDOSY",
+              "m": -69.84,
+              "d2": "Pedidos Ya"
+            },
+            {
               "f": "2026-02-12",
               "c": "REDIVA 17934RUDY",
               "m": 33.75,
@@ -15281,16 +15267,16 @@
               "d2": ""
             },
             {
-              "f": "2026-02-06",
-              "c": "REDIVA 17934MASSEY FAMIL",
-              "m": 153.26,
-              "d2": "Massey"
-            },
-            {
               "f": "2026-02-28",
               "c": "REDUC. IVA LEY 17934",
               "m": 153.26,
               "d2": ""
+            },
+            {
+              "f": "2026-02-06",
+              "c": "REDIVA 17934MASSEY FAMIL",
+              "m": 153.26,
+              "d2": "Massey"
             },
             {
               "f": "2026-02-28",
@@ -15820,92 +15806,6 @@
             }
           ]
         },
-        "Delivery / Pedidos": {
-          "total": 6882.69,
-          "sub": {
-            "Pedidos Ya": 6882.69
-          },
-          "movs": [
-            {
-              "f": "2026-03-25",
-              "c": "COMPRA      DLO*PEDIDOSY",
-              "m": -2704.59,
-              "d2": "Pedidos Ya"
-            },
-            {
-              "f": "2026-03-30",
-              "c": "COMPRA      DLO*PEDIDOSY",
-              "m": -1398.61,
-              "d2": "Pedidos Ya"
-            },
-            {
-              "f": "2026-03-27",
-              "c": "COMPRA      DLO*PEDIDOSY",
-              "m": -1009.59,
-              "d2": "Pedidos Ya"
-            },
-            {
-              "f": "2026-03-16",
-              "c": "COMPRA      DLO*PEDIDOSY",
-              "m": -699.3,
-              "d2": "Pedidos Ya"
-            },
-            {
-              "f": "2026-03-30",
-              "c": "COMPRA      DLO*PEDIDOSY",
-              "m": -433.96,
-              "d2": "Pedidos Ya"
-            },
-            {
-              "f": "2026-03-25",
-              "c": "COMPRA      DLO*PEDIDOSY",
-              "m": -275.0,
-              "d2": "Pedidos Ya"
-            },
-            {
-              "f": "2026-03-16",
-              "c": "COMPRA      DLO*PEDIDOSY",
-              "m": -69.84,
-              "d2": "Pedidos Ya"
-            },
-            {
-              "f": "2026-03-30",
-              "c": "COMPRA      DLO*PEDIDOSY",
-              "m": -69.84,
-              "d2": "Pedidos Ya"
-            },
-            {
-              "f": "2026-03-30",
-              "c": "COMPRA      DLO*PEDIDOSY",
-              "m": -65.9,
-              "d2": "Pedidos Ya"
-            },
-            {
-              "f": "2026-03-27",
-              "c": "COMPRA      DLO*PEDIDOSY",
-              "m": -48.2,
-              "d2": "Pedidos Ya"
-            },
-            {
-              "f": "2026-03-25",
-              "c": "COMPRA      DLO*PEDIDOSY",
-              "m": -40.0,
-              "d2": "Pedidos Ya"
-            },
-            {
-              "f": "2026-03-25",
-              "c": "COMPRA      DLO*PEDIDOSY",
-              "m": -39.34,
-              "d2": "Pedidos Ya"
-            },
-            {
-              "f": "2026-03-25",
-              "c": "COMPRA      DLO*PEDIDOSY",
-              "m": -28.52,
-              "d2": "Pedidos Ya"
-            }
-          ]
-        },
         "Estación de servicio": {
           "total": 6779.35,
           "sub": {
@@ -16316,10 +16216,11 @@
           ]
         },
         "Social / Amigos": {
-          "total": 12792.06,
+          "total": 19674.75,
           "sub": {
             "Cabify/Uber": 1615.73,
-            "Peaje": 324.0
+            "Peaje": 324.0,
+            "Pedidos Ya": 6882.69
           },
           "movs": [
             {
@@ -16329,10 +16230,22 @@
               "d2": ""
             },
             {
+              "f": "2026-03-25",
+              "c": "COMPRA      DLO*PEDIDOSY",
+              "m": -2704.59,
+              "d2": "Pedidos Ya"
+            },
+            {
               "f": "2026-03-23",
               "c": "COMPRA      SALON DE TE",
               "m": -1940.0,
               "d2": ""
+            },
+            {
+              "f": "2026-03-30",
+              "c": "COMPRA      DLO*PEDIDOSY",
+              "m": -1398.61,
+              "d2": "Pedidos Ya"
             },
             {
               "f": "2026-03-09",
@@ -16347,6 +16260,12 @@
               "d2": "Cabify/Uber"
             },
             {
+              "f": "2026-03-27",
+              "c": "COMPRA      DLO*PEDIDOSY",
+              "m": -1009.59,
+              "d2": "Pedidos Ya"
+            },
+            {
               "f": "2026-03-12",
               "c": "TRASPASO A  3874282ILINK",
               "m": -1000.0,
@@ -16357,6 +16276,12 @@
               "c": "COMPRA      RUDY",
               "m": -915.0,
               "d2": ""
+            },
+            {
+              "f": "2026-03-16",
+              "c": "COMPRA      DLO*PEDIDOSY",
+              "m": -699.3,
+              "d2": "Pedidos Ya"
             },
             {
               "f": "2026-03-04",
@@ -16383,6 +16308,12 @@
               "d2": "Cabify/Uber"
             },
             {
+              "f": "2026-03-30",
+              "c": "COMPRA      DLO*PEDIDOSY",
+              "m": -433.96,
+              "d2": "Pedidos Ya"
+            },
+            {
               "f": "2026-03-26",
               "c": "COMPRA      FERRAN",
               "m": -420.0,
@@ -16393,6 +16324,12 @@
               "c": "COMPRA      PANADERIA DE",
               "m": -371.0,
               "d2": ""
+            },
+            {
+              "f": "2026-03-25",
+              "c": "COMPRA      DLO*PEDIDOSY",
+              "m": -275.0,
+              "d2": "Pedidos Ya"
             },
             {
               "f": "2026-03-16",
@@ -16423,6 +16360,48 @@
               "c": "TELEPEAJE",
               "m": -162.0,
               "d2": "Peaje"
+            },
+            {
+              "f": "2026-03-16",
+              "c": "COMPRA      DLO*PEDIDOSY",
+              "m": -69.84,
+              "d2": "Pedidos Ya"
+            },
+            {
+              "f": "2026-03-30",
+              "c": "COMPRA      DLO*PEDIDOSY",
+              "m": -69.84,
+              "d2": "Pedidos Ya"
+            },
+            {
+              "f": "2026-03-30",
+              "c": "COMPRA      DLO*PEDIDOSY",
+              "m": -65.9,
+              "d2": "Pedidos Ya"
+            },
+            {
+              "f": "2026-03-27",
+              "c": "COMPRA      DLO*PEDIDOSY",
+              "m": -48.2,
+              "d2": "Pedidos Ya"
+            },
+            {
+              "f": "2026-03-25",
+              "c": "COMPRA      DLO*PEDIDOSY",
+              "m": -40.0,
+              "d2": "Pedidos Ya"
+            },
+            {
+              "f": "2026-03-25",
+              "c": "COMPRA      DLO*PEDIDOSY",
+              "m": -39.34,
+              "d2": "Pedidos Ya"
+            },
+            {
+              "f": "2026-03-25",
+              "c": "COMPRA      DLO*PEDIDOSY",
+              "m": -28.52,
+              "d2": "Pedidos Ya"
             },
             {
               "f": "2026-03-09",
@@ -17002,7 +16981,7 @@
         },
         {
           "f": "2026-03-25",
-          "desc": "Delivery / Pedidos",
+          "desc": "Social / Amigos",
           "d2": "Pedidos Ya",
           "c": "COMPRA      DLO*PEDIDOSY",
           "m": -2704.59
@@ -17126,50 +17105,6 @@
               "c": "REDIVA 17934CHESTERHOUSE",
               "m": 37.11,
               "d2": "Chesterhouse"
-            }
-          ]
-        },
-        "Delivery / Pedidos": {
-          "total": 3444.35,
-          "sub": {
-            "Pedidos Ya": 3444.35
-          },
-          "movs": [
-            {
-              "f": "2026-04-17",
-              "c": "COMPRA      DLO*PEDIDOSY",
-              "m": -1398.61,
-              "d2": "Pedidos Ya"
-            },
-            {
-              "f": "2026-04-06",
-              "c": "COMPRA      DLO*PEDIDOSY",
-              "m": -1376.07,
-              "d2": "Pedidos Ya"
-            },
-            {
-              "f": "2026-04-20",
-              "c": "COMPRA      DLO*PEDIDOSY",
-              "m": -463.11,
-              "d2": "Pedidos Ya"
-            },
-            {
-              "f": "2026-04-06",
-              "c": "COMPRA      DLO*PEDIDOSY",
-              "m": -72.79,
-              "d2": "Pedidos Ya"
-            },
-            {
-              "f": "2026-04-17",
-              "c": "COMPRA      DLO*PEDIDOSY",
-              "m": -72.79,
-              "d2": "Pedidos Ya"
-            },
-            {
-              "f": "2026-04-20",
-              "c": "COMPRA      DLO*PEDIDOSY",
-              "m": -60.98,
-              "d2": "Pedidos Ya"
             }
           ]
         },
@@ -17583,12 +17518,13 @@
           ]
         },
         "Social / Amigos": {
-          "total": 9054.77,
+          "total": 12499.12,
           "sub": {
             "Café Misterio": 2370.0,
             "Café misterio": -174.84,
             "Padel": 713.11,
             "Peaje": 1620.0,
+            "Pedidos Ya": 3444.35,
             "Starbucks": 1130.0
           },
           "movs": [
@@ -17603,6 +17539,18 @@
               "c": "CAFE MISTERIO",
               "m": -2370.0,
               "d2": "Café Misterio"
+            },
+            {
+              "f": "2026-04-17",
+              "c": "COMPRA      DLO*PEDIDOSY",
+              "m": -1398.61,
+              "d2": "Pedidos Ya"
+            },
+            {
+              "f": "2026-04-06",
+              "c": "COMPRA      DLO*PEDIDOSY",
+              "m": -1376.07,
+              "d2": "Pedidos Ya"
             },
             {
               "f": "2026-04-20",
@@ -17623,6 +17571,12 @@
               "d2": "Padel"
             },
             {
+              "f": "2026-04-20",
+              "c": "COMPRA      DLO*PEDIDOSY",
+              "m": -463.11,
+              "d2": "Pedidos Ya"
+            },
+            {
               "f": "2026-04-21",
               "c": "TRASPASO A  1883510ILINK",
               "m": -400.0,
@@ -17635,12 +17589,6 @@
               "d2": ""
             },
             {
-              "f": "2026-04-06",
-              "c": "TRASPASO A  2176894ILINK",
-              "m": -250.0,
-              "d2": ""
-            },
-            {
               "f": "2026-04-20",
               "c": "TRASPASO A  0209702ILINK",
               "m": -250.0,
@@ -17649,6 +17597,12 @@
             {
               "f": "2026-04-20",
               "c": "DEB. CAMBIOSTOLD31201689",
+              "m": -250.0,
+              "d2": ""
+            },
+            {
+              "f": "2026-04-06",
+              "c": "TRASPASO A  2176894ILINK",
               "m": -250.0,
               "d2": ""
             },
@@ -17717,6 +17671,24 @@
               "c": "COMPRA      PADEL SHOP",
               "m": -100.0,
               "d2": "Padel"
+            },
+            {
+              "f": "2026-04-06",
+              "c": "COMPRA      DLO*PEDIDOSY",
+              "m": -72.79,
+              "d2": "Pedidos Ya"
+            },
+            {
+              "f": "2026-04-17",
+              "c": "COMPRA      DLO*PEDIDOSY",
+              "m": -72.79,
+              "d2": "Pedidos Ya"
+            },
+            {
+              "f": "2026-04-20",
+              "c": "COMPRA      DLO*PEDIDOSY",
+              "m": -60.98,
+              "d2": "Pedidos Ya"
             },
             {
               "f": "2026-04-14",
@@ -18335,12 +18307,11 @@
     "Salud": 9160.3,
     "Seguro de vida": 214.48,
     "Servicios": 9276.97,
-    "Social / Amigos": 12131.8,
+    "Social / Amigos": 13379.78,
     "Supermercado": 20924.9,
     "Cosmética": 1393.96,
     "Ahorros": 10000.0,
     "Comida trabajo": 2127.12,
-    "Delivery / Pedidos": 3743.92,
     "Ropa": 923.6,
     "Seguros": 5128.06,
     "Suscripciones": 2233.94,
@@ -18456,10 +18427,10 @@
         21618.89,
         15683.54,
         12689.32,
-        6495.83,
-        7517.66,
-        12792.06,
-        9054.77,
+        10704.13,
+        7957.99,
+        19674.75,
+        12499.12,
         5872.0
       ],
       "CJPPU": [
@@ -20456,10 +20427,10 @@
             21618.89,
             15683.54,
             12689.32,
-            6495.83,
-            7517.66,
-            12792.06,
-            9054.77,
+            10704.13,
+            7957.99,
+            19674.75,
+            12499.12,
             5872.0
           ],
           "subcats": {
@@ -20634,6 +20605,25 @@
               1620.0,
               0.0
             ],
+            "Pedidos Ya": [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              4208.3,
+              440.33,
+              6882.69,
+              3444.35,
+              0.0
+            ],
             "Regalo Bauti": [
               0.0,
               0.0,
@@ -20749,7 +20739,7 @@
               0.0
             ]
           },
-          "total": 229855.22
+          "total": 244830.89
         },
         {
           "cat": "CJPPU",
@@ -21668,50 +21658,6 @@
             ]
           },
           "total": 15741.64
-        },
-        {
-          "cat": "Delivery / Pedidos",
-          "valores": [
-            0.0,
-            0.0,
-            0.0,
-            0.0,
-            0.0,
-            0.0,
-            0.0,
-            0.0,
-            0.0,
-            0.0,
-            0.0,
-            0.0,
-            4208.3,
-            440.33,
-            6882.69,
-            3444.35,
-            0.0
-          ],
-          "subcats": {
-            "Pedidos Ya": [
-              0.0,
-              0.0,
-              0.0,
-              0.0,
-              0.0,
-              0.0,
-              0.0,
-              0.0,
-              0.0,
-              0.0,
-              0.0,
-              0.0,
-              4208.3,
-              440.33,
-              6882.69,
-              3444.35,
-              0.0
-            ]
-          },
-          "total": 14975.67
         },
         {
           "cat": "Ahorros",
