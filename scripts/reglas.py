@@ -123,7 +123,10 @@ def cargar_reglas(force=False):
         if not has_text and not has_amt:
             continue
 
+        # Especificidad de las CONDICIONES (qué tan restrictiva es la regla)
         especificidad = (1 if has_text else 0) + (1 if has_amt else 0)
+        # Especificidad de los OUTPUTS (qué tan completa la dejó el usuario)
+        outputs       = (1 if sub else 0) + (1 if origen else 0) + (1 if tipo else 0)
 
         reglas.append({
             "patron": patron,
@@ -134,11 +137,16 @@ def cargar_reglas(force=False):
             "origen": origen,
             "tipo":   tipo,
             "espec":  especificidad,
+            "outs":   outputs,
             "orden":  orig_idx,
         })
 
-    # Sort: especificidad DESC, longitud de patrón DESC, orden original ASC
-    reglas.sort(key=lambda r: (-r["espec"], -len(r["patron"]), r["orden"]))
+    # Prioridad de match (de mayor a menor):
+    #  1) MÁS CONDICIONES (text+monto > solo una)
+    #  2) MÁS OUTPUTS COMPLETOS (sub+origen+tipo) → reglas curadas a mano ganan
+    #  3) PATRÓN MÁS LARGO (más específico textualmente)
+    #  4) ORDEN DE LA HOJA (estable)
+    reglas.sort(key=lambda r: (-r["espec"], -r["outs"], -len(r["patron"]), r["orden"]))
 
     _REGLAS["data"]  = reglas
     _REGLAS["mtime"] = mtime

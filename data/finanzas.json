@@ -1,6 +1,6 @@
 {
-  "generado": "2026-05-02T15:20:17",
-  "n_revisar": 22,
+  "generado": "2026-05-04T10:33:18",
+  "n_revisar": 24,
   "meses": [
     {
       "id": "2025-01",
@@ -13383,6 +13383,20 @@
       "gastos_total": 123340.39,
       "ingresos_total": 108230.0,
       "categorias": {
+        "Cosmética": {
+          "total": 840.0,
+          "sub": {
+            "Depilife": 840.0
+          },
+          "movs": [
+            {
+              "f": "2026-01-31",
+              "c": "MERPAGO*DEPILIFE",
+              "m": -840.0,
+              "d2": "Depilife"
+            }
+          ]
+        },
         "Cuotas": {
           "total": 1137.67,
           "sub": {
@@ -13394,6 +13408,74 @@
               "c": "MERPAGO*ROAGORSAS",
               "m": -1137.67,
               "d2": "Honda"
+            }
+          ]
+        },
+        "Delivery / Pedidos": {
+          "total": 4208.3,
+          "sub": {
+            "Pedidos Ya": 4208.3
+          },
+          "movs": [
+            {
+              "f": "2026-01-31",
+              "c": "PEDIDOSYA*PEDIDOSYA*",
+              "m": -2780.0,
+              "d2": "Pedidos Ya"
+            },
+            {
+              "f": "2026-01-12",
+              "c": "COMPRA      DLO*PEDIDOSY",
+              "m": -2561.02,
+              "d2": "Pedidos Ya"
+            },
+            {
+              "f": "2026-01-12",
+              "c": "COMPRA      DLO*PEDIDOSY",
+              "m": -1287.46,
+              "d2": "Pedidos Ya"
+            },
+            {
+              "f": "2026-01-12",
+              "c": "COMPRA      PEDIDOSYA*PE",
+              "m": -81.0,
+              "d2": "Pedidos Ya"
+            },
+            {
+              "f": "2026-01-31",
+              "c": "PEDIDOSYA*PEDIDOSYA",
+              "m": -71.0,
+              "d2": "Pedidos Ya"
+            },
+            {
+              "f": "2026-01-12",
+              "c": "COMPRA      PEDIDOSYA*PE",
+              "m": -71.0,
+              "d2": "Pedidos Ya"
+            },
+            {
+              "f": "2026-01-12",
+              "c": "REDIVA 19210PEDIDOSYA*PE",
+              "m": 1.16,
+              "d2": "Pedidos Ya"
+            },
+            {
+              "f": "2026-01-12",
+              "c": "REDIVA 19210PEDIDOSYA*PE",
+              "m": 1.43,
+              "d2": "Pedidos Ya"
+            },
+            {
+              "f": "2026-01-14",
+              "c": "CRE.VARIOS   PEDIDOSYA(C",
+              "m": 79.57,
+              "d2": "Pedidos Ya"
+            },
+            {
+              "f": "2026-01-12",
+              "c": "DEVOLUCION  DLO*PEDIDOSY",
+              "m": 2561.02,
+              "d2": "Pedidos Ya"
             }
           ]
         },
@@ -13424,26 +13506,27 @@
           ]
         },
         "Hogar - Mejoras": {
-          "total": 31443.56,
+          "total": 27788.68,
           "sub": {
             "Barometrica": 2000.0,
-            "Bautismo fran": 5252.46,
+            "Bautismo fran": 4500.0,
             "Calor Slim": 3364.5,
             "Creatina": 1990.0,
             "Curso constru": 1082.0,
-            "Depilife": 840.0,
             "Espejo auto fran": 963.93,
             "Flores pilu": 963.93,
             "Impuesto primaria": 393.0,
             "Liquido mosquitos": 2759.02,
-            "Patente moto": 1513.0
+            "Patente moto": 1513.0,
+            "Roomba": 4028.28,
+            "Sodimac": 520.32
           },
           "movs": [
             {
               "f": "2026-01-31",
               "c": "MERPAGO*IROBOTURUGUA",
               "m": -4028.28,
-              "d2": ""
+              "d2": "Roomba"
             },
             {
               "f": "2026-01-27",
@@ -13470,16 +13553,16 @@
               "d2": ""
             },
             {
-              "f": "2026-01-22",
-              "c": "RETIRO      BRED    2662",
-              "m": -2000.0,
-              "d2": "Bautismo fran"
-            },
-            {
               "f": "2026-01-05",
               "c": "RETIRO      BRED    2670",
               "m": -2000.0,
               "d2": "Barometrica"
+            },
+            {
+              "f": "2026-01-22",
+              "c": "RETIRO      BRED    2662",
+              "m": -2000.0,
+              "d2": "Bautismo fran"
             },
             {
               "f": "2026-01-07",
@@ -13530,58 +13613,16 @@
               "d2": "Flores pilu"
             },
             {
-              "f": "2026-01-31",
-              "c": "MERPAGO*DEPILIFE",
-              "m": -840.0,
-              "d2": "Depilife"
-            },
-            {
-              "f": "2026-01-31",
-              "c": "OPENAI *CHATGPT SUBS",
-              "m": -788.0,
-              "d2": ""
-            },
-            {
-              "f": "2026-01-31",
-              "c": "LEOMOVES",
-              "m": -787.61,
-              "d2": ""
-            },
-            {
-              "f": "2026-01-19",
-              "c": "COMPRA      GOCCO",
-              "m": -765.0,
-              "d2": "Bautismo fran"
-            },
-            {
               "f": "2026-01-12",
               "c": "COMPRA      SODIMAC",
               "m": -529.0,
-              "d2": ""
-            },
-            {
-              "f": "2026-01-31",
-              "c": "MICROSOFT*STORE",
-              "m": -369.0,
-              "d2": ""
-            },
-            {
-              "f": "2026-01-31",
-              "c": "GOOGLE *HBO MAX STRE",
-              "m": -117.81,
-              "d2": ""
+              "d2": "Sodimac"
             },
             {
               "f": "2026-01-12",
               "c": "REDIVA 19210SODIMAC",
               "m": 8.68,
-              "d2": ""
-            },
-            {
-              "f": "2026-01-19",
-              "c": "REDIVA 19210GOCCO",
-              "m": 12.54,
-              "d2": "Bautismo fran"
+              "d2": "Sodimac"
             },
             {
               "f": "2026-01-21",
@@ -13627,46 +13668,46 @@
             }
           ]
         },
-        "Mapfre": {
-          "total": 5105.38,
-          "sub": {
-            "Honda": 4177.12,
-            "Seguro casa": 928.26
-          },
-          "movs": [
-            {
-              "f": "2026-01-31",
-              "c": "MAPFRE",
-              "m": -4177.12,
-              "d2": "Honda"
-            },
-            {
-              "f": "2026-01-31",
-              "c": "MAPFRE",
-              "m": -928.26,
-              "d2": "Seguro casa"
-            }
-          ]
-        },
         "Niñera": {
           "total": 971.0,
           "sub": {
-            "BPS Rose": 971.0
+            "BPS": 971.0
           },
           "movs": [
             {
               "f": "2026-01-12",
               "c": "DEB. VARIOS PAGO B.P.S.",
               "m": -971.0,
-              "d2": "BPS Rose"
+              "d2": "BPS"
+            }
+          ]
+        },
+        "Ropa": {
+          "total": 752.46,
+          "sub": {
+            "Ropa Fran": 752.46
+          },
+          "movs": [
+            {
+              "f": "2026-01-19",
+              "c": "COMPRA      GOCCO",
+              "m": -765.0,
+              "d2": "Ropa Fran"
+            },
+            {
+              "f": "2026-01-19",
+              "c": "REDIVA 19210GOCCO",
+              "m": 12.54,
+              "d2": "Ropa Fran"
             }
           ]
         },
         "Salud": {
           "total": 19397.82,
           "sub": {
-            "Dentista": 4336.0,
-            "Farmacia": 15061.82
+            "Dentista": 3000.0,
+            "Farmacia": 15061.82,
+            "SEMM": 1336.0
           },
           "movs": [
             {
@@ -13715,7 +13756,7 @@
               "f": "2026-01-31",
               "c": "S.E.M.M.",
               "m": -1336.0,
-              "d2": "Dentista"
+              "d2": "SEMM"
             },
             {
               "f": "2026-01-07",
@@ -13839,12 +13880,33 @@
             }
           ]
         },
+        "Seguros": {
+          "total": 5105.38,
+          "sub": {
+            "Seguro Casa": 928.26,
+            "Seguro Honda": 4177.12
+          },
+          "movs": [
+            {
+              "f": "2026-01-31",
+              "c": "MAPFRE",
+              "m": -4177.12,
+              "d2": "Seguro Honda"
+            },
+            {
+              "f": "2026-01-31",
+              "c": "MAPFRE",
+              "m": -928.26,
+              "d2": "Seguro Casa"
+            }
+          ]
+        },
         "Servicios": {
           "total": 8924.88,
           "sub": {
             "ANTEL": 4029.0,
             "OSE": 642.0,
-            "Personal Bank": 421.88,
+            "Paquete Personal Bank": 421.88,
             "UTE": 3832.0
           },
           "movs": [
@@ -13882,26 +13944,27 @@
               "f": "2026-01-15",
               "c": "DEBITO      PAQUETE 2601",
               "m": -390.63,
-              "d2": "Personal Bank"
+              "d2": "Paquete Personal Bank"
             },
             {
               "f": "2026-01-15",
               "c": "IVA AL 22%  IVA PAQUETE",
               "m": -34.37,
-              "d2": "Personal Bank"
+              "d2": "Paquete Personal Bank"
             },
             {
               "f": "2026-01-15",
               "c": "REDIVA 19210IVA PAQUETE",
               "m": 3.12,
-              "d2": "Personal Bank"
+              "d2": "Paquete Personal Bank"
             }
           ]
         },
         "Social / Amigos": {
-          "total": 10704.13,
+          "total": 6495.83,
           "sub": {
-            "Bautismo fran": 4400.0
+            "Bautismo fran": 4400.0,
+            "Peaje": 648.0
           },
           "movs": [
             {
@@ -13917,18 +13980,6 @@
               "d2": "Bautismo fran"
             },
             {
-              "f": "2026-01-31",
-              "c": "PEDIDOSYA*PEDIDOSYA*",
-              "m": -2780.0,
-              "d2": ""
-            },
-            {
-              "f": "2026-01-12",
-              "c": "COMPRA      DLO*PEDIDOSY",
-              "m": -2561.02,
-              "d2": ""
-            },
-            {
               "f": "2026-01-21",
               "c": "COMPRA      RUDY",
               "m": -1565.62,
@@ -13938,12 +13989,6 @@
               "f": "2026-01-02",
               "c": "COMPRA      RUDY",
               "m": -1358.0,
-              "d2": ""
-            },
-            {
-              "f": "2026-01-12",
-              "c": "COMPRA      DLO*PEDIDOSY",
-              "m": -1287.46,
               "d2": ""
             },
             {
@@ -13962,66 +14007,30 @@
               "f": "2026-01-31",
               "c": "TELEPEAJE",
               "m": -162.0,
-              "d2": ""
+              "d2": "Peaje"
             },
             {
               "f": "2026-01-31",
               "c": "TELEPEAJE",
               "m": -162.0,
-              "d2": ""
+              "d2": "Peaje"
             },
             {
               "f": "2026-01-31",
               "c": "TELEPEAJE",
               "m": -162.0,
-              "d2": ""
+              "d2": "Peaje"
             },
             {
               "f": "2026-01-31",
               "c": "TELEPEAJE",
               "m": -162.0,
-              "d2": ""
-            },
-            {
-              "f": "2026-01-12",
-              "c": "COMPRA      PEDIDOSYA*PE",
-              "m": -81.0,
-              "d2": ""
-            },
-            {
-              "f": "2026-01-12",
-              "c": "COMPRA      PEDIDOSYA*PE",
-              "m": -71.0,
-              "d2": ""
-            },
-            {
-              "f": "2026-01-31",
-              "c": "PEDIDOSYA*PEDIDOSYA",
-              "m": -71.0,
-              "d2": ""
-            },
-            {
-              "f": "2026-01-12",
-              "c": "REDIVA 19210PEDIDOSYA*PE",
-              "m": 1.16,
-              "d2": ""
-            },
-            {
-              "f": "2026-01-12",
-              "c": "REDIVA 19210PEDIDOSYA*PE",
-              "m": 1.43,
-              "d2": ""
+              "d2": "Peaje"
             },
             {
               "f": "2026-01-19",
               "c": "REDIVA 17934CAFE VD",
               "m": 56.07,
-              "d2": ""
-            },
-            {
-              "f": "2026-01-14",
-              "c": "CRE.VARIOS   PEDIDOSYA(C",
-              "m": 79.57,
               "d2": ""
             },
             {
@@ -14043,20 +14052,20 @@
               "d2": ""
             },
             {
-              "f": "2026-01-02",
-              "c": "CRE. CAMBIOSOP....759519",
-              "m": 250.0,
-              "d2": ""
-            },
-            {
               "f": "2026-01-05",
               "c": "CRE. CAMBIOSTOLC17563738",
               "m": 250.0,
               "d2": ""
             },
             {
-              "f": "2026-01-19",
-              "c": "TRASPASO DE 6750087ILINK",
+              "f": "2026-01-02",
+              "c": "CRE. CAMBIOSOP....759519",
+              "m": 250.0,
+              "d2": ""
+            },
+            {
+              "f": "2026-01-21",
+              "c": "TRASPASO DE 8364275ILINK",
               "m": 300.0,
               "d2": ""
             },
@@ -14068,7 +14077,61 @@
             },
             {
               "f": "2026-01-19",
-              "c": "CRE. CAMBIOSOP....096208",
+              "c": "TRASPASO DE 2888662ILINK",
+              "m": 300.0,
+              "d2": ""
+            },
+            {
+              "f": "2026-01-19",
+              "c": "TRASPASO DE 6750087ILINK",
+              "m": 300.0,
+              "d2": ""
+            },
+            {
+              "f": "2026-01-20",
+              "c": "CRE. CAMBIOSTOLC18023866",
+              "m": 300.0,
+              "d2": ""
+            },
+            {
+              "f": "2026-01-19",
+              "c": "CRE. CAMBIOSTOLC17987797",
+              "m": 300.0,
+              "d2": ""
+            },
+            {
+              "f": "2026-01-21",
+              "c": "CRE. CAMBIOSTOLC18051640",
+              "m": 300.0,
+              "d2": ""
+            },
+            {
+              "f": "2026-01-19",
+              "c": "TRASPASO DE 3124951ILINK",
+              "m": 300.0,
+              "d2": ""
+            },
+            {
+              "f": "2026-01-26",
+              "c": "TRASPASO DE 8304771ILINK",
+              "m": 300.0,
+              "d2": ""
+            },
+            {
+              "f": "2026-01-22",
+              "c": "TRASPASO DE 0630592ILINK",
+              "m": 300.0,
+              "d2": ""
+            },
+            {
+              "f": "2026-01-26",
+              "c": "CRE. CAMBIOSOP....202036",
+              "m": 300.0,
+              "d2": ""
+            },
+            {
+              "f": "2026-01-19",
+              "c": "TRASPASO DE 7600885ILINK",
               "m": 300.0,
               "d2": ""
             },
@@ -14092,7 +14155,7 @@
             },
             {
               "f": "2026-01-19",
-              "c": "TRASPASO DE 7600885ILINK",
+              "c": "CRE. CAMBIOSOP....096208",
               "m": 300.0,
               "d2": ""
             },
@@ -14103,44 +14166,8 @@
               "d2": ""
             },
             {
-              "f": "2026-01-26",
-              "c": "CRE. CAMBIOSOP....202036",
-              "m": 300.0,
-              "d2": ""
-            },
-            {
-              "f": "2026-01-21",
-              "c": "TRASPASO DE 8364275ILINK",
-              "m": 300.0,
-              "d2": ""
-            },
-            {
-              "f": "2026-01-21",
-              "c": "CRE. CAMBIOSTOLC18051640",
-              "m": 300.0,
-              "d2": ""
-            },
-            {
-              "f": "2026-01-19",
-              "c": "TRASPASO DE 3124951ILINK",
-              "m": 300.0,
-              "d2": ""
-            },
-            {
-              "f": "2026-01-19",
-              "c": "TRASPASO DE 2888662ILINK",
-              "m": 300.0,
-              "d2": ""
-            },
-            {
-              "f": "2026-01-19",
-              "c": "CRE. CAMBIOSTOLC17987797",
-              "m": 300.0,
-              "d2": ""
-            },
-            {
-              "f": "2026-01-20",
-              "c": "CRE. CAMBIOSTOLC18023866",
+              "f": "2026-01-30",
+              "c": "TRASPASO DE 9628861ILINK",
               "m": 300.0,
               "d2": ""
             },
@@ -14151,26 +14178,8 @@
               "d2": ""
             },
             {
-              "f": "2026-01-30",
-              "c": "TRASPASO DE 9628861ILINK",
-              "m": 300.0,
-              "d2": ""
-            },
-            {
               "f": "2026-01-26",
               "c": "TRASPASO DE 3505443ILINK",
-              "m": 300.0,
-              "d2": ""
-            },
-            {
-              "f": "2026-01-26",
-              "c": "TRASPASO DE 8304771ILINK",
-              "m": 300.0,
-              "d2": ""
-            },
-            {
-              "f": "2026-01-22",
-              "c": "TRASPASO DE 0630592ILINK",
               "m": 300.0,
               "d2": ""
             },
@@ -14191,60 +14200,65 @@
               "c": "TRASPASO DE 2253370ILINK",
               "m": 1425.0,
               "d2": ""
-            },
-            {
-              "f": "2026-01-12",
-              "c": "DEVOLUCION  DLO*PEDIDOSY",
-              "m": 2561.02,
-              "d2": ""
             }
           ]
         },
         "Supermercado": {
           "total": 31449.2,
-          "sub": {},
+          "sub": {
+            "Devoto": 175.0,
+            "El Puestin": 267.28,
+            "Frog": 677.71,
+            "Kinko": 683.75,
+            "La Molienda": 1623.84,
+            "Macromercado": 10156.37,
+            "Palermo": 1426.23,
+            "Queso Bus": 1049.75,
+            "Santa Clara": 3887.05,
+            "Tienda Inglesa": 9493.22
+          },
           "movs": [
             {
               "f": "2026-01-19",
               "c": "COMPRA      MACROMERCADO",
               "m": -4079.0,
-              "d2": ""
+              "d2": "Macromercado"
             },
             {
               "f": "2026-01-27",
               "c": "COMPRA      MACROMERCADO",
               "m": -3943.0,
-              "d2": ""
+              "d2": "Macromercado"
             },
             {
               "f": "2026-01-14",
               "c": "COMPRA      TIENDA INGLE",
               "m": -3646.34,
-              "d2": ""
+              "d2": "Tienda Inglesa"
             },
             {
               "f": "2026-01-20",
               "c": "COMPRA      TIENDA INGLE",
               "m": -3233.62,
-              "d2": ""
+              "d2": "Tienda Inglesa"
             },
             {
               "f": "2026-01-31",
               "c": "ABASTO SANTA CLARA",
               "m": -2485.8,
-              "d2": ""
+              "d2": "Santa Clara"
             },
             {
               "f": "2026-01-27",
               "c": "COMPRA      TIENDA INGLE",
               "m": -2400.88,
-              "d2": ""
+              "d2": "Tienda Inglesa"
             },
             {
               "f": "2026-01-02",
               "c": "COMPRA      MACROMERCADO",
               "m": -2147.0,
-              "d2": ""
+              "d2": "Macromercado"
             },
             {
               "f": "2026-01-13",
@@ -14256,67 +14270,67 @@
               "f": "2026-01-16",
               "c": "COMPRA      PALERMO HNOS",
               "m": -1450.0,
-              "d2": ""
+              "d2": "Palermo"
             },
             {
               "f": "2026-01-02",
               "c": "COMPRA      ABASTO SANTA",
               "m": -1424.6,
-              "d2": ""
+              "d2": "Santa Clara"
             },
             {
               "f": "2026-01-07",
               "c": "COMPRA      QUESO BUS",
               "m": -752.24,
-              "d2": ""
+              "d2": "Queso Bus"
             },
             {
               "f": "2026-01-19",
               "c": "COMPRA      FROG",
               "m": -689.1,
-              "d2": ""
+              "d2": "Frog"
             },
             {
               "f": "2026-01-19",
               "c": "COMPRA      LA MOLIENDA",
               "m": -676.95,
-              "d2": ""
+              "d2": "La Molienda"
             },
             {
               "f": "2026-01-27",
               "c": "COMPRA      LA MOLIENDA",
               "m": -525.48,
-              "d2": ""
+              "d2": "La Molienda"
             },
             {
               "f": "2026-01-07",
               "c": "COMPRA      LA MOLIENDA",
               "m": -448.47,
-              "d2": ""
+              "d2": "La Molienda"
             },
             {
               "f": "2026-01-02",
               "c": "COMPRA      KINKO",
               "m": -431.0,
-              "d2": ""
+              "d2": "Kinko"
             },
             {
               "f": "2026-01-05",
               "c": "COMPRA      TIENDA INGLE",
               "m": -375.0,
-              "d2": ""
+              "d2": "Tienda Inglesa"
             },
             {
               "f": "2026-01-14",
               "c": "COMPRA      QUESO BUS",
               "m": -315.0,
-              "d2": ""
+              "d2": "Queso Bus"
             },
             {
               "f": "2026-01-09",
               "c": "COMPRA      EL PUESTIN -",
               "m": -272.23,
-              "d2": ""
+              "d2": "El Puestin"
             },
             {
               "f": "2026-01-28",
@@ -14328,127 +14342,162 @@
               "f": "2026-01-26",
               "c": "COMPRA      KINKO",
               "m": -260.0,
-              "d2": ""
+              "d2": "Kinko"
             },
             {
               "f": "2026-01-31",
               "c": "DEVOTO EXPRESS",
               "m": -175.0,
-              "d2": ""
+              "d2": "Devoto"
             },
             {
               "f": "2026-01-29",
               "c": "COMPRA      MACROMERCADO",
               "m": -145.0,
-              "d2": ""
+              "d2": "Macromercado"
             },
             {
               "f": "2026-01-29",
               "c": "REDIVA 19210MACROMERCADO",
               "m": 2.38,
-              "d2": ""
+              "d2": "Macromercado"
             },
             {
               "f": "2026-01-09",
               "c": "REDIVA 19210EL PUESTIN -",
               "m": 4.95,
-              "d2": ""
+              "d2": "El Puestin"
             },
             {
               "f": "2026-01-14",
               "c": "REDIVA 19210QUESO BUS",
               "m": 5.16,
-              "d2": ""
+              "d2": "Queso Bus"
             },
             {
               "f": "2026-01-05",
               "c": "REDIVA 19210TIENDA INGLE",
               "m": 6.74,
-              "d2": ""
+              "d2": "Tienda Inglesa"
             },
             {
               "f": "2026-01-02",
               "c": "REDIVA 19210KINKO",
               "m": 7.25,
-              "d2": ""
+              "d2": "Kinko"
             },
             {
               "f": "2026-01-07",
               "c": "REDIVA 19210LA MOLIENDA",
               "m": 7.35,
-              "d2": ""
+              "d2": "La Molienda"
             },
             {
               "f": "2026-01-27",
               "c": "REDIVA 19210LA MOLIENDA",
               "m": 8.61,
-              "d2": ""
+              "d2": "La Molienda"
             },
             {
               "f": "2026-01-19",
               "c": "REDIVA 19210LA MOLIENDA",
               "m": 11.1,
-              "d2": ""
+              "d2": "La Molienda"
             },
             {
               "f": "2026-01-19",
               "c": "REDIVA 19210FROG",
               "m": 11.39,
-              "d2": ""
+              "d2": "Frog"
             },
             {
               "f": "2026-01-07",
               "c": "REDIVA 19210QUESO BUS",
               "m": 12.33,
-              "d2": ""
+              "d2": "Queso Bus"
             },
             {
               "f": "2026-01-02",
               "c": "REDIVA 19210ABASTO SANTA",
               "m": 23.35,
-              "d2": ""
+              "d2": "Santa Clara"
             },
             {
               "f": "2026-01-16",
               "c": "REDIVA 19210PALERMO HNOS",
               "m": 23.77,
-              "d2": ""
+              "d2": "Palermo"
             },
             {
               "f": "2026-01-02",
               "c": "REDIVA 19210MACROMERCADO",
               "m": 32.24,
-              "d2": ""
+              "d2": "Macromercado"
             },
             {
               "f": "2026-01-27",
               "c": "REDIVA 19210TIENDA INGLE",
               "m": 34.11,
-              "d2": ""
+              "d2": "Tienda Inglesa"
             },
             {
               "f": "2026-01-20",
               "c": "REDIVA 19210TIENDA INGLE",
               "m": 56.66,
-              "d2": ""
+              "d2": "Tienda Inglesa"
             },
             {
               "f": "2026-01-27",
               "c": "REDIVA 19210MACROMERCADO",
               "m": 59.0,
-              "d2": ""
+              "d2": "Macromercado"
             },
             {
               "f": "2026-01-19",
               "c": "REDIVA 19210MACROMERCADO",
               "m": 64.01,
-              "d2": ""
+              "d2": "Macromercado"
             },
             {
               "f": "2026-01-14",
               "c": "REDIVA 19210TIENDA INGLE",
               "m": 65.11,
-              "d2": ""
+              "d2": "Tienda Inglesa"
+            }
+          ]
+        },
+        "Suscripciones": {
+          "total": 2062.42,
+          "sub": {
+            "Chat GPT": 788.0,
+            "HBO": 117.81,
+            "Leomoves": 787.61,
+            "Microsoft": 369.0
+          },
+          "movs": [
+            {
+              "f": "2026-01-31",
+              "c": "OPENAI *CHATGPT SUBS",
+              "m": -788.0,
+              "d2": "Chat GPT"
+            },
+            {
+              "f": "2026-01-31",
+              "c": "LEOMOVES",
+              "m": -787.61,
+              "d2": "Leomoves"
+            },
+            {
+              "f": "2026-01-31",
+              "c": "MICROSOFT*STORE",
+              "m": -369.0,
+              "d2": "Microsoft"
+            },
+            {
+              "f": "2026-01-31",
+              "c": "GOOGLE *HBO MAX STRE",
+              "m": -117.81,
+              "d2": "HBO"
             }
           ]
         }
@@ -14477,29 +14526,29 @@
         },
         {
           "f": "2026-01-31",
-          "desc": "Mapfre",
-          "d2": "Honda",
+          "desc": "Seguros",
+          "d2": "Seguro Honda",
           "c": "MAPFRE",
           "m": -4177.12
         },
         {
           "f": "2026-01-19",
           "desc": "Supermercado",
-          "d2": "",
+          "d2": "Macromercado",
           "c": "COMPRA      MACROMERCADO",
           "m": -4079.0
         },
         {
           "f": "2026-01-31",
           "desc": "Hogar - Mejoras",
-          "d2": "",
+          "d2": "Roomba",
           "c": "MERPAGO*IROBOTURUGUA",
           "m": -4028.28
         },
         {
           "f": "2026-01-27",
           "desc": "Supermercado",
-          "d2": "",
+          "d2": "Macromercado",
           "c": "COMPRA      MACROMERCADO",
           "m": -3943.0
         },
@@ -14513,7 +14562,7 @@
         {
           "f": "2026-01-14",
           "desc": "Supermercado",
-          "d2": "",
+          "d2": "Tienda Inglesa",
           "c": "COMPRA      TIENDA INGLE",
           "m": -3646.34
         },
@@ -14527,7 +14576,7 @@
         {
           "f": "2026-01-20",
           "desc": "Supermercado",
-          "d2": "",
+          "d2": "Tienda Inglesa",
           "c": "COMPRA      TIENDA INGLE",
           "m": -3233.62
         },
@@ -14547,8 +14596,8 @@
         },
         {
           "f": "2026-01-31",
-          "desc": "Social / Amigos",
-          "d2": "",
+          "desc": "Delivery / Pedidos",
+          "d2": "Pedidos Ya",
           "c": "PEDIDOSYA*PEDIDOSYA*",
           "m": -2780.0
         },
@@ -14564,19 +14613,15 @@
     {
       "id": "2026-02",
       "label": "Feb 26",
-      "gastos_total": 103688.63,
-      "ingresos_total": 125631.0,
+      "gastos_total": 77930.53,
+      "ingresos_total": 125581.0,
       "categorias": {
         "Comida trabajo": {
-          "total": 1465.75,
-          "sub": {},
+          "total": 1042.0,
+          "sub": {
+            "Chesterhouse": 694.68
+          },
           "movs": [
-            {
-              "f": "2026-02-12",
-              "c": "COMPRA      RUDY",
-              "m": -457.5,
-              "d2": ""
-            },
             {
               "f": "2026-02-05",
               "c": "COMPRA      DONA COXINHA",
@@ -14584,52 +14629,54 @@
               "d2": ""
             },
             {
-              "f": "2026-02-12",
-              "c": "COMPRA      CHESTERHOUSE",
-              "m": -375.0,
-              "d2": ""
-            },
-            {
               "f": "2026-02-05",
               "c": "COMPRA      CHESTERHOUSE",
               "m": -375.0,
-              "d2": ""
+              "d2": "Chesterhouse"
             },
             {
               "f": "2026-02-12",
-              "c": "REDIVA 17934CHESTERHOUSE",
-              "m": 27.66,
-              "d2": ""
+              "c": "COMPRA      CHESTERHOUSE",
+              "m": -375.0,
+              "d2": "Chesterhouse"
             },
             {
               "f": "2026-02-05",
               "c": "REDIVA 17934CHESTERHOUSE",
               "m": 27.66,
-              "d2": ""
+              "d2": "Chesterhouse"
+            },
+            {
+              "f": "2026-02-12",
+              "c": "REDIVA 17934CHESTERHOUSE",
+              "m": 27.66,
+              "d2": "Chesterhouse"
             },
             {
               "f": "2026-02-05",
               "c": "REDIVA 17934DONA COXINHA",
               "m": 27.68,
               "d2": ""
-            },
-            {
-              "f": "2026-02-12",
-              "c": "REDIVA 17934RUDY",
-              "m": 33.75,
-              "d2": ""
             }
           ]
         },
         "Cosmética": {
-          "total": 3160.0,
-          "sub": {},
+          "total": 4000.0,
+          "sub": {
+            "Depilife": 840.0
+          },
           "movs": [
             {
               "f": "2026-02-09",
               "c": "TRASPASO A  2691050ILINK",
               "m": -2500.0,
               "d2": ""
+            },
+            {
+              "f": "2026-02-28",
+              "c": "MERPAGO*DEPILIFE",
+              "m": -840.0,
+              "d2": "Depilife"
             },
             {
               "f": "2026-02-20",
@@ -14639,10 +14686,30 @@
             }
           ]
         },
-        "Estación de servicio": {
-          "total": 11148.8,
+        "Delivery / Pedidos": {
+          "total": 440.33,
           "sub": {
-            "Combustible": 11148.8
+            "Pedidos Ya": 440.33
+          },
+          "movs": [
+            {
+              "f": "2026-02-26",
+              "c": "COMPRA      DLO*PEDIDOSY",
+              "m": -370.49,
+              "d2": "Pedidos Ya"
+            },
+            {
+              "f": "2026-02-26",
+              "c": "COMPRA      DLO*PEDIDOSY",
+              "m": -69.84,
+              "d2": "Pedidos Ya"
+            }
+          ]
+        },
+        "Estación de servicio": {
+          "total": 8093.72,
+          "sub": {
+            "Combustible": 8093.72
           },
           "movs": [
             {
@@ -14659,12 +14726,6 @@
             },
             {
               "f": "2026-02-02",
-              "c": "DEB. VARIOS VISA-ILINK",
-              "m": -3300.0,
-              "d2": "Combustible"
-            },
-            {
-              "f": "2026-02-02",
               "c": "COMPRA      DISA MISUROL",
               "m": -508.7,
               "d2": "Combustible"
@@ -14673,6 +14734,18 @@
               "f": "2026-02-25",
               "c": "COMPRA      ESTACION ITA",
               "m": -469.1,
+              "d2": "Combustible"
+            },
+            {
+              "f": "2026-02-09",
+              "c": "COMPRA      ZAGREB LTDA",
+              "m": -249.0,
+              "d2": "Combustible"
+            },
+            {
+              "f": "2026-02-09",
+              "c": "REDIVA 19210ZAGREB LTDA",
+              "m": 4.08,
               "d2": "Combustible"
             }
           ]
@@ -14690,26 +14763,19 @@
           ]
         },
         "Hogar - Mejoras": {
-          "total": 15841.76,
+          "total": -7022.91,
           "sub": {
             "Aperols": 1200.0,
             "Calor Slim": 1682.3,
-            "Depilife": 840.0,
-            "HBO": 117.51,
-            "Microsoft": 369.0
+            "High Car Wash": 1100.0,
+            "Roomba": 4028.28
           },
           "movs": [
-            {
-              "f": "2026-02-18",
-              "c": "DEB. VARIOS VISA-ILINK",
-              "m": -20117.0,
-              "d2": ""
-            },
             {
               "f": "2026-02-28",
               "c": "MERPAGO*IROBOTURUGUA",
               "m": -4028.28,
-              "d2": ""
+              "d2": "Roomba"
             },
             {
               "f": "2026-02-28",
@@ -14736,22 +14802,10 @@
               "d2": "Aperols"
             },
             {
-              "f": "2026-02-27",
-              "c": "COMPRA      CARTERS PORT",
-              "m": -1113.0,
-              "d2": ""
-            },
-            {
-              "f": "2026-02-28",
-              "c": "MERPAGO*DEPILIFE",
-              "m": -840.0,
-              "d2": "Depilife"
-            },
-            {
-              "f": "2026-02-28",
-              "c": "LEOMOVES",
-              "m": -785.61,
-              "d2": ""
+              "f": "2026-02-18",
+              "c": "COMPRA      HIGH CAR WAS",
+              "m": -1100.0,
+              "d2": "High Car Wash"
             },
             {
               "f": "2026-02-02",
@@ -14766,39 +14820,15 @@
               "d2": ""
             },
             {
-              "f": "2026-02-26",
-              "c": "COMPRA      UBR* PENDING",
-              "m": -492.95,
-              "d2": ""
-            },
-            {
-              "f": "2026-02-28",
-              "c": "MICROSOFT*MICROSOFT",
-              "m": -369.0,
-              "d2": "Microsoft"
-            },
-            {
-              "f": "2026-02-28",
-              "c": "GOOGLE *HBO MAX STRE",
-              "m": -117.51,
-              "d2": "HBO"
-            },
-            {
-              "f": "2026-02-28",
-              "c": "GOOGLE *YOUTUBE MEMB",
-              "m": -97.86,
-              "d2": ""
-            },
-            {
               "f": "2026-02-06",
               "c": "COMPRA      HOSPITAL BRI",
               "m": -70.0,
               "d2": ""
             },
             {
-              "f": "2026-02-26",
-              "c": "TRASPASO A  7765226ILINK",
-              "m": -50.0,
+              "f": "2026-02-11",
+              "c": "DEBITO      ABITAB246790",
+              "m": -17.63,
               "d2": ""
             },
             {
@@ -14810,12 +14840,6 @@
             {
               "f": "2026-02-11",
               "c": "DEBITO      ABITAB247701",
-              "m": -17.63,
-              "d2": ""
-            },
-            {
-              "f": "2026-02-11",
-              "c": "DEBITO      ABITAB246790",
               "m": -17.63,
               "d2": ""
             },
@@ -14844,12 +14868,6 @@
               "d2": ""
             },
             {
-              "f": "2026-02-27",
-              "c": "REDIVA 19210CARTERS PORT",
-              "m": 18.25,
-              "d2": ""
-            },
-            {
               "f": "2026-02-18",
               "c": "TRASPASO DE 4327535ILINK",
               "m": 20117.72,
@@ -14870,42 +14888,23 @@
           ]
         },
         "Mapfre": {
-          "total": 7340.68,
+          "total": 1137.65,
           "sub": {
-            "Honda": 6414.77,
-            "Seguro casa": 925.91
+            "Honda": 1137.65
           },
           "movs": [
-            {
-              "f": "2026-02-28",
-              "c": "MAPFRE",
-              "m": -4177.12,
-              "d2": "Honda"
-            },
             {
               "f": "2026-02-28",
               "c": "MERPAGO*ROAGORSAS",
               "m": -1137.65,
               "d2": "Honda"
-            },
-            {
-              "f": "2026-02-18",
-              "c": "COMPRA      HIGH CAR WAS",
-              "m": -1100.0,
-              "d2": "Honda"
-            },
-            {
-              "f": "2026-02-28",
-              "c": "MAPFRE",
-              "m": -925.91,
-              "d2": "Seguro casa"
             }
           ]
         },
         "Niñera": {
           "total": 3129.0,
           "sub": {
-            "BPS Rose": 771.0
+            "BPS": 771.0
           },
           "movs": [
             {
@@ -14918,15 +14917,36 @@
               "f": "2026-02-04",
               "c": "DEB. VARIOS PAGO B.P.S.",
               "m": -771.0,
-              "d2": "BPS Rose"
+              "d2": "BPS"
+            }
+          ]
+        },
+        "Ropa": {
+          "total": 1094.75,
+          "sub": {
+            "Carters": 1094.75
+          },
+          "movs": [
+            {
+              "f": "2026-02-27",
+              "c": "COMPRA      CARTERS PORT",
+              "m": -1113.0,
+              "d2": "Carters"
+            },
+            {
+              "f": "2026-02-27",
+              "c": "REDIVA 19210CARTERS PORT",
+              "m": 18.25,
+              "d2": "Carters"
             }
           ]
         },
         "Salud": {
           "total": 14545.35,
           "sub": {
-            "Dentista": 1542.56,
-            "Farmacia": 13002.79
+            "Dentista": 206.56,
+            "Farmacia": 13002.79,
+            "SEMM": 1336.0
           },
           "movs": [
             {
@@ -14945,7 +14965,7 @@
               "f": "2026-02-28",
               "c": "S.E.M.M.",
               "m": -1336.0,
-              "d2": "Dentista"
+              "d2": "SEMM"
             },
             {
               "f": "2026-02-09",
@@ -15081,12 +15101,33 @@
             }
           ]
         },
+        "Seguros": {
+          "total": 5103.03,
+          "sub": {
+            "Seguro Casa": 925.91,
+            "Seguro Honda": 4177.12
+          },
+          "movs": [
+            {
+              "f": "2026-02-28",
+              "c": "MAPFRE",
+              "m": -4177.12,
+              "d2": "Seguro Honda"
+            },
+            {
+              "f": "2026-02-28",
+              "c": "MAPFRE",
+              "m": -925.91,
+              "d2": "Seguro Casa"
+            }
+          ]
+        },
         "Servicios": {
           "total": 9794.88,
           "sub": {
             "ANTEL": 4122.0,
             "OSE": 675.0,
-            "Personal Bank": 421.88,
+            "Paquete Personal Bank": 421.88,
             "UTE": 4576.0
           },
           "movs": [
@@ -15124,37 +15165,42 @@
               "f": "2026-02-13",
               "c": "DEBITO      PAQUETE 2602",
               "m": -390.63,
-              "d2": "Personal Bank"
+              "d2": "Paquete Personal Bank"
             },
             {
               "f": "2026-02-13",
               "c": "IVA AL 22%  IVA PAQUETE",
               "m": -34.37,
-              "d2": "Personal Bank"
+              "d2": "Paquete Personal Bank"
             },
             {
               "f": "2026-02-13",
               "c": "REDIVA 19210IVA PAQUETE",
               "m": 3.12,
-              "d2": "Personal Bank"
+              "d2": "Paquete Personal Bank"
             }
           ]
         },
         "Social / Amigos": {
-          "total": 7223.26,
-          "sub": {},
+          "total": 7517.66,
+          "sub": {
+            "Cabify/Uber": 492.95,
+            "Café Misterio": 2370.0,
+            "Massey": 2131.24,
+            "Peaje": 648.0
+          },
           "movs": [
             {
               "f": "2026-02-28",
               "c": "CAFE MISTERIO",
               "m": -2370.0,
-              "d2": ""
+              "d2": "Café Misterio"
             },
             {
               "f": "2026-02-06",
               "c": "COMPRA      MASSEY FAMIL",
               "m": -2284.5,
-              "d2": ""
+              "d2": "Massey"
             },
             {
               "f": "2026-02-28",
@@ -15175,15 +15221,21 @@
               "d2": ""
             },
             {
-              "f": "2026-02-24",
-              "c": "TRASPASO A  8999925ILINK",
-              "m": -444.44,
+              "f": "2026-02-26",
+              "c": "COMPRA      UBR* PENDING",
+              "m": -492.95,
+              "d2": "Cabify/Uber"
+            },
+            {
+              "f": "2026-02-12",
+              "c": "COMPRA      RUDY",
+              "m": -457.5,
               "d2": ""
             },
             {
-              "f": "2026-02-26",
-              "c": "COMPRA      DLO*PEDIDOSY",
-              "m": -370.49,
+              "f": "2026-02-24",
+              "c": "TRASPASO A  8999925ILINK",
+              "m": -444.44,
               "d2": ""
             },
             {
@@ -15193,45 +15245,33 @@
               "d2": ""
             },
             {
-              "f": "2026-02-23",
-              "c": "COMPRA      DEVOTO EXPRE",
-              "m": -185.0,
-              "d2": ""
+              "f": "2026-02-28",
+              "c": "TELEPEAJE",
+              "m": -162.0,
+              "d2": "Peaje"
             },
             {
               "f": "2026-02-28",
               "c": "TELEPEAJE",
               "m": -162.0,
-              "d2": ""
+              "d2": "Peaje"
             },
             {
               "f": "2026-02-28",
               "c": "TELEPEAJE",
               "m": -162.0,
-              "d2": ""
+              "d2": "Peaje"
             },
             {
               "f": "2026-02-28",
               "c": "TELEPEAJE",
               "m": -162.0,
-              "d2": ""
+              "d2": "Peaje"
             },
             {
-              "f": "2026-02-28",
-              "c": "TELEPEAJE",
-              "m": -162.0,
-              "d2": ""
-            },
-            {
-              "f": "2026-02-26",
-              "c": "COMPRA      DLO*PEDIDOSY",
-              "m": -69.84,
-              "d2": ""
-            },
-            {
-              "f": "2026-02-23",
-              "c": "REDIVA 19210DEVOTO EXPRE",
-              "m": 3.03,
+              "f": "2026-02-12",
+              "c": "REDIVA 17934RUDY",
+              "m": 33.75,
               "d2": ""
             },
             {
@@ -15244,7 +15284,7 @@
               "f": "2026-02-06",
               "c": "REDIVA 17934MASSEY FAMIL",
               "m": 153.26,
-              "d2": ""
+              "d2": "Massey"
             },
             {
               "f": "2026-02-28",
@@ -15271,14 +15311,14 @@
               "d2": ""
             },
             {
-              "f": "2026-02-02",
-              "c": "TRASPASO DE 0211746ILINK",
+              "f": "2026-02-03",
+              "c": "TRASPASO DE 8963433ILINK",
               "m": 300.0,
               "d2": ""
             },
             {
-              "f": "2026-02-03",
-              "c": "TRASPASO DE 8963433ILINK",
+              "f": "2026-02-02",
+              "c": "TRASPASO DE 0211746ILINK",
               "m": 300.0,
               "d2": ""
             },
@@ -15309,128 +15349,124 @@
           ]
         },
         "Supermercado": {
-          "total": 19156.74,
-          "sub": {},
+          "total": 16802.69,
+          "sub": {
+            "Devoto": 485.9,
+            "Disco": 794.75,
+            "Frog": 2029.17,
+            "Kinko": 825.24,
+            "Macromercado": 3653.44,
+            "Palermo": 511.48,
+            "Tienda Inglesa": 8209.71
+          },
           "movs": [
             {
               "f": "2026-02-18",
               "c": "COMPRA      TIENDA INGLE",
               "m": -3877.76,
-              "d2": ""
-            },
-            {
-              "f": "2026-02-18",
-              "c": "DEB. VARIOS VISA-ILINK",
-              "m": -2291.1,
-              "d2": ""
+              "d2": "Tienda Inglesa"
             },
             {
               "f": "2026-02-02",
               "c": "COMPRA      MACROMERCADO",
               "m": -1646.0,
-              "d2": ""
+              "d2": "Macromercado"
             },
             {
               "f": "2026-02-09",
               "c": "COMPRA      FROG",
               "m": -1423.0,
-              "d2": ""
+              "d2": "Frog"
             },
             {
               "f": "2026-02-24",
               "c": "COMPRA      MACROMERCADO",
               "m": -1418.0,
-              "d2": ""
+              "d2": "Macromercado"
             },
             {
               "f": "2026-02-19",
               "c": "COMPRA      TIENDA INGLE",
               "m": -1289.21,
-              "d2": ""
+              "d2": "Tienda Inglesa"
             },
             {
               "f": "2026-02-24",
               "c": "COMPRA      TIENDA INGLE",
               "m": -959.37,
-              "d2": ""
+              "d2": "Tienda Inglesa"
             },
             {
               "f": "2026-02-11",
               "c": "COMPRA      TIENDA INGLE",
               "m": -918.74,
-              "d2": ""
+              "d2": "Tienda Inglesa"
             },
             {
               "f": "2026-02-09",
               "c": "COMPRA      DISCO N 31",
               "m": -808.0,
-              "d2": ""
+              "d2": "Disco"
             },
             {
               "f": "2026-02-10",
               "c": "COMPRA      KINKO",
               "m": -550.0,
-              "d2": ""
+              "d2": "Kinko"
             },
             {
               "f": "2026-02-20",
               "c": "COMPRA      PALERMO HNOS",
               "m": -520.0,
-              "d2": ""
+              "d2": "Palermo"
             },
             {
               "f": "2026-02-02",
               "c": "COMPRA      FROG",
               "m": -475.0,
-              "d2": ""
+              "d2": "Frog"
             },
             {
               "f": "2026-02-03",
               "c": "COMPRA      TIENDA INGLE",
               "m": -450.0,
-              "d2": ""
+              "d2": "Tienda Inglesa"
             },
             {
               "f": "2026-02-25",
               "c": "COMPRA      TIENDA INGLE",
               "m": -446.0,
-              "d2": ""
+              "d2": "Tienda Inglesa"
             },
             {
               "f": "2026-02-26",
               "c": "COMPRA      TIENDA INGLE",
               "m": -414.3,
-              "d2": ""
+              "d2": "Tienda Inglesa"
             },
             {
               "f": "2026-02-11",
               "c": "COMPRA      MACROMERCADO",
               "m": -335.0,
-              "d2": ""
+              "d2": "Macromercado"
             },
             {
               "f": "2026-02-09",
               "c": "COMPRA      DEVOTO EXPRE",
               "m": -309.0,
-              "d2": ""
+              "d2": "Devoto"
             },
             {
               "f": "2026-02-18",
               "c": "COMPRA      MACROMERCADO",
               "m": -306.0,
-              "d2": ""
+              "d2": "Macromercado"
             },
             {
               "f": "2026-02-09",
               "c": "COMPRA      KINKO",
               "m": -289.0,
-              "d2": ""
-            },
-            {
-              "f": "2026-02-09",
-              "c": "COMPRA      ZAGREB LTDA",
-              "m": -249.0,
-              "d2": ""
+              "d2": "Kinko"
             },
             {
               "f": "2026-02-24",
@@ -15439,10 +15475,16 @@
               "d2": ""
             },
             {
+              "f": "2026-02-23",
+              "c": "COMPRA      DEVOTO EXPRE",
+              "m": -185.0,
+              "d2": "Devoto"
+            },
+            {
               "f": "2026-02-27",
               "c": "COMPRA      FROG",
               "m": -165.0,
-              "d2": ""
+              "d2": "Frog"
             },
             {
               "f": "2026-02-28",
@@ -15454,133 +15496,161 @@
               "f": "2026-02-27",
               "c": "REDIVA 19210FROG",
               "m": 2.71,
-              "d2": ""
+              "d2": "Frog"
             },
             {
-              "f": "2026-02-09",
-              "c": "REDIVA 19210ZAGREB LTDA",
-              "m": 4.08,
-              "d2": ""
+              "f": "2026-02-23",
+              "c": "REDIVA 19210DEVOTO EXPRE",
+              "m": 3.03,
+              "d2": "Devoto"
             },
             {
               "f": "2026-02-09",
               "c": "REDIVA 19210KINKO",
               "m": 4.74,
-              "d2": ""
+              "d2": "Kinko"
             },
             {
               "f": "2026-02-18",
               "c": "REDIVA 19210MACROMERCADO",
               "m": 5.02,
-              "d2": ""
+              "d2": "Macromercado"
             },
             {
               "f": "2026-02-09",
               "c": "REDIVA 19210DEVOTO EXPRE",
               "m": 5.07,
-              "d2": ""
+              "d2": "Devoto"
             },
             {
               "f": "2026-02-11",
               "c": "REDIVA 19210MACROMERCADO",
               "m": 5.59,
-              "d2": ""
+              "d2": "Macromercado"
             },
             {
               "f": "2026-02-26",
               "c": "REDIVA 19210TIENDA INGLE",
               "m": 6.79,
-              "d2": ""
+              "d2": "Tienda Inglesa"
             },
             {
               "f": "2026-02-25",
               "c": "REDIVA 19210TIENDA INGLE",
               "m": 7.31,
-              "d2": ""
+              "d2": "Tienda Inglesa"
             },
             {
               "f": "2026-02-02",
               "c": "REDIVA 19210FROG",
               "m": 7.79,
-              "d2": ""
+              "d2": "Frog"
             },
             {
               "f": "2026-02-03",
               "c": "REDIVA 19210TIENDA INGLE",
               "m": 7.8,
-              "d2": ""
+              "d2": "Tienda Inglesa"
             },
             {
               "f": "2026-02-20",
               "c": "REDIVA 19210PALERMO HNOS",
               "m": 8.52,
-              "d2": ""
+              "d2": "Palermo"
             },
             {
               "f": "2026-02-10",
               "c": "REDIVA 19210KINKO",
               "m": 9.02,
-              "d2": ""
+              "d2": "Kinko"
             },
             {
               "f": "2026-02-09",
               "c": "REDIVA 19210DISCO N 31",
               "m": 13.25,
-              "d2": ""
+              "d2": "Disco"
             },
             {
               "f": "2026-02-11",
               "c": "REDIVA 19210TIENDA INGLE",
               "m": 16.46,
-              "d2": ""
+              "d2": "Tienda Inglesa"
             },
             {
               "f": "2026-02-24",
               "c": "REDIVA 19210MACROMERCADO",
               "m": 16.62,
-              "d2": ""
+              "d2": "Macromercado"
             },
             {
               "f": "2026-02-24",
               "c": "REDIVA 19210TIENDA INGLE",
               "m": 16.82,
-              "d2": ""
+              "d2": "Tienda Inglesa"
             },
             {
               "f": "2026-02-19",
               "c": "REDIVA 19210TIENDA INGLE",
               "m": 21.21,
-              "d2": ""
+              "d2": "Tienda Inglesa"
             },
             {
               "f": "2026-02-09",
               "c": "REDIVA 19210FROG",
               "m": 23.33,
-              "d2": ""
+              "d2": "Frog"
             },
             {
               "f": "2026-02-02",
               "c": "REDIVA 19210MACROMERCADO",
               "m": 24.33,
-              "d2": ""
+              "d2": "Macromercado"
             },
             {
               "f": "2026-02-18",
               "c": "REDIVA 19210TIENDA INGLE",
               "m": 69.28,
-              "d2": ""
+              "d2": "Tienda Inglesa"
+            }
+          ]
+        },
+        "Suscripciones": {
+          "total": 1369.97,
+          "sub": {
+            "HBO": 117.51,
+            "Leomoves": 785.61,
+            "Microsoft": 369.0,
+            "Youtube": 97.86
+          },
+          "movs": [
+            {
+              "f": "2026-02-28",
+              "c": "LEOMOVES",
+              "m": -785.61,
+              "d2": "Leomoves"
+            },
+            {
+              "f": "2026-02-28",
+              "c": "MICROSOFT*MICROSOFT",
+              "m": -369.0,
+              "d2": "Microsoft"
+            },
+            {
+              "f": "2026-02-28",
+              "c": "GOOGLE *HBO MAX STRE",
+              "m": -117.51,
+              "d2": "HBO"
+            },
+            {
+              "f": "2026-02-28",
+              "c": "GOOGLE *YOUTUBE MEMB",
+              "m": -97.86,
+              "d2": "Youtube"
             }
           ]
         }
       },
       "top_movs": [
-        {
-          "f": "2026-02-18",
-          "desc": "Hogar - Mejoras",
-          "d2": "",
-          "c": "DEB. VARIOS VISA-ILINK",
-          "m": -20117.0
-        },
         {
           "f": "2026-02-18",
           "desc": "Gastos comunes",
@@ -15604,22 +15674,22 @@
         },
         {
           "f": "2026-02-28",
-          "desc": "Mapfre",
-          "d2": "Honda",
+          "desc": "Seguros",
+          "d2": "Seguro Honda",
           "c": "MAPFRE",
           "m": -4177.12
         },
         {
           "f": "2026-02-28",
           "desc": "Hogar - Mejoras",
-          "d2": "",
+          "d2": "Roomba",
           "c": "MERPAGO*IROBOTURUGUA",
           "m": -4028.28
         },
         {
           "f": "2026-02-18",
           "desc": "Supermercado",
-          "d2": "",
+          "d2": "Tienda Inglesa",
           "c": "COMPRA      TIENDA INGLE",
           "m": -3877.76
         },
@@ -15638,13 +15708,6 @@
           "m": -3400.0
         },
         {
-          "f": "2026-02-02",
-          "desc": "Estación de servicio",
-          "d2": "Combustible",
-          "c": "DEB. VARIOS VISA-ILINK",
-          "m": -3300.0
-        },
-        {
           "f": "2026-02-28",
           "desc": "Servicios",
           "d2": "ANTEL",
@@ -15661,7 +15724,7 @@
         {
           "f": "2026-02-28",
           "desc": "Social / Amigos",
-          "d2": "",
+          "d2": "Café Misterio",
           "c": "CAFE MISTERIO",
           "m": -2370.0
         },
@@ -15673,11 +15736,25 @@
           "m": -2358.0
         },
         {
-          "f": "2026-02-18",
-          "desc": "Supermercado",
+          "f": "2026-02-06",
+          "desc": "Social / Amigos",
+          "d2": "Massey",
+          "c": "COMPRA      MASSEY FAMIL",
+          "m": -2284.5
+        },
+        {
+          "f": "2026-02-28",
+          "desc": "Hogar - Mejoras",
           "d2": "",
-          "c": "DEB. VARIOS VISA-ILINK",
-          "m": -2291.1
+          "c": "MERPAGO*CARESTINO221",
+          "m": -2249.75
+        },
+        {
+          "f": "2026-02-18",
+          "desc": "Jardín",
+          "d2": "",
+          "c": "DEB. CAMBIOSTOLD28141522",
+          "m": -2200.0
         }
       ]
     },
@@ -15701,13 +15778,15 @@
         },
         "Comida trabajo": {
           "total": 1158.7,
-          "sub": {},
+          "sub": {
+            "Chesterhouse": 767.84
+          },
           "movs": [
             {
               "f": "2026-03-05",
               "c": "COMPRA      CHESTERHOUSE",
               "m": -431.0,
-              "d2": ""
+              "d2": "Chesterhouse"
             },
             {
               "f": "2026-03-12",
@@ -15719,13 +15798,13 @@
               "f": "2026-03-12",
               "c": "COMPRA      CHESTERHOUSE",
               "m": -398.0,
-              "d2": ""
+              "d2": "Chesterhouse"
             },
             {
               "f": "2026-03-12",
               "c": "REDIVA 17934CHESTERHOUSE",
               "m": 29.36,
-              "d2": ""
+              "d2": "Chesterhouse"
             },
             {
               "f": "2026-03-12",
@@ -15737,14 +15816,100 @@
               "f": "2026-03-05",
               "c": "REDIVA 17934CHESTERHOUSE",
               "m": 31.8,
-              "d2": ""
+              "d2": "Chesterhouse"
+            }
+          ]
+        },
+        "Delivery / Pedidos": {
+          "total": 6882.69,
+          "sub": {
+            "Pedidos Ya": 6882.69
+          },
+          "movs": [
+            {
+              "f": "2026-03-25",
+              "c": "COMPRA      DLO*PEDIDOSY",
+              "m": -2704.59,
+              "d2": "Pedidos Ya"
+            },
+            {
+              "f": "2026-03-30",
+              "c": "COMPRA      DLO*PEDIDOSY",
+              "m": -1398.61,
+              "d2": "Pedidos Ya"
+            },
+            {
+              "f": "2026-03-27",
+              "c": "COMPRA      DLO*PEDIDOSY",
+              "m": -1009.59,
+              "d2": "Pedidos Ya"
+            },
+            {
+              "f": "2026-03-16",
+              "c": "COMPRA      DLO*PEDIDOSY",
+              "m": -699.3,
+              "d2": "Pedidos Ya"
+            },
+            {
+              "f": "2026-03-30",
+              "c": "COMPRA      DLO*PEDIDOSY",
+              "m": -433.96,
+              "d2": "Pedidos Ya"
+            },
+            {
+              "f": "2026-03-25",
+              "c": "COMPRA      DLO*PEDIDOSY",
+              "m": -275.0,
+              "d2": "Pedidos Ya"
+            },
+            {
+              "f": "2026-03-16",
+              "c": "COMPRA      DLO*PEDIDOSY",
+              "m": -69.84,
+              "d2": "Pedidos Ya"
+            },
+            {
+              "f": "2026-03-30",
+              "c": "COMPRA      DLO*PEDIDOSY",
+              "m": -69.84,
+              "d2": "Pedidos Ya"
+            },
+            {
+              "f": "2026-03-30",
+              "c": "COMPRA      DLO*PEDIDOSY",
+              "m": -65.9,
+              "d2": "Pedidos Ya"
+            },
+            {
+              "f": "2026-03-27",
+              "c": "COMPRA      DLO*PEDIDOSY",
+              "m": -48.2,
+              "d2": "Pedidos Ya"
+            },
+            {
+              "f": "2026-03-25",
+              "c": "COMPRA      DLO*PEDIDOSY",
+              "m": -40.0,
+              "d2": "Pedidos Ya"
+            },
+            {
+              "f": "2026-03-25",
+              "c": "COMPRA      DLO*PEDIDOSY",
+              "m": -39.34,
+              "d2": "Pedidos Ya"
+            },
+            {
+              "f": "2026-03-25",
+              "c": "COMPRA      DLO*PEDIDOSY",
+              "m": -28.52,
+              "d2": "Pedidos Ya"
             }
           ]
         },
         "Estación de servicio": {
-          "total": 6042.17,
+          "total": 6779.35,
           "sub": {
-            "Combustible": 6042.17
+            "Combustible": 6779.35
           },
           "movs": [
             {
@@ -15760,9 +15925,39 @@
               "d2": "Combustible"
             },
             {
+              "f": "2026-03-30",
+              "c": "COMPRA      DISA PDA 16",
+              "m": -315.0,
+              "d2": "Combustible"
+            },
+            {
+              "f": "2026-03-26",
+              "c": "COMPRA      DISA PDA 16",
+              "m": -284.0,
+              "d2": "Combustible"
+            },
+            {
+              "f": "2026-03-17",
+              "c": "COMPRA      ESTACION ITA",
+              "m": -148.0,
+              "d2": "Combustible"
+            },
+            {
               "f": "2026-03-17",
               "c": "REDIVA 19210ESTACION ITA",
               "m": 2.43,
+              "d2": "Combustible"
+            },
+            {
+              "f": "2026-03-26",
+              "c": "REDIVA 19210DISA PDA 16",
+              "m": 4.66,
+              "d2": "Combustible"
+            },
+            {
+              "f": "2026-03-30",
+              "c": "REDIVA 19210DISA PDA 16",
+              "m": 5.16,
               "d2": "Combustible"
             }
           ]
@@ -15780,9 +15975,11 @@
           ]
         },
         "Hogar - Mejoras": {
-          "total": 19760.74,
+          "total": 16976.87,
           "sub": {
-            "Barométrica": 2000.0
+            "Barométrica": 2000.0,
+            "Roomba": 4028.28,
+            "Sodimac": 1708.52
           },
           "movs": [
             {
@@ -15795,13 +15992,7 @@
               "f": "2026-03-31",
               "c": "MERPAGO*IROBOTURUGUA",
               "m": -4028.28,
-              "d2": ""
-            },
-            {
-              "f": "2026-03-31",
-              "c": "DONDOMINIO-MRDOMAIN",
-              "m": -2656.57,
-              "d2": ""
+              "d2": "Roomba"
             },
             {
               "f": "2026-03-31",
@@ -15813,30 +16004,12 @@
               "f": "2026-03-02",
               "c": "COMPRA      SODIMAC SAYA",
               "m": -1737.0,
-              "d2": ""
+              "d2": "Sodimac"
             },
             {
               "f": "2026-03-31",
               "c": "CONSULTAX",
               "m": -1342.0,
-              "d2": ""
-            },
-            {
-              "f": "2026-03-31",
-              "c": "GOOGLE *CLAUDE BY AN",
-              "m": -832.0,
-              "d2": ""
-            },
-            {
-              "f": "2026-03-31",
-              "c": "LEOMOVES",
-              "m": -831.58,
-              "d2": ""
-            },
-            {
-              "f": "2026-03-31",
-              "c": "DONDOMINIO-MRDOMAIN",
-              "m": -808.7,
               "d2": ""
             },
             {
@@ -15855,12 +16028,6 @@
               "f": "2026-03-02",
               "c": "TRASPASO A  6442506ILINK",
               "m": -300.0,
-              "d2": ""
-            },
-            {
-              "f": "2026-03-31",
-              "c": "GOOGLE *HBO MAX STRE",
-              "m": -124.38,
               "d2": ""
             },
             {
@@ -15891,34 +16058,7 @@
               "f": "2026-03-02",
               "c": "REDIVA 19210SODIMAC SAYA",
               "m": 28.48,
-              "d2": ""
-            },
-            {
-              "f": "2026-03-31",
-              "c": "DONDOMINIO-MRDOMAIN",
-              "m": 2469.37,
-              "d2": ""
-            }
-          ]
-        },
-        "Mapfre": {
-          "total": 5157.22,
-          "sub": {
-            "Honda": 4177.12,
-            "Seguro casa": 980.1
-          },
-          "movs": [
-            {
-              "f": "2026-03-31",
-              "c": "MAPFRE",
-              "m": -4177.12,
-              "d2": "Honda"
-            },
-            {
-              "f": "2026-03-31",
-              "c": "MAPFRE",
-              "m": -980.1,
-              "d2": "Seguro casa"
+              "d2": "Sodimac"
             }
           ]
         },
@@ -15939,8 +16079,8 @@
         "Salud": {
           "total": 13879.45,
           "sub": {
-            "Dentista": 1336.0,
-            "Farmacia": 12543.45
+            "Farmacia": 12543.45,
+            "SEMM": 1336.0
           },
           "movs": [
             {
@@ -15971,7 +16111,7 @@
               "f": "2026-03-31",
               "c": "S.E.M.M.",
               "m": -1336.0,
-              "d2": "Dentista"
+              "d2": "SEMM"
             },
             {
               "f": "2026-03-02",
@@ -16095,12 +16235,33 @@
             }
           ]
         },
+        "Seguros": {
+          "total": 5157.22,
+          "sub": {
+            "Seguro Casa": 980.1,
+            "Seguro Honda": 4177.12
+          },
+          "movs": [
+            {
+              "f": "2026-03-31",
+              "c": "MAPFRE",
+              "m": -4177.12,
+              "d2": "Seguro Honda"
+            },
+            {
+              "f": "2026-03-31",
+              "c": "MAPFRE",
+              "m": -980.1,
+              "d2": "Seguro Casa"
+            }
+          ]
+        },
         "Servicios": {
           "total": 9247.88,
           "sub": {
             "ANTEL": 4070.0,
             "OSE": 696.0,
-            "Personal Bank": 421.88,
+            "Paquete Personal Bank": 421.88,
             "UTE": 4060.0
           },
           "movs": [
@@ -16138,25 +16299,28 @@
               "f": "2026-03-13",
               "c": "DEBITO      PAQUETE 2603",
               "m": -390.63,
-              "d2": "Personal Bank"
+              "d2": "Paquete Personal Bank"
             },
             {
               "f": "2026-03-13",
               "c": "IVA AL 22%  IVA PAQUETE",
               "m": -34.37,
-              "d2": "Personal Bank"
+              "d2": "Paquete Personal Bank"
             },
             {
               "f": "2026-03-13",
               "c": "REDIVA 19210IVA PAQUETE",
               "m": 3.12,
-              "d2": "Personal Bank"
+              "d2": "Paquete Personal Bank"
             }
           ]
         },
         "Social / Amigos": {
-          "total": 19674.75,
-          "sub": {},
+          "total": 12792.06,
+          "sub": {
+            "Cabify/Uber": 1615.73,
+            "Peaje": 324.0
+          },
           "movs": [
             {
               "f": "2026-03-02",
@@ -16165,21 +16329,9 @@
               "d2": ""
             },
             {
-              "f": "2026-03-25",
-              "c": "COMPRA      DLO*PEDIDOSY",
-              "m": -2704.59,
-              "d2": ""
-            },
-            {
               "f": "2026-03-23",
               "c": "COMPRA      SALON DE TE",
               "m": -1940.0,
-              "d2": ""
-            },
-            {
-              "f": "2026-03-30",
-              "c": "COMPRA      DLO*PEDIDOSY",
-              "m": -1398.61,
               "d2": ""
             },
             {
@@ -16192,13 +16344,7 @@
               "f": "2026-03-09",
               "c": "COMPRA      DLO*UBER*RID",
               "m": -1011.97,
-              "d2": ""
-            },
-            {
-              "f": "2026-03-27",
-              "c": "COMPRA      DLO*PEDIDOSY",
-              "m": -1009.59,
-              "d2": ""
+              "d2": "Cabify/Uber"
             },
             {
               "f": "2026-03-12",
@@ -16210,12 +16356,6 @@
               "f": "2026-03-02",
               "c": "COMPRA      RUDY",
               "m": -915.0,
-              "d2": ""
-            },
-            {
-              "f": "2026-03-16",
-              "c": "COMPRA      DLO*PEDIDOSY",
-              "m": -699.3,
               "d2": ""
             },
             {
@@ -16234,19 +16374,13 @@
               "f": "2026-03-18",
               "c": "COMPRA      DLO*UBER*RID",
               "m": -603.76,
-              "d2": ""
+              "d2": "Cabify/Uber"
             },
             {
               "f": "2026-03-18",
               "c": "COMPRA      DLO*UBER*RID",
               "m": -601.8,
-              "d2": ""
-            },
-            {
-              "f": "2026-03-30",
-              "c": "COMPRA      DLO*PEDIDOSY",
-              "m": -433.96,
-              "d2": ""
+              "d2": "Cabify/Uber"
             },
             {
               "f": "2026-03-26",
@@ -16258,12 +16392,6 @@
               "f": "2026-03-18",
               "c": "COMPRA      PANADERIA DE",
               "m": -371.0,
-              "d2": ""
-            },
-            {
-              "f": "2026-03-25",
-              "c": "COMPRA      DLO*PEDIDOSY",
-              "m": -275.0,
               "d2": ""
             },
             {
@@ -16288,61 +16416,19 @@
               "f": "2026-03-31",
               "c": "TELEPEAJE",
               "m": -162.0,
-              "d2": ""
+              "d2": "Peaje"
             },
             {
               "f": "2026-03-31",
               "c": "TELEPEAJE",
               "m": -162.0,
-              "d2": ""
-            },
-            {
-              "f": "2026-03-16",
-              "c": "COMPRA      DLO*PEDIDOSY",
-              "m": -69.84,
-              "d2": ""
-            },
-            {
-              "f": "2026-03-30",
-              "c": "COMPRA      DLO*PEDIDOSY",
-              "m": -69.84,
-              "d2": ""
-            },
-            {
-              "f": "2026-03-30",
-              "c": "COMPRA      DLO*PEDIDOSY",
-              "m": -65.9,
-              "d2": ""
-            },
-            {
-              "f": "2026-03-27",
-              "c": "COMPRA      DLO*PEDIDOSY",
-              "m": -48.2,
-              "d2": ""
-            },
-            {
-              "f": "2026-03-25",
-              "c": "COMPRA      DLO*PEDIDOSY",
-              "m": -40.0,
-              "d2": ""
-            },
-            {
-              "f": "2026-03-25",
-              "c": "COMPRA      DLO*PEDIDOSY",
-              "m": -39.34,
-              "d2": ""
-            },
-            {
-              "f": "2026-03-25",
-              "c": "COMPRA      DLO*PEDIDOSY",
-              "m": -28.52,
-              "d2": ""
+              "d2": "Peaje"
             },
             {
               "f": "2026-03-09",
               "c": "COMPRA      DLO*UBER*RID",
               "m": -15.0,
-              "d2": ""
+              "d2": "Cabify/Uber"
             },
             {
               "f": "2026-03-09",
@@ -16360,7 +16446,7 @@
               "f": "2026-03-10",
               "c": "CRE.VARIOS   DLO*UBER*RI",
               "m": 15.0,
-              "d2": ""
+              "d2": "Cabify/Uber"
             },
             {
               "f": "2026-03-26",
@@ -16390,43 +16476,53 @@
               "f": "2026-03-20",
               "c": "CRE.VARIOS   DLO*UBER*RI",
               "m": 601.8,
-              "d2": ""
+              "d2": "Cabify/Uber"
             }
           ]
         },
         "Supermercado": {
-          "total": 28973.73,
-          "sub": {},
+          "total": 28236.55,
+          "sub": {
+            "Binmon": 351.15,
+            "Disco": 1159.01,
+            "Frog": 765.93,
+            "Kinko": 850.82,
+            "La Molienda": 1159.2,
+            "Macromercado": 4444.74,
+            "Palermo": 1967.21,
+            "Queso Bus": 1888.49,
+            "Tienda Inglesa": 11764.02
+          },
           "movs": [
             {
               "f": "2026-03-04",
               "c": "COMPRA      TIENDA INGLE",
               "m": -2703.27,
-              "d2": ""
+              "d2": "Tienda Inglesa"
             },
             {
               "f": "2026-03-31",
               "c": "COMPRA      TIENDA INGLE",
               "m": -2124.04,
-              "d2": ""
+              "d2": "Tienda Inglesa"
             },
             {
               "f": "2026-03-20",
               "c": "COMPRA      PALERMO HNOS",
               "m": -2000.0,
-              "d2": ""
+              "d2": "Palermo"
             },
             {
               "f": "2026-03-03",
               "c": "COMPRA      MACROMERCADO",
               "m": -1859.0,
-              "d2": ""
+              "d2": "Macromercado"
             },
             {
               "f": "2026-03-17",
               "c": "COMPRA      TIENDA INGLE",
               "m": -1785.54,
-              "d2": ""
+              "d2": "Tienda Inglesa"
             },
             {
               "f": "2026-03-05",
@@ -16438,49 +16534,49 @@
               "f": "2026-03-02",
               "c": "COMPRA      MACROMERCADO",
               "m": -1469.0,
-              "d2": ""
+              "d2": "Macromercado"
             },
             {
               "f": "2026-03-23",
               "c": "COMPRA      TIENDA INGLE",
               "m": -1287.2,
-              "d2": ""
+              "d2": "Tienda Inglesa"
             },
             {
               "f": "2026-03-30",
               "c": "COMPRA      MACROMERCADO",
               "m": -1178.0,
-              "d2": ""
+              "d2": "Macromercado"
             },
             {
               "f": "2026-03-24",
               "c": "COMPRA      TIENDA INGLE",
               "m": -1140.54,
-              "d2": ""
+              "d2": "Tienda Inglesa"
             },
             {
               "f": "2026-03-03",
               "c": "COMPRA      TIENDA INGLE",
               "m": -1105.09,
-              "d2": ""
+              "d2": "Tienda Inglesa"
             },
             {
               "f": "2026-03-23",
               "c": "COMPRA      DISCO NÊ  5",
               "m": -1021.33,
-              "d2": ""
+              "d2": "Disco"
             },
             {
               "f": "2026-03-04",
               "c": "COMPRA      QUESO BUS",
               "m": -987.87,
-              "d2": ""
+              "d2": "Queso Bus"
             },
             {
               "f": "2026-03-18",
               "c": "COMPRA      QUESO BUS",
               "m": -932.09,
-              "d2": ""
+              "d2": "Queso Bus"
             },
             {
               "f": "2026-03-09",
@@ -16492,19 +16588,19 @@
               "f": "2026-03-20",
               "c": "COMPRA      TIENDA INGLE",
               "m": -797.3,
-              "d2": ""
+              "d2": "Tienda Inglesa"
             },
             {
               "f": "2026-03-18",
               "c": "COMPRA      LA MOLIENDA",
               "m": -605.76,
-              "d2": ""
+              "d2": "La Molienda"
             },
             {
               "f": "2026-03-16",
               "c": "COMPRA      KINKO",
               "m": -575.0,
-              "d2": ""
+              "d2": "Kinko"
             },
             {
               "f": "2026-03-09",
@@ -16516,13 +16612,13 @@
               "f": "2026-03-23",
               "c": "COMPRA      FROG",
               "m": -521.3,
-              "d2": ""
+              "d2": "Frog"
             },
             {
               "f": "2026-03-19",
               "c": "COMPRA      TIENDA INGLE",
               "m": -486.2,
-              "d2": ""
+              "d2": "Tienda Inglesa"
             },
             {
               "f": "2026-03-05",
@@ -16534,7 +16630,7 @@
               "f": "2026-03-11",
               "c": "COMPRA      SUPER BINMON",
               "m": -357.0,
-              "d2": ""
+              "d2": "Binmon"
             },
             {
               "f": "2026-03-05",
@@ -16543,130 +16639,100 @@
               "d2": ""
             },
             {
-              "f": "2026-03-30",
-              "c": "COMPRA      DISA PDA 16",
-              "m": -315.0,
-              "d2": ""
-            },
-            {
               "f": "2026-03-04",
               "c": "COMPRA      LA MOLIENDA",
               "m": -303.51,
-              "d2": ""
+              "d2": "La Molienda"
             },
             {
               "f": "2026-03-23",
               "c": "COMPRA      KINKO",
               "m": -290.0,
-              "d2": ""
-            },
-            {
-              "f": "2026-03-26",
-              "c": "COMPRA      DISA PDA 16",
-              "m": -284.0,
-              "d2": ""
+              "d2": "Kinko"
             },
             {
               "f": "2026-03-04",
               "c": "COMPRA      LA MOLIENDA",
               "m": -269.25,
-              "d2": ""
+              "d2": "La Molienda"
             },
             {
               "f": "2026-03-20",
               "c": "COMPRA      FROG",
               "m": -257.4,
-              "d2": ""
+              "d2": "Frog"
             },
             {
               "f": "2026-03-05",
               "c": "COMPRA      TIENDA INGLE",
               "m": -226.5,
-              "d2": ""
+              "d2": "Tienda Inglesa"
             },
             {
               "f": "2026-03-26",
               "c": "COMPRA      TIENDA INGLE",
               "m": -173.95,
-              "d2": ""
+              "d2": "Tienda Inglesa"
             },
             {
               "f": "2026-03-27",
               "c": "COMPRA      DISCO NÊ  5",
               "m": -154.0,
-              "d2": ""
-            },
-            {
-              "f": "2026-03-17",
-              "c": "COMPRA      ESTACION ITA",
-              "m": -148.0,
-              "d2": ""
+              "d2": "Disco"
             },
             {
               "f": "2026-03-30",
               "c": "COMPRA      TIENDA INGLE",
               "m": -137.0,
-              "d2": ""
+              "d2": "Tienda Inglesa"
             },
             {
               "f": "2026-03-30",
               "c": "REDIVA 19210TIENDA INGLE",
               "m": 2.25,
-              "d2": ""
+              "d2": "Tienda Inglesa"
             },
             {
               "f": "2026-03-27",
               "c": "REDIVA 19210DISCO NÊ  5",
               "m": 2.52,
-              "d2": ""
+              "d2": "Disco"
             },
             {
               "f": "2026-03-26",
               "c": "REDIVA 19210TIENDA INGLE",
               "m": 2.85,
-              "d2": ""
+              "d2": "Tienda Inglesa"
             },
             {
               "f": "2026-03-05",
               "c": "REDIVA 19210TIENDA INGLE",
               "m": 3.71,
-              "d2": ""
+              "d2": "Tienda Inglesa"
             },
             {
               "f": "2026-03-20",
               "c": "REDIVA 19210FROG",
               "m": 4.22,
-              "d2": ""
+              "d2": "Frog"
             },
             {
               "f": "2026-03-04",
               "c": "REDIVA 19210LA MOLIENDA",
               "m": 4.41,
-              "d2": ""
-            },
-            {
-              "f": "2026-03-26",
-              "c": "REDIVA 19210DISA PDA 16",
-              "m": 4.66,
-              "d2": ""
+              "d2": "La Molienda"
             },
             {
               "f": "2026-03-23",
               "c": "REDIVA 19210KINKO",
               "m": 4.75,
-              "d2": ""
+              "d2": "Kinko"
             },
             {
               "f": "2026-03-04",
               "c": "REDIVA 19210LA MOLIENDA",
               "m": 4.98,
-              "d2": ""
-            },
-            {
-              "f": "2026-03-30",
-              "c": "REDIVA 19210DISA PDA 16",
-              "m": 5.16,
-              "d2": ""
+              "d2": "La Molienda"
             },
             {
               "f": "2026-03-05",
@@ -16678,7 +16744,7 @@
               "f": "2026-03-11",
               "c": "REDIVA 19210SUPER BINMON",
               "m": 5.85,
-              "d2": ""
+              "d2": "Binmon"
             },
             {
               "f": "2026-03-05",
@@ -16690,13 +16756,13 @@
               "f": "2026-03-19",
               "c": "REDIVA 19210TIENDA INGLE",
               "m": 7.97,
-              "d2": ""
+              "d2": "Tienda Inglesa"
             },
             {
               "f": "2026-03-23",
               "c": "REDIVA 19210FROG",
               "m": 8.55,
-              "d2": ""
+              "d2": "Frog"
             },
             {
               "f": "2026-03-09",
@@ -16708,19 +16774,25 @@
               "f": "2026-03-16",
               "c": "REDIVA 19210KINKO",
               "m": 9.43,
-              "d2": ""
+              "d2": "Kinko"
             },
             {
               "f": "2026-03-18",
               "c": "REDIVA 19210LA MOLIENDA",
               "m": 9.93,
-              "d2": ""
+              "d2": "La Molienda"
             },
             {
               "f": "2026-03-20",
               "c": "REDIVA 19210TIENDA INGLE",
               "m": 13.07,
-              "d2": ""
+              "d2": "Tienda Inglesa"
+            },
+            {
+              "f": "2026-03-30",
+              "c": "REDIVA 19210MACROMERCADO",
+              "m": 13.29,
+              "d2": "Macromercado"
             },
             {
               "f": "2026-03-09",
@@ -16729,82 +16801,123 @@
               "d2": ""
             },
             {
-              "f": "2026-03-30",
-              "c": "REDIVA 19210MACROMERCADO",
-              "m": 13.29,
-              "d2": ""
-            },
-            {
               "f": "2026-03-23",
               "c": "REDIVA 19210DISCO NÊ  5",
               "m": 13.8,
-              "d2": ""
+              "d2": "Disco"
             },
             {
               "f": "2026-03-18",
               "c": "REDIVA 19210QUESO BUS",
               "m": 15.28,
-              "d2": ""
+              "d2": "Queso Bus"
             },
             {
               "f": "2026-03-04",
               "c": "REDIVA 19210QUESO BUS",
               "m": 16.19,
-              "d2": ""
+              "d2": "Queso Bus"
             },
             {
               "f": "2026-03-24",
               "c": "REDIVA 19210TIENDA INGLE",
               "m": 16.33,
-              "d2": ""
+              "d2": "Tienda Inglesa"
             },
             {
               "f": "2026-03-03",
               "c": "REDIVA 19210TIENDA INGLE",
               "m": 19.44,
-              "d2": ""
+              "d2": "Tienda Inglesa"
             },
             {
               "f": "2026-03-02",
               "c": "REDIVA 19210MACROMERCADO",
               "m": 21.07,
-              "d2": ""
+              "d2": "Macromercado"
             },
             {
               "f": "2026-03-23",
               "c": "REDIVA 19210TIENDA INGLE",
               "m": 21.1,
-              "d2": ""
+              "d2": "Tienda Inglesa"
             },
             {
               "f": "2026-03-03",
               "c": "REDIVA 19210MACROMERCADO",
               "m": 26.9,
-              "d2": ""
+              "d2": "Macromercado"
             },
             {
               "f": "2026-03-17",
               "c": "REDIVA 19210TIENDA INGLE",
               "m": 30.59,
-              "d2": ""
+              "d2": "Tienda Inglesa"
             },
             {
               "f": "2026-03-20",
               "c": "REDIVA 19210PALERMO HNOS",
               "m": 32.79,
-              "d2": ""
+              "d2": "Palermo"
             },
             {
               "f": "2026-03-31",
               "c": "REDIVA 19210TIENDA INGLE",
               "m": 36.99,
-              "d2": ""
+              "d2": "Tienda Inglesa"
             },
             {
               "f": "2026-03-04",
               "c": "REDIVA 19210TIENDA INGLE",
               "m": 48.31,
-              "d2": ""
+              "d2": "Tienda Inglesa"
+            }
+          ]
+        },
+        "Suscripciones": {
+          "total": 2783.87,
+          "sub": {
+            "Claude": 832.0,
+            "Dominio mail": 995.9,
+            "HBO": 124.38,
+            "Leomoves": 831.58
+          },
+          "movs": [
+            {
+              "f": "2026-03-31",
+              "c": "DONDOMINIO-MRDOMAIN",
+              "m": -2656.57,
+              "d2": "Dominio mail"
+            },
+            {
+              "f": "2026-03-31",
+              "c": "GOOGLE *CLAUDE BY AN",
+              "m": -832.0,
+              "d2": "Claude"
+            },
+            {
+              "f": "2026-03-31",
+              "c": "LEOMOVES",
+              "m": -831.58,
+              "d2": "Leomoves"
+            },
+            {
+              "f": "2026-03-31",
+              "c": "DONDOMINIO-MRDOMAIN",
+              "m": -808.7,
+              "d2": "Dominio mail"
+            },
+            {
+              "f": "2026-03-31",
+              "c": "GOOGLE *HBO MAX STRE",
+              "m": -124.38,
+              "d2": "HBO"
+            },
+            {
+              "f": "2026-03-31",
+              "c": "DONDOMINIO-MRDOMAIN",
+              "m": 2469.37,
+              "d2": "Dominio mail"
             }
           ]
         }
@@ -16833,8 +16946,8 @@
         },
         {
           "f": "2026-03-31",
-          "desc": "Mapfre",
-          "d2": "Honda",
+          "desc": "Seguros",
+          "d2": "Seguro Honda",
           "c": "MAPFRE",
           "m": -4177.12
         },
@@ -16848,7 +16961,7 @@
         {
           "f": "2026-03-31",
           "desc": "Hogar - Mejoras",
-          "d2": "",
+          "d2": "Roomba",
           "c": "MERPAGO*IROBOTURUGUA",
           "m": -4028.28
         },
@@ -16889,29 +17002,29 @@
         },
         {
           "f": "2026-03-25",
-          "desc": "Social / Amigos",
-          "d2": "",
+          "desc": "Delivery / Pedidos",
+          "d2": "Pedidos Ya",
           "c": "COMPRA      DLO*PEDIDOSY",
           "m": -2704.59
         },
         {
           "f": "2026-03-04",
           "desc": "Supermercado",
-          "d2": "",
+          "d2": "Tienda Inglesa",
           "c": "COMPRA      TIENDA INGLE",
           "m": -2703.27
         },
         {
           "f": "2026-03-31",
-          "desc": "Hogar - Mejoras",
-          "d2": "",
+          "desc": "Suscripciones",
+          "d2": "Dominio mail",
           "c": "DONDOMINIO-MRDOMAIN",
           "m": -2656.57
         },
         {
           "f": "2026-03-31",
           "desc": "Supermercado",
-          "d2": "",
+          "d2": "Tienda Inglesa",
           "c": "COMPRA      TIENDA INGLE",
           "m": -2124.04
         }
@@ -16937,118 +17050,133 @@
         },
         "Comida trabajo": {
           "total": 2542.8,
-          "sub": {},
+          "sub": {
+            "Chesterhouse": 1775.58,
+            "Nuevo Poctios": 767.22
+          },
           "movs": [
             {
               "f": "2026-04-16",
               "c": "COMPRA      CHESTERHOUSE",
               "m": -503.0,
-              "d2": ""
+              "d2": "Chesterhouse"
             },
             {
               "f": "2026-04-23",
               "c": "COMPRA      CHESTERHOUSE",
               "m": -499.0,
-              "d2": ""
+              "d2": "Chesterhouse"
             },
             {
               "f": "2026-04-09",
               "c": "COMPRA      CHESTERHOUSE",
               "m": -495.0,
-              "d2": ""
+              "d2": "Chesterhouse"
             },
             {
               "f": "2026-04-30",
               "c": "COMPRA      CHESTERHOUSE",
               "m": -420.0,
-              "d2": ""
+              "d2": "Chesterhouse"
             },
             {
               "f": "2026-04-23",
               "c": "COMPRA      NUEVO POCITO",
               "m": -390.0,
-              "d2": ""
+              "d2": "Nuevo Poctios"
             },
             {
               "f": "2026-04-09",
               "c": "COMPRA      NUEVO POCITO",
               "m": -390.0,
-              "d2": ""
+              "d2": "Nuevo Poctios"
             },
             {
               "f": "2026-04-23",
               "c": "REDIVA 19210NUEVO POCITO",
               "m": 6.39,
-              "d2": ""
+              "d2": "Nuevo Poctios"
             },
             {
               "f": "2026-04-09",
               "c": "REDIVA 19210NUEVO POCITO",
               "m": 6.39,
-              "d2": ""
+              "d2": "Nuevo Poctios"
             },
             {
               "f": "2026-04-30",
               "c": "REDIVA 17934CHESTERHOUSE",
               "m": 30.98,
-              "d2": ""
+              "d2": "Chesterhouse"
             },
             {
               "f": "2026-04-09",
               "c": "REDIVA 17934CHESTERHOUSE",
               "m": 36.52,
-              "d2": ""
+              "d2": "Chesterhouse"
             },
             {
               "f": "2026-04-23",
               "c": "REDIVA 17934CHESTERHOUSE",
               "m": 36.81,
-              "d2": ""
+              "d2": "Chesterhouse"
             },
             {
               "f": "2026-04-16",
               "c": "REDIVA 17934CHESTERHOUSE",
               "m": 37.11,
-              "d2": ""
+              "d2": "Chesterhouse"
             }
           ]
         },
-        "Entretenimiento": {
-          "total": 1891.66,
+        "Delivery / Pedidos": {
+          "total": 3444.35,
           "sub": {
-            "Hobbies": 1069.07
+            "Pedidos Ya": 3444.35
           },
           "movs": [
             {
-              "f": "2026-04-30",
-              "c": "GOOGLE *CLAUDE BY AN",
-              "m": -823.0,
-              "d2": "Hobbies"
+              "f": "2026-04-17",
+              "c": "COMPRA      DLO*PEDIDOSY",
+              "m": -1398.61,
+              "d2": "Pedidos Ya"
             },
             {
-              "f": "2026-04-30",
-              "c": "LEOMOVES",
-              "m": -822.59,
-              "d2": ""
+              "f": "2026-04-06",
+              "c": "COMPRA      DLO*PEDIDOSY",
+              "m": -1376.07,
+              "d2": "Pedidos Ya"
             },
             {
-              "f": "2026-04-30",
-              "c": "GOOGLE *HBO MAX STRE",
-              "m": -123.04,
-              "d2": "Hobbies"
+              "f": "2026-04-20",
+              "c": "COMPRA      DLO*PEDIDOSY",
+              "m": -463.11,
+              "d2": "Pedidos Ya"
             },
             {
-              "f": "2026-04-30",
-              "c": "GOOGLE *HBO MAX STRE",
-              "m": -123.04,
-              "d2": "Hobbies"
+              "f": "2026-04-06",
+              "c": "COMPRA      DLO*PEDIDOSY",
+              "m": -72.79,
+              "d2": "Pedidos Ya"
+            },
+            {
+              "f": "2026-04-17",
+              "c": "COMPRA      DLO*PEDIDOSY",
+              "m": -72.79,
+              "d2": "Pedidos Ya"
+            },
+            {
+              "f": "2026-04-20",
+              "c": "COMPRA      DLO*PEDIDOSY",
+              "m": -60.98,
+              "d2": "Pedidos Ya"
             }
           ]
         },
         "Estación de servicio": {
-          "total": 10284.5,
+          "total": 13184.5,
           "sub": {
-            "Combustible": 7105.5
+            "Combustible": 13184.5
           },
           "movs": [
             {
@@ -17061,7 +17189,7 @@
               "f": "2026-04-27",
               "c": "COMPRA      ANCAP CHAMIZ",
               "m": -3179.0,
-              "d2": ""
+              "d2": "Combustible"
             },
             {
               "f": "2026-04-20",
@@ -17070,9 +17198,45 @@
               "d2": "Combustible"
             },
             {
+              "f": "2026-04-08",
+              "c": "COMPRA      ANCAP DINEX",
+              "m": -2285.0,
+              "d2": "Combustible"
+            },
+            {
               "f": "2026-04-06",
               "c": "COMPRA      ANCAP AEROPU",
               "m": -525.5,
+              "d2": "Combustible"
+            },
+            {
+              "f": "2026-04-20",
+              "c": "COMPRA      ANCAP AROCEN",
+              "m": -425.0,
+              "d2": "Combustible"
+            },
+            {
+              "f": "2026-04-09",
+              "c": "COMPRA      DISA URUGUAY",
+              "m": -235.0,
+              "d2": "Combustible"
+            },
+            {
+              "f": "2026-04-09",
+              "c": "REDIVA 19210DISA URUGUAY",
+              "m": 3.85,
+              "d2": "Combustible"
+            },
+            {
+              "f": "2026-04-20",
+              "c": "REDIVA 19210ANCAP AROCEN",
+              "m": 6.97,
+              "d2": "Combustible"
+            },
+            {
+              "f": "2026-04-08",
+              "c": "REDIVA 19210ANCAP DINEX",
+              "m": 34.18,
               "d2": "Combustible"
             }
           ]
@@ -17090,12 +17254,14 @@
           ]
         },
         "Hogar - Mejoras": {
-          "total": 25951.3,
+          "total": 24892.33,
           "sub": {
             "A santander": 4000.0,
             "Deshollinador": 4840.8,
+            "Divino": 3395.75,
             "Felpudo": 703.28,
             "Mosquitos": 3340.08,
+            "Roomba": 4028.28,
             "Sanitario": 3300.0,
             "Traducciones italiano": 3800.0
           },
@@ -17116,7 +17282,7 @@
               "f": "2026-04-30",
               "c": "MERPAGO*IROBOTURUGUA",
               "m": -4028.28,
-              "d2": ""
+              "d2": "Roomba"
             },
             {
               "f": "2026-04-06",
@@ -17137,16 +17303,16 @@
               "d2": ""
             },
             {
+              "f": "2026-04-30",
+              "c": "DIVINO",
+              "m": -3395.75,
+              "d2": "Divino"
+            },
+            {
               "f": "2026-04-06",
               "c": "COMPRA      MERPAGO*MERC",
               "m": -3395.75,
               "d2": "Mosquitos"
-            },
-            {
-              "f": "2026-04-30",
-              "c": "DIVINO",
-              "m": -3395.75,
-              "d2": ""
             },
             {
               "f": "2026-04-01",
@@ -17161,27 +17327,9 @@
               "d2": "Felpudo"
             },
             {
-              "f": "2026-04-30",
-              "c": "MICROSOFT#G152112142",
-              "m": -458.82,
-              "d2": ""
-            },
-            {
-              "f": "2026-04-30",
-              "c": "MICROSOFT*MICROSOFT",
-              "m": -369.0,
-              "d2": ""
-            },
-            {
               "f": "2026-04-13",
               "c": "RETIRO      BRED    2670",
               "m": -270.0,
-              "d2": ""
-            },
-            {
-              "f": "2026-04-09",
-              "c": "COMPRA      DISA URUGUAY",
-              "m": -235.0,
               "d2": ""
             },
             {
@@ -17206,12 +17354,6 @@
               "f": "2026-04-24",
               "c": "REDIVA 19210FERRETERIA M",
               "m": 3.61,
-              "d2": ""
-            },
-            {
-              "f": "2026-04-09",
-              "c": "REDIVA 19210DISA URUGUAY",
-              "m": 3.85,
               "d2": ""
             },
             {
@@ -17246,29 +17388,10 @@
             }
           ]
         },
-        "Mapfre": {
-          "total": 5146.61,
-          "sub": {
-            "Honda": 5146.61
-          },
-          "movs": [
-            {
-              "f": "2026-04-30",
-              "c": "MAPFRE",
-              "m": -4177.12,
-              "d2": "Honda"
-            },
-            {
-              "f": "2026-04-30",
-              "c": "MAPFRE",
-              "m": -969.49,
-              "d2": "Honda"
-            }
-          ]
-        },
         "Niñera": {
           "total": 10628.0,
           "sub": {
+            "BPS": 4737.0,
             "Cuidado fran Carmen": 4988.0
           },
           "movs": [
@@ -17276,7 +17399,7 @@
               "f": "2026-04-06",
               "c": "DEB. VARIOS PAGO B.P.S.",
               "m": -4737.0,
-              "d2": ""
+              "d2": "BPS"
             },
             {
               "f": "2026-04-09",
@@ -17301,8 +17424,8 @@
         "Salud": {
           "total": 11372.92,
           "sub": {
-            "Dentista": 1336.0,
-            "Farmacia": 10036.92
+            "Farmacia": 10036.92,
+            "SEMM": 1336.0
           },
           "movs": [
             {
@@ -17321,7 +17444,7 @@
               "f": "2026-04-30",
               "c": "S.E.M.M.",
               "m": -1336.0,
-              "d2": "Dentista"
+              "d2": "SEMM"
             },
             {
               "f": "2026-04-15",
@@ -17379,12 +17502,33 @@
             }
           ]
         },
+        "Seguros": {
+          "total": 5146.61,
+          "sub": {
+            "Seguro Casa": 969.49,
+            "Seguro Honda": 4177.12
+          },
+          "movs": [
+            {
+              "f": "2026-04-30",
+              "c": "MAPFRE",
+              "m": -4177.12,
+              "d2": "Seguro Honda"
+            },
+            {
+              "f": "2026-04-30",
+              "c": "MAPFRE",
+              "m": -969.49,
+              "d2": "Seguro Casa"
+            }
+          ]
+        },
         "Servicios": {
           "total": 9052.88,
           "sub": {
             "ANTEL": 4070.0,
             "OSE": 696.0,
-            "Personal Bank": 421.88,
+            "Paquete Personal Bank": 421.88,
             "UTE": 3865.0
           },
           "movs": [
@@ -17422,27 +17566,30 @@
               "f": "2026-04-15",
               "c": "DEBITO      PAQUETE 2604",
               "m": -390.63,
-              "d2": "Personal Bank"
+              "d2": "Paquete Personal Bank"
             },
             {
               "f": "2026-04-15",
               "c": "IVA AL 22%  IVA PAQUETE",
               "m": -34.37,
-              "d2": "Personal Bank"
+              "d2": "Paquete Personal Bank"
             },
             {
               "f": "2026-04-15",
               "c": "REDIVA 19210IVA PAQUETE",
               "m": 3.12,
-              "d2": "Personal Bank"
+              "d2": "Paquete Personal Bank"
             }
           ]
         },
         "Social / Amigos": {
-          "total": 12917.15,
+          "total": 9054.77,
           "sub": {
-            "Café misterio": 2195.16,
-            "Peaje": 1620.0
+            "Café Misterio": 2370.0,
+            "Café misterio": -174.84,
+            "Padel": 713.11,
+            "Peaje": 1620.0,
+            "Starbucks": 1130.0
           },
           "movs": [
             {
@@ -17455,25 +17602,13 @@
               "f": "2026-04-30",
               "c": "CAFE MISTERIO",
               "m": -2370.0,
-              "d2": "Café misterio"
-            },
-            {
-              "f": "2026-04-17",
-              "c": "COMPRA      DLO*PEDIDOSY",
-              "m": -1398.61,
-              "d2": ""
-            },
-            {
-              "f": "2026-04-06",
-              "c": "COMPRA      DLO*PEDIDOSY",
-              "m": -1376.07,
-              "d2": ""
+              "d2": "Café Misterio"
             },
             {
               "f": "2026-04-20",
               "c": "COMPRA      STARBUCKS CO",
               "m": -1220.0,
-              "d2": ""
+              "d2": "Starbucks"
             },
             {
               "f": "2026-04-27",
@@ -17485,19 +17620,7 @@
               "f": "2026-04-14",
               "c": "COMPRA      TOP PADEL FI",
               "m": -625.0,
-              "d2": ""
-            },
-            {
-              "f": "2026-04-20",
-              "c": "COMPRA      DLO*PEDIDOSY",
-              "m": -463.11,
-              "d2": ""
-            },
-            {
-              "f": "2026-04-20",
-              "c": "COMPRA      ANCAP AROCEN",
-              "m": -425.0,
-              "d2": ""
+              "d2": "Padel"
             },
             {
               "f": "2026-04-21",
@@ -17506,14 +17629,8 @@
               "d2": ""
             },
             {
-              "f": "2026-04-20",
-              "c": "DEB. CAMBIOSTOLD31201689",
-              "m": -250.0,
-              "d2": ""
-            },
-            {
-              "f": "2026-04-20",
-              "c": "TRASPASO A  0209702ILINK",
+              "f": "2026-04-17",
+              "c": "DEB. CAMBIOSTOLD31056572",
               "m": -250.0,
               "d2": ""
             },
@@ -17524,8 +17641,14 @@
               "d2": ""
             },
             {
-              "f": "2026-04-17",
-              "c": "DEB. CAMBIOSTOLD31056572",
+              "f": "2026-04-20",
+              "c": "TRASPASO A  0209702ILINK",
+              "m": -250.0,
+              "d2": ""
+            },
+            {
+              "f": "2026-04-20",
+              "c": "DEB. CAMBIOSTOLD31201689",
               "m": -250.0,
               "d2": ""
             },
@@ -17593,49 +17716,25 @@
               "f": "2026-04-14",
               "c": "COMPRA      PADEL SHOP",
               "m": -100.0,
-              "d2": ""
-            },
-            {
-              "f": "2026-04-06",
-              "c": "COMPRA      DLO*PEDIDOSY",
-              "m": -72.79,
-              "d2": ""
-            },
-            {
-              "f": "2026-04-17",
-              "c": "COMPRA      DLO*PEDIDOSY",
-              "m": -72.79,
-              "d2": ""
-            },
-            {
-              "f": "2026-04-20",
-              "c": "COMPRA      DLO*PEDIDOSY",
-              "m": -60.98,
-              "d2": ""
+              "d2": "Padel"
             },
             {
               "f": "2026-04-14",
               "c": "REDIVA 19210PADEL SHOP",
               "m": 1.64,
-              "d2": ""
-            },
-            {
-              "f": "2026-04-20",
-              "c": "REDIVA 19210ANCAP AROCEN",
-              "m": 6.97,
-              "d2": ""
+              "d2": "Padel"
             },
             {
               "f": "2026-04-14",
               "c": "REDIVA 19210TOP PADEL FI",
               "m": 10.25,
-              "d2": ""
+              "d2": "Padel"
             },
             {
               "f": "2026-04-20",
               "c": "REDIVA 17934STARBUCKS CO",
               "m": 90.0,
-              "d2": ""
+              "d2": "Starbucks"
             },
             {
               "f": "2026-04-30",
@@ -17658,44 +17757,41 @@
           ]
         },
         "Supermercado": {
-          "total": 23287.81,
+          "total": 21036.99,
           "sub": {
-            "Geant": 1715.55,
+            "Devoto": 505.57,
+            "Geant": 3548.01,
             "Kinko": 224.26,
-            "Macromercado": 977.1,
-            "Queso bus": 989.9,
-            "Tienda Inglesa": 1997.51
+            "La Molienda": 143.85,
+            "Macromercado": 4426.45,
+            "Palermo": 511.48,
+            "Queso Bus": 1794.29,
+            "Tienda Inglesa": 7829.4
           },
           "movs": [
             {
               "f": "2026-04-15",
               "c": "COMPRA      TIENDA INGLE",
               "m": -2380.5,
-              "d2": ""
-            },
-            {
-              "f": "2026-04-08",
-              "c": "COMPRA      ANCAP DINEX",
-              "m": -2285.0,
-              "d2": ""
+              "d2": "Tienda Inglesa"
             },
             {
               "f": "2026-04-13",
               "c": "COMPRA      MACROMERCADO",
               "m": -2090.0,
-              "d2": ""
+              "d2": "Macromercado"
             },
             {
               "f": "2026-04-06",
               "c": "COMPRA      GEANT",
               "m": -1863.0,
-              "d2": ""
+              "d2": "Geant"
             },
             {
               "f": "2026-04-21",
               "c": "COMPRA      TIENDA INGLE",
               "m": -1801.48,
-              "d2": ""
+              "d2": "Tienda Inglesa"
             },
             {
               "f": "2026-04-27",
@@ -17713,19 +17809,19 @@
               "f": "2026-04-01",
               "c": "COMPRA      MACROMERCADO",
               "m": -1408.0,
-              "d2": ""
+              "d2": "Macromercado"
             },
             {
               "f": "2026-04-14",
               "c": "COMPRA      TIENDA INGLE",
               "m": -1013.79,
-              "d2": ""
+              "d2": "Tienda Inglesa"
             },
             {
               "f": "2026-04-29",
               "c": "COMPRA      QUESO BUS",
               "m": -1006.4,
-              "d2": "Queso bus"
+              "d2": "Queso Bus"
             },
             {
               "f": "2026-04-27",
@@ -17749,25 +17845,25 @@
               "f": "2026-04-15",
               "c": "COMPRA      QUESO BUS",
               "m": -817.8,
-              "d2": ""
+              "d2": "Queso Bus"
             },
             {
               "f": "2026-04-07",
               "c": "COMPRA      TIENDA INGLE",
               "m": -741.52,
-              "d2": ""
+              "d2": "Tienda Inglesa"
             },
             {
               "f": "2026-04-06",
               "c": "COMPRA      PALERMO HNOS",
               "m": -520.0,
-              "d2": ""
+              "d2": "Palermo"
             },
             {
               "f": "2026-04-14",
               "c": "COMPRA      DEVOTO EXPRE",
               "m": -514.0,
-              "d2": ""
+              "d2": "Devoto"
             },
             {
               "f": "2026-04-30",
@@ -17791,7 +17887,7 @@
               "f": "2026-04-01",
               "c": "COMPRA      LA MOLIENDA",
               "m": -146.25,
-              "d2": ""
+              "d2": "La Molienda"
             },
             {
               "f": "2026-04-17",
@@ -17809,7 +17905,7 @@
               "f": "2026-04-01",
               "c": "REDIVA 19210LA MOLIENDA",
               "m": 2.4,
-              "d2": ""
+              "d2": "La Molienda"
             },
             {
               "f": "2026-04-27",
@@ -17827,25 +17923,25 @@
               "f": "2026-04-14",
               "c": "REDIVA 19210DEVOTO EXPRE",
               "m": 8.43,
-              "d2": ""
+              "d2": "Devoto"
             },
             {
               "f": "2026-04-06",
               "c": "REDIVA 19210PALERMO HNOS",
               "m": 8.52,
-              "d2": ""
+              "d2": "Palermo"
             },
             {
               "f": "2026-04-07",
               "c": "REDIVA 19210TIENDA INGLE",
               "m": 13.16,
-              "d2": ""
+              "d2": "Tienda Inglesa"
             },
             {
               "f": "2026-04-15",
               "c": "REDIVA 19210QUESO BUS",
               "m": 13.41,
-              "d2": ""
+              "d2": "Queso Bus"
             },
             {
               "f": "2026-04-17",
@@ -17869,7 +17965,7 @@
               "f": "2026-04-29",
               "c": "REDIVA 19210QUESO BUS",
               "m": 16.5,
-              "d2": "Queso bus"
+              "d2": "Queso Bus"
             },
             {
               "f": "2026-04-27",
@@ -17881,19 +17977,19 @@
               "f": "2026-04-14",
               "c": "REDIVA 19210TIENDA INGLE",
               "m": 18.1,
-              "d2": ""
+              "d2": "Tienda Inglesa"
             },
             {
               "f": "2026-04-01",
               "c": "REDIVA 19210MACROMERCADO",
               "m": 20.11,
-              "d2": ""
+              "d2": "Macromercado"
             },
             {
               "f": "2026-04-13",
               "c": "REDIVA 19210MACROMERCADO",
               "m": 28.54,
-              "d2": ""
+              "d2": "Macromercado"
             },
             {
               "f": "2026-04-27",
@@ -17905,25 +18001,66 @@
               "f": "2026-04-06",
               "c": "REDIVA 19210GEANT",
               "m": 30.54,
-              "d2": ""
+              "d2": "Geant"
             },
             {
               "f": "2026-04-21",
               "c": "REDIVA 19210TIENDA INGLE",
               "m": 30.87,
-              "d2": ""
-            },
-            {
-              "f": "2026-04-08",
-              "c": "REDIVA 19210ANCAP DINEX",
-              "m": 34.18,
-              "d2": ""
+              "d2": "Tienda Inglesa"
             },
             {
               "f": "2026-04-15",
               "c": "REDIVA 19210TIENDA INGLE",
               "m": 43.27,
-              "d2": ""
+              "d2": "Tienda Inglesa"
+            }
+          ]
+        },
+        "Suscripciones": {
+          "total": 2719.48,
+          "sub": {
+            "Claude": 823.0,
+            "HBO": 246.08,
+            "Leomoves": 822.59,
+            "Microsoft": 827.82
+          },
+          "movs": [
+            {
+              "f": "2026-04-30",
+              "c": "GOOGLE *CLAUDE BY AN",
+              "m": -823.0,
+              "d2": "Claude"
+            },
+            {
+              "f": "2026-04-30",
+              "c": "LEOMOVES",
+              "m": -822.59,
+              "d2": "Leomoves"
+            },
+            {
+              "f": "2026-04-30",
+              "c": "MICROSOFT#G152112142",
+              "m": -458.82,
+              "d2": "Microsoft"
+            },
+            {
+              "f": "2026-04-30",
+              "c": "MICROSOFT*MICROSOFT",
+              "m": -369.0,
+              "d2": "Microsoft"
+            },
+            {
+              "f": "2026-04-30",
+              "c": "GOOGLE *HBO MAX STRE",
+              "m": -123.04,
+              "d2": "HBO"
+            },
+            {
+              "f": "2026-04-30",
+              "c": "GOOGLE *HBO MAX STRE",
+              "m": -123.04,
+              "d2": "HBO"
             }
           ]
         }
@@ -17960,7 +18097,7 @@
         {
           "f": "2026-04-06",
           "desc": "Niñera",
-          "d2": "",
+          "d2": "BPS",
           "c": "DEB. VARIOS PAGO B.P.S.",
           "m": -4737.0
         },
@@ -17980,8 +18117,8 @@
         },
         {
           "f": "2026-04-30",
-          "desc": "Mapfre",
-          "d2": "Honda",
+          "desc": "Seguros",
+          "d2": "Seguro Honda",
           "c": "MAPFRE",
           "m": -4177.12
         },
@@ -17995,7 +18132,7 @@
         {
           "f": "2026-04-30",
           "desc": "Hogar - Mejoras",
-          "d2": "",
+          "d2": "Roomba",
           "c": "MERPAGO*IROBOTURUGUA",
           "m": -4028.28
         },
@@ -18039,15 +18176,27 @@
     {
       "id": "2026-05",
       "label": "May 26",
-      "gastos_total": 2844.02,
-      "ingresos_total": 0.0,
+      "gastos_total": 18653.5,
+      "ingresos_total": 10847.0,
       "categorias": {
         "Salud": {
-          "total": 761.86,
+          "total": 5467.21,
           "sub": {
-            "Farmacia": 761.86
+            "Farmacia": 5467.21
           },
           "movs": [
+            {
+              "f": "2026-05-04",
+              "c": "COMPRA      FARMACIA EL",
+              "m": -2906.0,
+              "d2": "Farmacia"
+            },
+            {
+              "f": "2026-05-04",
+              "c": "COMPRA      FARMACIA BCB",
+              "m": -1847.0,
+              "d2": "Farmacia"
+            },
             {
               "f": "2026-05-04",
               "c": "COMPRA      FARMASHOP 49",
@@ -18059,6 +18208,30 @@
               "c": "REDIVA 19210FARMASHOP 49",
               "m": 12.94,
               "d2": "Farmacia"
+            },
+            {
+              "f": "2026-05-04",
+              "c": "REDIVA 19210FARMACIA EL",
+              "m": 47.65,
+              "d2": "Farmacia"
+            }
+          ]
+        },
+        "Sin clasificar": {
+          "total": 4380.0,
+          "sub": {},
+          "movs": [
+            {
+              "f": "2026-05-04",
+              "c": "COMPRA      MERPAGO*FLOR",
+              "m": -2580.0,
+              "d2": ""
+            },
+            {
+              "f": "2026-05-04",
+              "c": "COMPRA      DLO*BELVEDER",
+              "m": -1800.0,
+              "d2": ""
             }
           ]
         },
@@ -18075,11 +18248,18 @@
           ]
         },
         "Supermercado": {
-          "total": 590.16,
+          "total": 7314.29,
           "sub": {
-            "Kinko": 590.16
+            "Kinko": 590.16,
+            "Macromercado": 6724.13
           },
           "movs": [
+            {
+              "f": "2026-05-04",
+              "c": "COMPRA      MACROMERCADO",
+              "m": -6824.0,
+              "d2": "Macromercado"
+            },
             {
               "f": "2026-05-04",
               "c": "COMPRA      KINKO",
@@ -18091,11 +18271,52 @@
               "c": "REDIVA 19210KINKO",
               "m": 9.84,
               "d2": "Kinko"
+            },
+            {
+              "f": "2026-05-04",
+              "c": "REDIVA 19210MACROMERCADO",
+              "m": 99.87,
+              "d2": "Macromercado"
             }
           ]
         }
       },
       "top_movs": [
+        {
+          "f": "2026-05-04",
+          "desc": "Supermercado",
+          "d2": "Macromercado",
+          "c": "COMPRA      MACROMERCADO",
+          "m": -6824.0
+        },
+        {
+          "f": "2026-05-04",
+          "desc": "Salud",
+          "d2": "Farmacia",
+          "c": "COMPRA      FARMACIA EL",
+          "m": -2906.0
+        },
+        {
+          "f": "2026-05-04",
+          "desc": "Sin clasificar",
+          "d2": "",
+          "c": "COMPRA      MERPAGO*FLOR",
+          "m": -2580.0
+        },
+        {
+          "f": "2026-05-04",
+          "desc": "Salud",
+          "d2": "Farmacia",
+          "c": "COMPRA      FARMACIA BCB",
+          "m": -1847.0
+        },
+        {
+          "f": "2026-05-04",
+          "desc": "Sin clasificar",
+          "d2": "",
+          "c": "COMPRA      DLO*BELVEDER",
+          "m": -1800.0
+        },
         {
           "f": "2026-05-04",
           "desc": "Social / Amigos",
@@ -18123,21 +18344,25 @@
   "promedios": {
     "CJPPU": 10651.89,
     "Cuotas": 5728.63,
-    "Estación de servicio": 7442.96,
+    "Estación de servicio": 7495.88,
     "Gastos comunes": 8439.0,
-    "Hogar - Mejoras": 29132.59,
+    "Hogar - Mejoras": 26372.37,
     "Jardín": 2310.0,
     "Niñera": 4931.64,
-    "Salud": 8922.11,
+    "Salud": 9314.22,
     "Seguro de vida": 214.48,
     "Servicios": 9276.97,
-    "Social / Amigos": 12988.38,
-    "Supermercado": 20809.72,
-    "Cosmética": 1353.09,
+    "Social / Amigos": 11766.8,
+    "Supermercado": 20924.9,
+    "Cosmética": 1393.96,
     "Ahorros": 10000.0,
-    "Comida trabajo": 2180.09,
-    "Mapfre": 5687.47,
-    "Entretenimiento": 1891.66
+    "Comida trabajo": 2127.12,
+    "Delivery / Pedidos": 3743.92,
+    "Ropa": 923.6,
+    "Seguros": 5128.06,
+    "Suscripciones": 2233.94,
+    "Mapfre": 1137.65,
+    "Sin clasificar": 4380.0
   },
   "historico": {
     "labels": [
@@ -18173,10 +18398,10 @@
       114631.92,
       141369.8,
       123340.39,
-      103688.63,
+      77930.53,
       116894.94,
       136617.44,
-      2844.02
+      18653.5
     ],
     "ingresos": [
       132664.0,
@@ -18192,10 +18417,10 @@
       131121.0,
       136455.0,
       108230.0,
-      125631.0,
+      125581.0,
       243980.0,
       16740.0,
-      0.0
+      10847.0
     ],
     "por_cat": {
       "Hogar - Mejoras": [
@@ -18211,10 +18436,10 @@
         31140.3,
         19202.96,
         32056.18,
-        31443.56,
-        15841.76,
-        19760.74,
-        25951.3,
+        27788.68,
+        -7022.91,
+        16976.87,
+        24892.33,
         0
       ],
       "Supermercado": [
@@ -18231,10 +18456,10 @@
         19562.52,
         29562.5,
         31449.2,
-        19156.74,
-        28973.73,
-        23287.81,
-        590.16
+        16802.69,
+        28236.55,
+        21036.99,
+        7314.29
       ],
       "Social / Amigos": [
         22385.78,
@@ -18249,10 +18474,10 @@
         21618.89,
         15683.54,
         12689.32,
-        10704.13,
-        7223.26,
-        19674.75,
-        12917.15,
+        6495.83,
+        7517.66,
+        12792.06,
+        9054.77,
         1492.0
       ],
       "CJPPU": [
@@ -18293,6 +18518,25 @@
         9052.88,
         0
       ],
+      "Salud": [
+        8921.03,
+        2774.28,
+        6692.84,
+        3066.03,
+        3910.58,
+        12686.7,
+        1285.0,
+        7396.58,
+        2391.38,
+        2487.38,
+        7218.38,
+        13642.45,
+        19397.82,
+        14545.35,
+        13879.45,
+        11372.92,
+        5467.21
+      ],
       "Gastos comunes": [
         8143.0,
         8143.0,
@@ -18312,25 +18556,6 @@
         8550.0,
         0
       ],
-      "Salud": [
-        8921.03,
-        2774.28,
-        6692.84,
-        3066.03,
-        3910.58,
-        12686.7,
-        1285.0,
-        7396.58,
-        2391.38,
-        2487.38,
-        7218.38,
-        13642.45,
-        19397.82,
-        14545.35,
-        13879.45,
-        11372.92,
-        761.86
-      ],
       "Estación de servicio": [
         5388.8,
         6751.0,
@@ -18345,9 +18570,9 @@
         7239.59,
         7018.0,
         3277.0,
-        11148.8,
-        6042.17,
-        10284.5,
+        8093.72,
+        6779.35,
+        13184.5,
         0
       ]
     }
@@ -18393,42 +18618,42 @@
         "May 26"
       ],
       "saldo_inicial": [
-        30307.939999999995,
+        30307.94,
         26148.45,
         91811.04,
-        161577.4,
-        36500.54,
-        108130.7,
-        104792.29,
-        89613.3,
-        -35758.97,
-        62045.19,
-        38642.23,
+        58283.93,
+        37056.09,
+        129288.7,
+        129957.29,
+        83613.3,
+        55832.03,
+        74192.02,
+        -50208.35,
         56810.31,
         53801.76,
-        36785.12,
-        58727.49000000001,
-        194368.27,
-        null
+        26384.77000000002,
+        37773.640000000014,
+        187936.59,
+        51199.399999999994
       ],
       "saldo_final": [
         26148.45,
         91811.04,
-        161577.4,
-        36500.54,
-        108130.7,
-        104792.29,
-        89613.3,
-        -35758.97,
-        62045.19,
-        38642.23,
+        58283.93,
+        37056.09,
+        129288.7,
+        129957.29,
+        83613.3,
+        55832.03,
+        74192.02,
+        -50208.35,
         56810.31,
         53801.76,
-        36785.12,
-        58727.49000000001,
-        194368.27,
-        110493.42,
-        null
+        26384.77000000002,
+        37773.640000000014,
+        187936.59,
+        51199.399999999994,
+        42106.61
       ],
       "ingresos": [
         {
@@ -18491,13 +18716,13 @@
             23285.0,
             22000.0,
             29470.0,
-            12000.0,
+            11950.0,
             48083.0,
             -1800.0,
-            0.0
+            10847.0
           ],
           "subcats": {},
-          "total": 370710.0
+          "total": 381507.0
         },
         {
           "cat": "Varios",
@@ -18582,10 +18807,10 @@
         131121.0,
         136455.0,
         108230.0,
-        125631.0,
+        125581.0,
         243980.0,
         16740.0,
-        0.0
+        10847.0
       ],
       "gastos": [
         {
@@ -18603,10 +18828,10 @@
             31140.3,
             19202.96,
             32056.18,
-            31443.56,
-            15841.76,
-            19760.74,
-            25951.3,
+            27788.68,
+            -7022.91,
+            16976.87,
+            24892.33,
             0.0
           ],
           "subcats": {
@@ -18794,7 +19019,7 @@
               0.0,
               0.0,
               0.0,
-              5252.46,
+              4500.0,
               0.0,
               0.0,
               0.0,
@@ -19041,8 +19266,8 @@
               840.0,
               840.0,
               0.0,
-              840.0,
-              840.0,
+              0.0,
+              0.0,
               0.0,
               0.0,
               0.0
@@ -19064,6 +19289,25 @@
               0.0,
               0.0,
               4840.8,
+              0.0
+            ],
+            "Divino": [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              3395.75,
               0.0
             ],
             "Espejo auto fran": [
@@ -19199,25 +19443,6 @@
               0.0,
               0.0
             ],
-            "HBO": [
-              0.0,
-              0.0,
-              0.0,
-              0.0,
-              0.0,
-              0.0,
-              0.0,
-              0.0,
-              0.0,
-              0.0,
-              0.0,
-              0.0,
-              0.0,
-              117.51,
-              0.0,
-              0.0,
-              0.0
-            ],
             "Herramientas": [
               0.0,
               0.0,
@@ -19252,6 +19477,25 @@
               0.0,
               0.0,
               0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "High Car Wash": [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1100.0,
               0.0,
               0.0,
               0.0
@@ -19446,25 +19690,6 @@
               0.0,
               0.0
             ],
-            "Microsoft": [
-              0.0,
-              0.0,
-              0.0,
-              0.0,
-              0.0,
-              0.0,
-              0.0,
-              0.0,
-              0.0,
-              0.0,
-              0.0,
-              0.0,
-              0.0,
-              369.0,
-              0.0,
-              0.0,
-              0.0
-            ],
             "Mosquitos": [
               0.0,
               0.0,
@@ -19636,6 +19861,25 @@
               0.0,
               0.0
             ],
+            "Roomba": [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              4028.28,
+              4028.28,
+              4028.28,
+              4028.28,
+              0.0
+            ],
             "Ropa": [
               0.0,
               0.0,
@@ -19782,9 +20026,9 @@
               0.0,
               0.0,
               0.0,
+              520.32,
               0.0,
-              0.0,
-              0.0,
+              1708.52,
               0.0,
               0.0
             ],
@@ -19941,7 +20185,7 @@
               0.0
             ]
           },
-          "total": 579128.42
+          "total": 548766.03
         },
         {
           "cat": "Supermercado",
@@ -19959,12 +20203,107 @@
             19562.52,
             29562.5,
             31449.2,
-            19156.74,
-            28973.73,
-            23287.81,
-            590.16
+            16802.69,
+            28236.55,
+            21036.99,
+            7314.29
           ],
           "subcats": {
+            "Binmon": [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              351.15,
+              0.0,
+              0.0
+            ],
+            "Devoto": [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              175.0,
+              485.9,
+              0.0,
+              505.57,
+              0.0
+            ],
+            "Disco": [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              794.75,
+              1159.01,
+              0.0,
+              0.0
+            ],
+            "El Puestin": [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              267.28,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "Frog": [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              677.71,
+              2029.17,
+              765.93,
+              0.0,
+              0.0
+            ],
             "Geant": [
               0.0,
               0.0,
@@ -19981,7 +20320,7 @@
               0.0,
               0.0,
               0.0,
-              1715.55,
+              3548.01,
               0.0
             ],
             "Kinko": [
@@ -19997,11 +20336,30 @@
               0.0,
               0.0,
               0.0,
-              0.0,
-              0.0,
-              0.0,
+              683.75,
+              825.24,
+              850.82,
               224.26,
               590.16
+            ],
+            "La Molienda": [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1623.84,
+              0.0,
+              1159.2,
+              143.85,
+              0.0
             ],
             "Macromercado": [
               0.0,
@@ -20016,13 +20374,32 @@
               0.0,
               0.0,
               0.0,
+              10156.37,
+              3653.44,
+              4444.74,
+              4426.45,
+              6724.13
+            ],
+            "Palermo": [
               0.0,
               0.0,
               0.0,
-              977.1,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1426.23,
+              511.48,
+              1967.21,
+              511.48,
               0.0
             ],
-            "Queso bus": [
+            "Queso Bus": [
               0.0,
               0.0,
               0.0,
@@ -20035,10 +20412,29 @@
               0.0,
               0.0,
               0.0,
+              1049.75,
+              0.0,
+              1888.49,
+              1794.29,
+              0.0
+            ],
+            "Santa Clara": [
               0.0,
               0.0,
               0.0,
-              989.9,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              3887.05,
+              0.0,
+              0.0,
+              0.0,
               0.0
             ],
             "Tienda Inglesa": [
@@ -20054,14 +20450,14 @@
               0.0,
               0.0,
               0.0,
-              0.0,
-              0.0,
-              0.0,
-              1997.51,
+              9493.22,
+              8209.71,
+              11764.02,
+              7829.4,
               0.0
             ]
           },
-          "total": 320886.85
+          "total": 322268.93
         },
         {
           "cat": "Social / Amigos",
@@ -20078,10 +20474,10 @@
             21618.89,
             15683.54,
             12689.32,
-            10704.13,
-            7223.26,
-            19674.75,
-            12917.15,
+            6495.83,
+            7517.66,
+            12792.06,
+            9054.77,
             1492.0
           ],
           "subcats": {
@@ -20104,6 +20500,44 @@
               0.0,
               0.0
             ],
+            "Cabify/Uber": [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              492.95,
+              1615.73,
+              0.0,
+              0.0
+            ],
+            "Café Misterio": [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              2370.0,
+              0.0,
+              2370.0,
+              0.0
+            ],
             "Café misterio": [
               0.0,
               0.0,
@@ -20120,7 +20554,7 @@
               0.0,
               0.0,
               0.0,
-              2195.16,
+              -174.84,
               0.0
             ],
             "Contigo sueño y Café mist": [
@@ -20161,6 +20595,44 @@
               0.0,
               0.0
             ],
+            "Massey": [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              2131.24,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "Padel": [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              713.11,
+              0.0
+            ],
             "Peaje": [
               0.0,
               0.0,
@@ -20174,9 +20646,9 @@
               0.0,
               0.0,
               0.0,
-              0.0,
-              0.0,
-              0.0,
+              648.0,
+              648.0,
+              324.0,
               1620.0,
               0.0
             ],
@@ -20237,6 +20709,25 @@
               0.0,
               0.0
             ],
+            "Starbucks": [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1130.0,
+              0.0
+            ],
             "bowling": [
               0.0,
               0.0,
@@ -20257,7 +20748,7 @@
               0.0
             ]
           },
-          "total": 240134.19
+          "total": 225475.22
         },
         {
           "cat": "CJPPU",
@@ -20362,6 +20853,25 @@
               696.0,
               0.0
             ],
+            "Paquete Personal Bank": [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              421.88,
+              421.88,
+              421.88,
+              421.88,
+              0.0
+            ],
             "Personal Bank": [
               421.88,
               421.88,
@@ -20375,10 +20885,10 @@
               421.88,
               421.88,
               421.88,
-              421.88,
-              421.88,
-              421.88,
-              421.88,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
               0.0
             ],
             "UTE": [
@@ -20404,30 +20914,6 @@
           "total": 148371.42
         },
         {
-          "cat": "Gastos comunes",
-          "valores": [
-            8143.0,
-            8143.0,
-            8143.0,
-            8143.0,
-            8143.0,
-            8143.0,
-            8143.0,
-            8143.0,
-            8550.0,
-            8550.0,
-            8550.0,
-            8550.0,
-            8550.0,
-            8550.0,
-            8550.0,
-            8550.0,
-            0.0
-          ],
-          "subcats": {},
-          "total": 133544.0
-        },
-        {
           "cat": "Salud",
           "valores": [
             8921.03,
@@ -20446,7 +20932,7 @@
             14545.35,
             13879.45,
             11372.92,
-            761.86
+            5467.21
           ],
           "subcats": {
             "Creatina": [
@@ -20481,10 +20967,10 @@
               1442.38,
               1762.38,
               1348.93,
-              4336.0,
-              1542.56,
-              1336.0,
-              1336.0,
+              3000.0,
+              206.56,
+              0.0,
+              0.0,
               0.0
             ],
             "Farmacia": [
@@ -20504,10 +20990,53 @@
               13002.79,
               12543.45,
               10036.92,
-              761.86
+              5467.21
+            ],
+            "SEMM": [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1336.0,
+              1336.0,
+              1336.0,
+              1336.0,
+              0.0
             ]
           },
-          "total": 132430.03
+          "total": 137135.38
+        },
+        {
+          "cat": "Gastos comunes",
+          "valores": [
+            8143.0,
+            8143.0,
+            8143.0,
+            8143.0,
+            8143.0,
+            8143.0,
+            8143.0,
+            8143.0,
+            8550.0,
+            8550.0,
+            8550.0,
+            8550.0,
+            8550.0,
+            8550.0,
+            8550.0,
+            8550.0,
+            0.0
+          ],
+          "subcats": {},
+          "total": 133544.0
         },
         {
           "cat": "Estación de servicio",
@@ -20525,9 +21054,9 @@
             7239.59,
             7018.0,
             3277.0,
-            11148.8,
-            6042.17,
-            10284.5,
+            8093.72,
+            6779.35,
+            13184.5,
             0.0
           ],
           "subcats": {
@@ -20545,13 +21074,13 @@
               7239.59,
               7018.0,
               3277.0,
-              11148.8,
-              6042.17,
-              7105.5,
+              8093.72,
+              6779.35,
+              13184.5,
               0.0
             ]
           },
-          "total": 111606.56
+          "total": 112188.66
         },
         {
           "cat": "Niñera",
@@ -20588,10 +21117,10 @@
               0.0,
               0.0,
               0.0,
-              0.0,
-              0.0,
+              971.0,
+              771.0,
               4299.0,
-              0.0,
+              4737.0,
               0.0
             ],
             "BPS Rose": [
@@ -20607,8 +21136,8 @@
               1038.0,
               0.0,
               563.0,
-              971.0,
-              771.0,
+              0.0,
+              0.0,
               0.0,
               0.0,
               0.0
@@ -20970,7 +21499,7 @@
           "total": 34500.0
         },
         {
-          "cat": "Mapfre",
+          "cat": "Seguros",
           "valores": [
             0.0,
             0.0,
@@ -20985,32 +21514,13 @@
             0.0,
             0.0,
             5105.38,
-            7340.68,
+            5103.03,
             5157.22,
             5146.61,
             0.0
           ],
           "subcats": {
-            "Honda": [
-              0.0,
-              0.0,
-              0.0,
-              0.0,
-              0.0,
-              0.0,
-              0.0,
-              0.0,
-              0.0,
-              0.0,
-              0.0,
-              0.0,
-              4177.12,
-              6414.77,
-              4177.12,
-              5146.61,
-              0.0
-            ],
-            "Seguro casa": [
+            "Seguro Casa": [
               0.0,
               0.0,
               0.0,
@@ -21026,11 +21536,30 @@
               928.26,
               925.91,
               980.1,
+              969.49,
+              0.0
+            ],
+            "Seguro Honda": [
               0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              4177.12,
+              4177.12,
+              4177.12,
+              4177.12,
               0.0
             ]
           },
-          "total": 22749.89
+          "total": 20512.24
         },
         {
           "cat": "Comida trabajo",
@@ -21048,13 +21577,52 @@
             2954.12,
             1929.5,
             0.0,
-            1465.75,
+            1042.0,
             1158.7,
             2542.8,
             0.0
           ],
-          "subcats": {},
-          "total": 17440.75
+          "subcats": {
+            "Chesterhouse": [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              694.68,
+              767.84,
+              1775.58,
+              0.0
+            ],
+            "Nuevo Poctios": [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              767.22,
+              0.0
+            ]
+          },
+          "total": 17017.0
         },
         {
           "cat": "Cosmética",
@@ -21071,14 +21639,78 @@
             700.0,
             1554.1,
             700.0,
-            0.0,
-            3160.0,
+            840.0,
+            4000.0,
             0.0,
             0.0,
             0.0
           ],
-          "subcats": {},
-          "total": 14061.64
+          "subcats": {
+            "Depilife": [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              840.0,
+              840.0,
+              0.0,
+              0.0,
+              0.0
+            ]
+          },
+          "total": 15741.64
+        },
+        {
+          "cat": "Delivery / Pedidos",
+          "valores": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            4208.3,
+            440.33,
+            6882.69,
+            3444.35,
+            0.0
+          ],
+          "subcats": {
+            "Pedidos Ya": [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              4208.3,
+              440.33,
+              6882.69,
+              3444.35,
+              0.0
+            ]
+          },
+          "total": 14975.67
         },
         {
           "cat": "Ahorros",
@@ -21105,6 +21737,164 @@
           "total": 10000.0
         },
         {
+          "cat": "Suscripciones",
+          "valores": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            2062.42,
+            1369.97,
+            2783.87,
+            2719.48,
+            0.0
+          ],
+          "subcats": {
+            "Chat GPT": [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              788.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "Claude": [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              832.0,
+              823.0,
+              0.0
+            ],
+            "Dominio mail": [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              995.9,
+              0.0,
+              0.0
+            ],
+            "HBO": [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              117.81,
+              117.51,
+              124.38,
+              246.08,
+              0.0
+            ],
+            "Leomoves": [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              787.61,
+              785.61,
+              831.58,
+              822.59,
+              0.0
+            ],
+            "Microsoft": [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              369.0,
+              369.0,
+              0.0,
+              827.82,
+              0.0
+            ],
+            "Youtube": [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              97.86,
+              0.0,
+              0.0,
+              0.0
+            ]
+          },
+          "total": 8935.74
+        },
+        {
           "cat": "Seguro de vida",
           "valores": [
             309.54,
@@ -21129,7 +21919,70 @@
           "total": 3959.76
         },
         {
-          "cat": "Entretenimiento",
+          "cat": "Ropa",
+          "valores": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            752.46,
+            1094.75,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "subcats": {
+            "Carters": [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1094.75,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "Ropa Fran": [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              752.46,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ]
+          },
+          "total": 1847.21
+        },
+        {
+          "cat": "Mapfre",
           "valores": [
             0.0,
             0.0,
@@ -21144,13 +21997,13 @@
             0.0,
             0.0,
             0.0,
+            1137.65,
             0.0,
             0.0,
-            1891.66,
             0.0
           ],
           "subcats": {
-            "Hobbies": [
+            "Honda": [
               0.0,
               0.0,
               0.0,
@@ -21164,13 +22017,13 @@
               0.0,
               0.0,
               0.0,
+              1137.65,
               0.0,
               0.0,
-              1069.07,
               0.0
             ]
           },
-          "total": 1891.66
+          "total": 1137.65
         }
       ],
       "gastos_total": [
@@ -21187,10 +22040,10 @@
         114631.92,
         141369.8,
         123340.39,
-        103688.64,
+        77930.54,
         116894.94,
         136617.44,
-        2844.02
+        14273.5
       ],
       "sin_clasificar": {
         "valores": [
@@ -21210,7 +22063,7 @@
           0.0,
           0.0,
           0.0,
-          0.0
+          4380.0
         ],
         "movs_por_mes": {
           "2025-01": [],
@@ -21229,7 +22082,18 @@
           "2026-02": [],
           "2026-03": [],
           "2026-04": [],
-          "2026-05": []
+          "2026-05": [
+            {
+              "f": "2026-05-04",
+              "c": "COMPRA      MERPAGO*FLOR",
+              "m": -2580.0
+            },
+            {
+              "f": "2026-05-04",
+              "c": "COMPRA      DLO*BELVEDER",
+              "m": -1800.0
+            }
+          ]
         }
       }
     },
