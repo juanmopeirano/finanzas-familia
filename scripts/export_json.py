@@ -408,6 +408,10 @@ def export_json(excel_path=EXCEL_PATH, output=JSON_OUTPUT, verbose=True):
     meses_ca = agg_meses(ca)
     cuadro_ca = build_cuadro(ca, saldos_ca)
 
+    if verbose: print("Procesando Tarjeta de Crédito (subset CA)...")
+    tc = ca[ca["Origen"].astype(str).str.contains("Tarjeta", case=False, na=False)].copy()
+    cuadro_tc = build_cuadro(tc, {})  # TC no tiene saldo bancario propio
+
     if verbose: print("Procesando Cuenta Corriente...")
     cc       = cargar_hoja(excel_path, SHEET_CC, traducir_2025=False)
     saldos_cc = calcular_saldos(cc)
@@ -422,7 +426,7 @@ def export_json(excel_path=EXCEL_PATH, output=JSON_OUTPUT, verbose=True):
         "meses":        meses_ca,
         "promedios":    calc_promedios(meses_ca),
         "historico":    calc_historico(meses_ca),
-        "cuadro":       {"ca": cuadro_ca, "cc": cuadro_cc},
+        "cuadro":       {"ca": cuadro_ca, "tc": cuadro_tc, "cc": cuadro_cc},
         "cc": {
             "meses": [
                 {
