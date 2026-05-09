@@ -50,8 +50,15 @@ let charts = {};
 // ── carga ─────────────────────────────────────────────────────
 async function load() {
   const res = await fetch('data/finanzas.json?v=' + Date.now());
+  // 401 = sesión Cloudflare Access expirada → recargar para re-autenticar
+  if (res.status === 401) {
+    location.reload();
+    throw new Error('Sesión expirada, recargando…');
+  }
   if (!res.ok) throw new Error('No se pudo cargar el JSON');
-  DATA = await res.json();
+  const json = await res.json();
+  if (json && json.error) throw new Error(json.error === 'offline' ? 'Sin conexión' : 'No se pudo cargar');
+  DATA = json;
   mesActualIdx = DATA.meses.length - 1;
   init();
   document.getElementById('loader').classList.add('hidden');

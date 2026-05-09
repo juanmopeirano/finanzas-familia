@@ -1,5 +1,5 @@
 // Service worker — cache robusto que NUNCA devuelve null
-const CACHE = 'finanzas-v13';
+const CACHE = 'finanzas-v14';
 const SHELL = ['./','./index.html','./styles.css','./app.js','./icon.svg',
                './icon-192.png','./icon-512.png','./apple-touch-icon.png','./manifest.json'];
 
@@ -41,17 +41,30 @@ self.addEventListener('fetch', e => {
 
       if (cached) {
         // Refresca en background (sin bloquear la respuesta)
-        fetch(e.request)
-          .then(r => { if (r && r.ok) cache.put(e.request, r.clone()); })
+        fetch(e.request, { redirect: 'follow' })
+          .then(r => {
+            // Si el response es HTML (signal de redirect a Access login) NO cachear
+            const ct = r.headers.get('content-type') || '';
+            if (r && r.ok && ct.includes('json')) cache.put(e.request, r.clone());
+          })
           .catch(() => {});
         return cached;
       }
 
       // Sin cache: hay que ir a red, pero NUNCA devolver null
       try {
-        const r = await fetch(e.request);
-        if (r && r.ok) cache.put(e.request, r.clone());
-        return r;
+        const r = await fetch(e.request, { redirect: 'follow' });
+        const ct = r.headers.get('content-type') || '';
+        if (r && r.ok && ct.includes('json')) {
+          cache.put(e.request, r.clone());
+          return r;
+        }
+        // Respuesta no-JSON → probablemente sesión expirada, mandamos error
+        // claro para que el cliente decida (recargar para re-autenticarse)
+        return new Response(
+          JSON.stringify({ error: 'auth_expired' }),
+          { status: 401, headers: { 'Content-Type': 'application/json' } }
+        );
       } catch (err) {
         return new Response(
           JSON.stringify({ error: 'offline' }),
