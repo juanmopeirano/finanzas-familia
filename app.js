@@ -682,7 +682,25 @@ function escapeHtml(s) {
 
 // ── go ─────────────────────────────────────────────────
 load().catch(err => {
-  document.getElementById('loader').innerHTML = `<div style="padding:2rem; color:var(--danger); text-align:center;">Error: ${err.message}<br><small>¿Existe data/finanzas.json?</small></div>`;
+  document.getElementById('loader').innerHTML = `
+    <div style="padding:2rem; text-align:center; max-width:340px;">
+      <div style="font-size:3rem; margin-bottom:1rem;">📡</div>
+      <div style="color:var(--text); font-weight:600; font-size:1.05rem; margin-bottom:.5rem;">
+        No se pudo cargar
+      </div>
+      <div style="color:var(--muted); font-size:.85rem; margin-bottom:1.25rem;">
+        Probablemente sin conexión o se cerró la sesión.
+      </div>
+      <button onclick="location.reload()" style="
+        background: var(--accent); color: #fff; border: 0;
+        padding: .75rem 1.5rem; border-radius: 10px;
+        font-size: .95rem; font-weight: 600; cursor: pointer;
+        font-family: inherit;
+      ">Reintentar</button>
+      <div style="margin-top:1rem; font-size:.7rem; color:var(--muted);">
+        ${err.message}
+      </div>
+    </div>`;
 });
 
 // service worker

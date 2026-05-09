@@ -1,32 +1,77 @@
-// Service worker mínimo — cache-first para shell, network-first para datos
-const CACHE = 'finanzas-v10';
+// Service worker — cache robusto que NUNCA devuelve null
+const CACHE = 'finanzas-v11';
 const SHELL = ['./','./index.html','./styles.css','./app.js','./icon.svg',
                './icon-192.png','./icon-512.png','./apple-touch-icon.png','./manifest.json'];
 
 self.addEventListener('install', e => {
-  e.waitUntil(caches.open(CACHE).then(c => c.addAll(SHELL)).then(() => self.skipWaiting()));
+  e.waitUntil(
+    caches.open(CACHE)
+      .then(c => c.addAll(SHELL))
+      .then(() => self.skipWaiting())
+  );
 });
 
 self.addEventListener('activate', e => {
   e.waitUntil(
-    caches.keys().then(keys => Promise.all(keys.filter(k => k !== CACHE).map(k => caches.delete(k))))
+    caches.keys()
+      .then(keys => Promise.all(keys.filter(k => k !== CACHE).map(k => caches.delete(k))))
       .then(() => self.clients.claim())
   );
 });
 
 self.addEventListener('fetch', e => {
+  // Solo manejamos GET de mismo origen — no interferimos con CDN ni APIs externas
+  if (e.request.method !== 'GET') return;
   const url = new URL(e.request.url);
-  // Datos: network-first (siempre lo más fresco)
+  if (url.origin !== self.location.origin) return;
+
+  // Datos: stale-while-revalidate (sirve cache rápido, refresca en background)
   if (url.pathname.endsWith('finanzas.json')) {
-    e.respondWith(
-      fetch(e.request).then(r => {
-        const copy = r.clone();
-        caches.open(CACHE).then(c => c.put(e.request, copy));
+    e.respondWith((async () => {
+      const cache = await caches.open(CACHE);
+      const cached = await cache.match(e.request, { ignoreSearch: true });
+
+      if (cached) {
+        // Refresca en background (sin bloquear la respuesta)
+        fetch(e.request)
+          .then(r => { if (r && r.ok) cache.put(e.request, r.clone()); })
+          .catch(() => {});
+        return cached;
+      }
+
+      // Sin cache: hay que ir a red, pero NUNCA devolver null
+      try {
+        const r = await fetch(e.request);
+        if (r && r.ok) cache.put(e.request, r.clone());
         return r;
-      }).catch(() => caches.match(e.request))
-    );
+      } catch (err) {
+        return new Response(
+          JSON.stringify({ error: 'offline' }),
+          { status: 503, headers: { 'Content-Type': 'application/json' } }
+        );
+      }
+    })());
     return;
   }
-  // Shell: cache-first
-  e.respondWith(caches.match(e.request).then(r => r || fetch(e.request)));
+
+  // Shell (HTML/CSS/JS/imgs): cache-first con fallback a red, y NUNCA null
+  e.respondWith((async () => {
+    const cached = await caches.match(e.request);
+    if (cached) return cached;
+    try {
+      const r = await fetch(e.request);
+      if (r && r.ok) {
+        const cache = await caches.open(CACHE);
+        cache.put(e.request, r.clone());
+      }
+      return r;
+    } catch (err) {
+      // Si es navegación, intentar servir el index del cache
+      if (e.request.mode === 'navigate') {
+        const fallback = await caches.match('./index.html');
+        if (fallback) return fallback;
+      }
+      return new Response('Offline', { status: 503, headers: { 'Content-Type': 'text/plain' } });
+    }
+  })());
 });
