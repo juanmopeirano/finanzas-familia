@@ -705,5 +705,52 @@ load().catch(err => {
 
 // service worker
 if ('serviceWorker' in navigator) {
-  window.addEventListener('load', () => navigator.serviceWorker.register('sw.js').catch(()=>{}));
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('sw.js').then(reg => {
+      // Chequear updates cada vez que la app vuelve al foreground
+      document.addEventListener('visibilitychange', () => {
+        if (document.visibilityState === 'visible') reg.update().catch(()=>{});
+      });
+
+      // Cuando se detecta SW nuevo instalado, mostrar banner para actualizar
+      reg.addEventListener('updatefound', () => {
+        const nw = reg.installing;
+        if (!nw) return;
+        nw.addEventListener('statechange', () => {
+          if (nw.state === 'installed' && navigator.serviceWorker.controller) {
+            mostrarBannerUpdate(nw);
+          }
+        });
+      });
+    }).catch(()=>{});
+
+    // Cuando el nuevo SW toma el control, recargar la página
+    let recargando = false;
+    navigator.serviceWorker.addEventListener('controllerchange', () => {
+      if (recargando) return;
+      recargando = true;
+      location.reload();
+    });
+  });
+}
+
+function mostrarBannerUpdate(nw) {
+  if (document.getElementById('updateBanner')) return;
+  const b = document.createElement('div');
+  b.id = 'updateBanner';
+  b.style.cssText = `
+    position: fixed; left: 50%; bottom: 20px; transform: translateX(-50%);
+    background: var(--accent); color: #fff; padding: .75rem 1.25rem;
+    border-radius: 999px; box-shadow: 0 4px 14px rgba(0,0,0,.25);
+    font-weight: 600; font-size: .9rem; cursor: pointer; z-index: 200;
+    display: flex; align-items: center; gap: .5rem;
+  `;
+  b.innerHTML = '✨ Hay una versión nueva — tocá para actualizar';
+  b.onclick = () => {
+    b.textContent = 'Actualizando…';
+    nw.postMessage({ type: 'SKIP_WAITING' });
+    // Por si el SW no responde al mensaje, recargamos en 2s
+    setTimeout(() => location.reload(), 2000);
+  };
+  document.body.appendChild(b);
 }

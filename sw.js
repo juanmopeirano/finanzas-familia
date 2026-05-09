@@ -1,5 +1,5 @@
 // Service worker — cache robusto que NUNCA devuelve null
-const CACHE = 'finanzas-v11';
+const CACHE = 'finanzas-v12';
 const SHELL = ['./','./index.html','./styles.css','./app.js','./icon.svg',
                './icon-192.png','./icon-512.png','./apple-touch-icon.png','./manifest.json'];
 
@@ -7,8 +7,14 @@ self.addEventListener('install', e => {
   e.waitUntil(
     caches.open(CACHE)
       .then(c => c.addAll(SHELL))
-      .then(() => self.skipWaiting())
+    // OJO: no llamamos skipWaiting() automáticamente.
+    // El nuevo SW espera hasta que el usuario apriete el banner "Actualizar".
   );
+});
+
+// Recibe mensaje del cliente para activar el SW nuevo en demanda
+self.addEventListener('message', e => {
+  if (e.data && e.data.type === 'SKIP_WAITING') self.skipWaiting();
 });
 
 self.addEventListener('activate', e => {
