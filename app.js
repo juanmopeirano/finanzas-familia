@@ -49,16 +49,19 @@ let charts = {};
 
 // ── carga ─────────────────────────────────────────────────────
 async function load() {
-  const res = await fetch('data/finanzas.json?v=' + Date.now());
-  // 401 = sesión Cloudflare Access expirada → recargar para re-autenticar
-  if (res.status === 401) {
-    location.reload();
-    throw new Error('Sesión expirada, recargando…');
+  let res;
+  try {
+    res = await fetch('data/finanzas.json?v=' + Date.now(), { redirect: 'follow' });
+  } catch (e) {
+    // Fetch falló (red caída, CORS, etc.) — probablemente sesión Access expirada
+    return triggerLogin();
   }
-  if (!res.ok) throw new Error('No se pudo cargar el JSON');
-  const json = await res.json();
-  if (json && json.error) throw new Error(json.error === 'offline' ? 'Sin conexión' : 'No se pudo cargar');
-  DATA = json;
+  // Cualquier respuesta no-OK o no-JSON = probablemente Access pidiendo login
+  const ct = res.headers.get('content-type') || '';
+  if (!res.ok || !ct.includes('json')) {
+    return triggerLogin();
+  }
+  DATA = await res.json();
   mesActualIdx = DATA.meses.length - 1;
   init();
   document.getElementById('loader').classList.add('hidden');
@@ -687,7 +690,25 @@ function escapeHtml(s) {
   return String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 }
 
+// ── auth ─────────────────────────────────────────────────
+// Cuando la sesión de Cloudflare Access expira (o nunca existió), navegamos a
+// /data/auth.html — ese path está protegido por Access, dispara el login,
+// y después rebota al usuario de vuelta a /
+function triggerLogin() {
+  // Evitar loop si ya estábamos en proceso de login
+  if (sessionStorage.getItem('authRedirect')) {
+    sessionStorage.removeItem('authRedirect');
+    throw new Error('No se pudo cargar (problema de autenticación)');
+  }
+  sessionStorage.setItem('authRedirect', '1');
+  location.replace('data/auth.html');
+  throw new Error('Iniciando sesión…');
+}
+
 // ── go ─────────────────────────────────────────────────
+// Limpiar marker de auth si llegamos bien
+sessionStorage.removeItem('authRedirect');
+
 load().catch(err => {
   document.getElementById('loader').innerHTML = `
     <div style="padding:2rem; text-align:center; max-width:340px;">
@@ -711,53 +732,11 @@ load().catch(err => {
 });
 
 // service worker
+// SW kill-switch: registramos el sw.js que se autoborra. Esto limpia
+// versiones viejas atrapadas en navegadores. El sw.js actual no intercepta
+// nada — solo se desregistra a sí mismo y borra cachés.
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', () => {
-    navigator.serviceWorker.register('sw.js').then(reg => {
-      // Chequear updates cada vez que la app vuelve al foreground
-      document.addEventListener('visibilitychange', () => {
-        if (document.visibilityState === 'visible') reg.update().catch(()=>{});
-      });
-
-      // Cuando se detecta SW nuevo instalado, mostrar banner para actualizar
-      reg.addEventListener('updatefound', () => {
-        const nw = reg.installing;
-        if (!nw) return;
-        nw.addEventListener('statechange', () => {
-          if (nw.state === 'installed' && navigator.serviceWorker.controller) {
-            mostrarBannerUpdate(nw);
-          }
-        });
-      });
-    }).catch(()=>{});
-
-    // Cuando el nuevo SW toma el control, recargar la página
-    let recargando = false;
-    navigator.serviceWorker.addEventListener('controllerchange', () => {
-      if (recargando) return;
-      recargando = true;
-      location.reload();
-    });
+    navigator.serviceWorker.register('sw.js').catch(() => {});
   });
-}
-
-function mostrarBannerUpdate(nw) {
-  if (document.getElementById('updateBanner')) return;
-  const b = document.createElement('div');
-  b.id = 'updateBanner';
-  b.style.cssText = `
-    position: fixed; left: 50%; bottom: 20px; transform: translateX(-50%);
-    background: var(--accent); color: #fff; padding: .75rem 1.25rem;
-    border-radius: 999px; box-shadow: 0 4px 14px rgba(0,0,0,.25);
-    font-weight: 600; font-size: .9rem; cursor: pointer; z-index: 200;
-    display: flex; align-items: center; gap: .5rem;
-  `;
-  b.innerHTML = '✨ Hay una versión nueva — tocá para actualizar';
-  b.onclick = () => {
-    b.textContent = 'Actualizando…';
-    nw.postMessage({ type: 'SKIP_WAITING' });
-    // Por si el SW no responde al mensaje, recargamos en 2s
-    setTimeout(() => location.reload(), 2000);
-  };
-  document.body.appendChild(b);
 }
