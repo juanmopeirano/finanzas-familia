@@ -14,3 +14,10 @@ PROJECT_DIR  = Path(__file__).parent.parent
 JSON_OUTPUT  = PROJECT_DIR / "data" / "finanzas.json"
 
 CONFIANZA_MINIMA = 0.82
+
+# Saldo de la Caja de Ahorro al inicio de los datos (1-ene-2025), ANTES del
+# primer movimiento. El saldo de la app se calcula como:
+#   APERTURA_CA + suma acumulada de TODOS los movimientos (CA + Tarjeta),
+#   excluyendo categoría "No va".
+# No se usa la columna Saldo del banco para nada.
+APERTURA_CA = 30307.94

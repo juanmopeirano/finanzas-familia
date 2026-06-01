@@ -21,7 +21,7 @@ import numpy as np
 import pandas as pd
 
 sys.path.insert(0, str(Path(__file__).parent))
-from config import EXCEL_PATH, SHEET_CA, SHEET_CC, JSON_OUTPUT
+from config import EXCEL_PATH, SHEET_CA, SHEET_CC, JSON_OUTPUT, APERTURA_CA
 from reglas import clasificar, cargar_reglas
 
 warnings.filterwarnings("ignore", message="Data Validation extension is not supported")
@@ -165,11 +165,34 @@ def cargar_hoja(excel_path, sheet_name, traducir_2025=False):
 
 # ── saldos por mes ────────────────────────────────────────────────────────────
 
+def calcular_saldos_mov(df, apertura, excluir_cats=("No va",)):
+    """
+    {periodo: (saldo_inicial, saldo_final)} basado en MOVIMIENTOS (no en la
+    columna Saldo del banco). Incluye TODOS los orígenes (Caja de Ahorro +
+    Tarjeta de crédito, porque la tarjeta también sale de la caja). Excluye las
+    categorías en excluir_cats (por defecto "No va").
+
+      saldo_final[mes] = apertura + suma acumulada de Monto (excl excluir_cats)
+                         hasta el fin de ese mes.
+    """
+    d = df[~df["cat"].isin(list(excluir_cats))].sort_values("Fecha")
+    meses = sorted(df["mes"].dropna().unique().astype(str))
+    out = {}
+    prev_sf = float(apertura)
+    for m in meses:
+        si = prev_sf
+        neto = float(d[d["mes"].astype(str) == m]["Monto"].sum())
+        sf = si + neto
+        out[m] = (round(si, 2), round(sf, 2))
+        prev_sf = sf
+    return out
+
+
 def calcular_saldos(df, filtrar_origen=None):
     """
-    {periodo: (saldo_inicial, saldo_final)}.
-    filtrar_origen: si se pasa (ej. 'Caja de Ahorro'), filtra solo movs de ese origen
-    para calcular el saldo (evita contaminación con tarjeta de crédito).
+    {periodo: (saldo_inicial, saldo_final)} basado en la columna Saldo del banco.
+    Se usa para la Cuenta Corriente (manual). Para Caja de Ahorro se usa
+    calcular_saldos_mov().
     """
     sub = df[df["Origen"] == filtrar_origen].copy() if filtrar_origen else df.copy()
     df_ord = sub.sort_values("Fecha")
@@ -421,7 +444,8 @@ def export_json(excel_path=EXCEL_PATH, output=JSON_OUTPUT, verbose=True):
 
     if verbose: print("Procesando Caja de Ahorro...")
     ca       = cargar_hoja(excel_path, SHEET_CA, traducir_2025=True)
-    saldos_ca = calcular_saldos(ca, filtrar_origen="Caja de Ahorro")
+    # Saldo por movimientos (CA + Tarjeta), excluyendo "No va". Sin usar col Saldo.
+    saldos_ca = calcular_saldos_mov(ca, APERTURA_CA, excluir_cats=("No va",))
     meses_ca = agg_meses(ca)
     cuadro_ca = build_cuadro(ca, saldos_ca)
 
