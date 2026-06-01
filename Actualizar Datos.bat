@@ -1,21 +1,22 @@
 @echo off
 REM ====================================================
-REM   FINANZAS FAMILIA - Actualizar todo
+REM   FINANZAS FAMILIA - Actualizar datos (local)
 REM ====================================================
 REM
 REM Lo que hace:
 REM   1. Procesa los archivos que esten en 'NUEVOS del banco/'
 REM   2. Auto-clasifica los movimientos nuevos
 REM   3. Mueve los archivos procesados a 'PROCESADOS/'
-REM   4. Regenera el JSON del dashboard
-REM   5. Sube todo a GitHub Pages
-REM   6. Te abre el Excel si hay sin clasificar para revisar
+REM   4. Regenera el JSON del dashboard (LOCAL)
+REM   5. Te abre el Excel si hay sin clasificar para revisar
+REM
+REM   NO sube nada a la web. Para publicar usa "Publicar Todo.bat".
 REM ====================================================
 
 cd /d "%~dp0"
 echo.
 echo ============================================
-echo   FINANZAS FAMILIA - Actualizando
+echo   FINANZAS FAMILIA - Actualizando datos
 echo ============================================
 echo.
 
@@ -29,26 +30,10 @@ if %ERR% geq 2 (
     exit /b 1
 )
 
-REM Push a GitHub
 echo.
-echo --- Publicando en GitHub Pages ---
-git add -A
-git diff --cached --quiet
-if errorlevel 1 (
-    git commit -m "Actualizacion %date% %time%" >nul
-    REM Auto-responder "n" a los prompts de cleanup (OneDrive locks)
-    (for /L %%i in (1,1,300) do @echo n) | git push 2>&1 | findstr /V "Deletion of directory"
-    if errorlevel 1 (
-        echo  !! Verifica con git status si subio bien.
-    ) else (
-        echo  OK Dashboard online actualizado
-        echo  Link: https://finanzas-familia.pages.dev/
-    )
-) else (
-    echo  Sin cambios para publicar.
-)
-
-echo.
+echo ============================================
+echo   Datos actualizados localmente.
+echo   Para publicar a la web usa "Publicar Todo.bat".
 echo ============================================
 
 REM Si hay sin clasificar (exit 1), abrir el Excel

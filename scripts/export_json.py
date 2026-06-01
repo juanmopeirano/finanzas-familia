@@ -216,6 +216,32 @@ def _split_ing_gasto(df):
     return is_ing, is_gas
 
 
+def _totalizar(cg, claves):
+    """
+    Agrupa las filas de cg por las columnas `claves` y suma el Monto.
+    Devuelve lista de dicts con: f (fecha más reciente), c (concepto
+    representativo), m (suma), d2 (sub), cat, origen, n (cant. de movs).
+    """
+    out = []
+    for valores, g in cg.groupby(claves, sort=False, dropna=False):
+        if not isinstance(valores, tuple):
+            valores = (valores,)
+        kv = dict(zip(claves, valores))
+        # concepto representativo = el más frecuente del grupo
+        modo = g["Concepto"].mode()
+        concepto_rep = str(modo.iloc[0]) if len(modo) else str(g["Concepto"].iloc[0])
+        out.append({
+            "f":      str(g["Fecha"].max().date()),
+            "c":      concepto_rep[:60],
+            "m":      round(float(g["Monto"].sum()), 2),
+            "d2":     str(kv.get("sub", "")) if kv.get("sub") else "",
+            "cat":    str(kv.get("cat", "")),
+            "origen": str(kv.get("Origen", "")),
+            "n":      int(len(g)),
+        })
+    return out
+
+
 def agg_meses(df):
     out = []
     is_ing_all, is_gas_all = _split_ing_gasto(df)
@@ -229,14 +255,9 @@ def agg_meses(df):
 
         cats_out = {}
         for cat, cg in gastos_df.groupby("cat"):
-            movs = []
-            for _, r in cg.sort_values("Monto").iterrows():
-                movs.append({
-                    "f":  str(r["Fecha"].date()),
-                    "c":  str(r["Concepto"])[:60],
-                    "m":  round(float(r["Monto"]), 2),
-                    "d2": str(r["sub"]) if r["sub"] else "",
-                })
+            # Totalizar por (Origen, Subcategoría) dentro de la categoría
+            movs = _totalizar(cg, ["Origen", "sub"])
+            movs.sort(key=lambda x: x["m"])  # mayor gasto (más negativo) primero
             sub = {}
             for s, sg in cg.groupby("sub"):
                 if s:
@@ -247,16 +268,12 @@ def agg_meses(df):
                 "movs":  movs,
             }
 
-        # top movs (>500 abs y los 15 mayores)
-        top = []
-        for _, r in gastos_df[gastos_df["Monto"].abs() > 500].sort_values("Monto").head(15).iterrows():
-            top.append({
-                "f":    str(r["Fecha"].date()),
-                "desc": str(r["cat"]),
-                "d2":   str(r["sub"]) if r["sub"] else "",
-                "c":    str(r["Concepto"])[:60],
-                "m":    round(float(r["Monto"]), 2),
-            })
+        # top movs: totalizar por (Origen, cat, sub) y tomar los 15 mayores >500
+        top_all = _totalizar(gastos_df, ["Origen", "cat", "sub"])
+        top = sorted([t for t in top_all if abs(t["m"]) > 500],
+                     key=lambda x: x["m"])[:15]
+        for t in top:
+            t["desc"] = t["cat"]
 
         out.append({
             "id":             str(mes),

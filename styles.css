@@ -409,6 +409,7 @@ main {
 .cat-mov .m-info { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; }
 .cat-mov .m-amt { font-weight: 600; color: var(--text); white-space: nowrap; }
 .cat-mov .m-amt.cred { color: var(--good); }
+.cat-mov .m-count { color: var(--muted); font-size: .72rem; font-weight: 600; }
 
 /* ── TOP MOVS ─────────────────────────────── */
 .movs-list { display: flex; flex-direction: column; gap: .5rem; }

@@ -107,8 +107,21 @@ def read_bank_file(path, sheet=None):
     rename = {v: k for k, v in col_map.items()}
     df = df.rename(columns=rename)
 
-    # parsear tipos
-    df["fecha"] = pd.to_datetime(df["fecha"], errors="coerce", dayfirst=True)
+    # parsear fechas: primero como texto dd/mm/aaaa
+    fecha_raw = df["fecha"]
+    df["fecha"] = pd.to_datetime(fecha_raw, errors="coerce", dayfirst=True)
+
+    # Fallback: algunas filas (típicamente tarjeta de crédito) vienen con la
+    # fecha como número serial de Excel (ej. 46173). Las convertimos aparte.
+    falla = df["fecha"].isna()
+    if falla.any():
+        serial = pd.to_numeric(fecha_raw[falla], errors="coerce")
+        es_serial = serial.notna() & (serial > 20000) & (serial < 80000)  # rango razonable
+        if es_serial.any():
+            convertidas = pd.to_datetime(
+                serial[es_serial], unit="D", origin="1899-12-30", errors="coerce"
+            )
+            df.loc[convertidas.index, "fecha"] = convertidas
     for col in ["debito", "credito", "saldo"]:
         if col in df.columns:
             df[col] = (

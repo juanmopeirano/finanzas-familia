@@ -207,10 +207,12 @@ function renderCats(mes, mesIdx) {
 
     const movsHtml = (c.movs || []).slice(0, 30).map(m => `
       <div class="cat-mov">
-        <div class="m-info">${m.f.slice(8,10)}/${m.f.slice(5,7)} — ${escapeHtml(m.d2 || m.c || '')}</div>
+        <div class="m-info">${escapeHtml(m.d2 || m.c || '')}${m.n > 1 ? ` <span class="m-count">×${m.n}</span>` : ''}</div>
         <div class="m-amt ${m.m > 0 ? 'cred' : ''}">${FMT.format(Math.abs(m.m))}</div>
       </div>
     `).join('');
+
+    const totalMovs = (c.movs || []).reduce((s, m) => s + (m.n || 1), 0);
 
     // Sparkline + tendencia
     const serie = serieCategoria(c.nombre, mesIdx, 6);
@@ -242,7 +244,7 @@ function renderCats(mes, mesIdx) {
         </div>
         <div class="cat-meta">
           ${c.prom > 0 ? `prom. ${FMT.format(c.prom)}` : 'sin promedio histórico'}
-          ${(c.movs || []).length ? ` · ${c.movs.length} mov.` : ''}
+          ${totalMovs ? ` · ${totalMovs} mov.` : ''}
         </div>
         ${subTxt ? `<div class="cat-sub">${subTxt}</div>` : ''}
         <div class="cat-detail">${movsHtml}</div>
