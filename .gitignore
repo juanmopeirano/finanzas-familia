@@ -22,3 +22,7 @@ Cloudflareaccess.txt
 google-oauth*.txt
 *-secret.txt
 *-secrets.txt
+
+# Archivos temporales de reporte de saldo
+SALDO_movs_*.xlsx
+SALDO_movimientos_considerados.xlsx

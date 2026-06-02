@@ -1,5 +1,5 @@
 {
-  "generado": "2026-06-01T15:53:47",
+  "generado": "2026-06-01T21:31:16",
   "n_revisar": 25,
   "meses": [
     {
@@ -7177,7 +7177,7 @@
     {
       "id": "2026-02",
       "label": "Feb 26",
-      "gastos_total": 77930.53,
+      "gastos_total": 103638.63,
       "ingresos_total": 125581.0,
       "categorias": {
         "Comida trabajo": {
@@ -7233,19 +7233,19 @@
           ]
         },
         "Estación de servicio": {
-          "total": 8093.72,
+          "total": 11393.72,
           "sub": {
-            "Combustible": 8093.72
+            "Combustible": 11393.72
           },
           "movs": [
             {
               "f": "2026-02-26",
               "c": "COMPRA      DISA MISUROL",
-              "m": -8093.72,
+              "m": -11393.72,
               "d2": "Combustible",
               "cat": "",
               "origen": "Caja de Ahorro",
-              "n": 6
+              "n": 7
             }
           ]
         },
@@ -7265,15 +7265,25 @@
           ]
         },
         "Hogar - Mejoras": {
-          "total": -5885.26,
+          "total": 14231.74,
           "sub": {
             "Aperols": 1200.0,
             "Calor Slim": 1682.3,
             "High Car Wash": 1100.0,
             "Honda": 1137.65,
-            "Roomba": 4028.28
+            "Roomba": 4028.28,
+            "Varios Tienda mia": 20117.0
           },
           "movs": [
+            {
+              "f": "2026-02-18",
+              "c": "DEB. VARIOS VISA-ILINK",
+              "m": -20117.0,
+              "d2": "Varios Tienda mia",
+              "cat": "",
+              "origen": "Caja de Ahorro",
+              "n": 1
+            },
             {
               "f": "2026-02-28",
               "c": "MERPAGO*IROBOTURUGUA",
@@ -7599,7 +7609,7 @@
           ]
         },
         "Supermercado": {
-          "total": 16802.69,
+          "total": 19093.79,
           "sub": {
             "Devoto": 485.9,
             "Disco": 794.75,
@@ -7607,17 +7617,17 @@
             "Kinko": 825.24,
             "Macromercado": 3653.44,
             "Palermo": 511.48,
-            "Tienda Inglesa": 8209.71
+            "Tienda Inglesa": 10500.81
           },
           "movs": [
             {
               "f": "2026-02-26",
               "c": "COMPRA      TIENDA INGLE",
-              "m": -8209.71,
+              "m": -10500.81,
               "d2": "Tienda Inglesa",
               "cat": "",
               "origen": "Caja de Ahorro",
-              "n": 14
+              "n": 15
             },
             {
               "f": "2026-02-24",
@@ -7743,6 +7753,16 @@
       },
       "top_movs": [
         {
+          "f": "2026-02-18",
+          "c": "DEB. VARIOS VISA-ILINK",
+          "m": -20117.0,
+          "d2": "Varios Tienda mia",
+          "cat": "Hogar - Mejoras",
+          "origen": "Caja de Ahorro",
+          "n": 1,
+          "desc": "Hogar - Mejoras"
+        },
+        {
           "f": "2026-02-26",
           "c": "COMPRA      FARMACIA EL",
           "m": -13002.79,
@@ -7753,6 +7773,26 @@
           "desc": "Salud"
         },
         {
+          "f": "2026-02-26",
+          "c": "COMPRA      DISA MISUROL",
+          "m": -11393.72,
+          "d2": "Combustible",
+          "cat": "Estación de servicio",
+          "origen": "Caja de Ahorro",
+          "n": 7,
+          "desc": "Estación de servicio"
+        },
+        {
+          "f": "2026-02-26",
+          "c": "COMPRA      TIENDA INGLE",
+          "m": -10500.81,
+          "d2": "Tienda Inglesa",
+          "cat": "Supermercado",
+          "origen": "Caja de Ahorro",
+          "n": 15,
+          "desc": "Supermercado"
+        },
+        {
           "f": "2026-02-18",
           "c": "COMPRA      ADMREN261070",
           "m": -8550.0,
@@ -7761,26 +7801,6 @@
           "origen": "Caja de Ahorro",
           "n": 1,
           "desc": "Gastos comunes"
-        },
-        {
-          "f": "2026-02-26",
-          "c": "COMPRA      TIENDA INGLE",
-          "m": -8209.71,
-          "d2": "Tienda Inglesa",
-          "cat": "Supermercado",
-          "origen": "Caja de Ahorro",
-          "n": 14,
-          "desc": "Supermercado"
-        },
-        {
-          "f": "2026-02-26",
-          "c": "COMPRA      DISA MISUROL",
-          "m": -8093.72,
-          "d2": "Combustible",
-          "cat": "Estación de servicio",
-          "origen": "Caja de Ahorro",
-          "n": 6,
-          "desc": "Estación de servicio"
         },
         {
           "f": "2026-02-28",
@@ -7881,16 +7901,6 @@
           "origen": "Caja de Ahorro",
           "n": 1,
           "desc": "Jardín"
-        },
-        {
-          "f": "2026-02-06",
-          "c": "COMPRA      MASSEY FAMIL",
-          "m": -2131.24,
-          "d2": "Massey",
-          "cat": "Social / Amigos",
-          "origen": "Caja de Ahorro",
-          "n": 2,
-          "desc": "Social / Amigos"
         }
       ]
     },
@@ -9242,7 +9252,7 @@
     {
       "id": "2026-05",
       "label": "May 26",
-      "gastos_total": 139849.27,
+      "gastos_total": 146499.27,
       "ingresos_total": 132486.0,
       "categorias": {
         "Ahorros": {
@@ -9345,19 +9355,29 @@
           ]
         },
         "Hogar - Mejoras": {
-          "total": 20097.29,
+          "total": 26747.29,
           "sub": {
-            "Amazon": 2284.5,
+            "Amazon": 8284.5,
             "Bolsas basura": 2464.11,
             "Divino": 3395.75,
             "Garrafa": 1416.39,
             "Grasa veleta": 645.0,
             "Hacha": 2740.33,
+            "High Car Wash": 650.0,
             "Limpieza grasera": 1200.0,
             "Roomba": 4028.25,
             "Sodimac": 1382.96
           },
           "movs": [
+            {
+              "f": "2026-05-25",
+              "c": "DEB. VARIOS VISA-ILINK",
+              "m": -6000.0,
+              "d2": "Amazon",
+              "cat": "",
+              "origen": "Caja de Ahorro",
+              "n": 1
+            },
             {
               "f": "2026-05-31",
               "c": "3032    MERPAGO*IROBOTURUGUA",
@@ -9426,6 +9446,15 @@
               "c": "DEB. CAMBIOSTOLD33084897",
               "m": -1200.0,
               "d2": "Limpieza grasera",
+              "cat": "",
+              "origen": "Caja de Ahorro",
+              "n": 1
+            },
+            {
+              "f": "2026-05-19",
+              "c": "DEB. CAMBIOSTOLD32631969",
+              "m": -650.0,
+              "d2": "High Car Wash",
               "cat": "",
               "origen": "Caja de Ahorro",
               "n": 1
@@ -9913,6 +9942,16 @@
           "desc": "Supermercado"
         },
         {
+          "f": "2026-05-25",
+          "c": "DEB. VARIOS VISA-ILINK",
+          "m": -6000.0,
+          "d2": "Amazon",
+          "cat": "Hogar - Mejoras",
+          "origen": "Caja de Ahorro",
+          "n": 1,
+          "desc": "Hogar - Mejoras"
+        },
+        {
           "f": "2026-05-29",
           "c": "COMPRA      FARMACIA EL",
           "m": -4949.28,
@@ -9991,16 +10030,6 @@
           "origen": "Caja de Ahorro",
           "n": 2,
           "desc": "Social / Amigos"
-        },
-        {
-          "f": "2026-05-25",
-          "c": "COMPRA      MERPAGO*HOTE",
-          "m": -2740.33,
-          "d2": "Hacha",
-          "cat": "Hogar - Mejoras",
-          "origen": "Caja de Ahorro",
-          "n": 4,
-          "desc": "Hogar - Mejoras"
         }
       ]
     }
@@ -10008,16 +10037,16 @@
   "promedios": {
     "CJPPU": 11014.6,
     "Cuotas": 6384.48,
-    "Estación de servicio": 7562.06,
+    "Estación de servicio": 7837.06,
     "Gastos comunes": 8448.25,
-    "Hogar - Mejoras": 26039.06,
+    "Hogar - Mejoras": 28269.64,
     "Jardín": 2310.0,
     "Niñera": 4931.64,
     "Salud": 9382.39,
     "Seguro de vida": 208.25,
     "Servicios": 9296.05,
     "Social / Amigos": 14742.26,
-    "Supermercado": 22067.84,
+    "Supermercado": 22258.76,
     "Cosmética": 1393.96,
     "Ahorros": 12500.0,
     "Comida trabajo": 2161.4,
@@ -10060,10 +10089,10 @@
       114631.92,
       141369.8,
       123340.39,
-      77930.53,
+      103638.63,
       116894.94,
       136617.44,
-      139849.27
+      146499.27
     ],
     "ingresos": [
       132664.0,
@@ -10099,10 +10128,10 @@
         19202.96,
         32056.18,
         28926.35,
-        -5885.26,
+        14231.74,
         16976.87,
         24892.33,
-        20097.29
+        26747.29
       ],
       "Supermercado": [
         12625.28,
@@ -10118,7 +10147,7 @@
         19562.52,
         29562.5,
         31449.2,
-        16802.69,
+        19093.79,
         28236.55,
         21036.99,
         21029.59
@@ -10232,7 +10261,7 @@
         7239.59,
         7018.0,
         3277.0,
-        8093.72,
+        11393.72,
         6779.35,
         13184.5,
         8289.97
@@ -10294,9 +10323,9 @@
         56810.31,
         51895.51,
         36785.12,
-        84435.59,
-        211520.65,
-        91643.21
+        58727.49,
+        185812.55,
+        65935.11
       ],
       "saldo_final": [
         26148.45,
@@ -10312,10 +10341,10 @@
         56810.31,
         51895.51,
         36785.12,
-        84435.59,
-        211520.65,
-        91643.21,
-        84279.94
+        58727.49,
+        185812.55,
+        65935.11,
+        51921.84
       ],
       "ingresos": [
         {
@@ -10467,10 +10496,10 @@
             19202.96,
             32056.18,
             28926.35,
-            -5885.26,
+            14231.74,
             16976.87,
             24892.33,
-            20097.29
+            26747.29
           ],
           "subcats": {
             "A santander": [
@@ -10547,7 +10576,7 @@
               0.0,
               0.0,
               0.0,
-              2284.5
+              8284.5
             ],
             "Aperols": [
               0.0,
@@ -11212,7 +11241,7 @@
               1100.0,
               0.0,
               0.0,
-              0.0
+              650.0
             ],
             "Honda": [
               0.0,
@@ -11860,6 +11889,25 @@
               3800.0,
               0.0
             ],
+            "Varios Tienda mia": [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              20117.0,
+              0.0,
+              0.0,
+              0.0
+            ],
             "Veneno caracol": [
               0.0,
               0.0,
@@ -11937,7 +11985,7 @@
               0.0
             ]
           },
-          "total": 571138.64
+          "total": 597905.64
         },
         {
           "cat": "Supermercado",
@@ -11955,7 +12003,7 @@
             19562.52,
             29562.5,
             31449.2,
-            16802.69,
+            19093.79,
             28236.55,
             21036.99,
             21029.59
@@ -12222,13 +12270,13 @@
               0.0,
               0.0,
               9493.22,
-              8209.71,
+              10500.81,
               11764.02,
               7829.4,
               10326.99
             ]
           },
-          "total": 335984.23
+          "total": 338275.33
         },
         {
           "cat": "Social / Amigos",
@@ -12977,7 +13025,7 @@
             7239.59,
             7018.0,
             3277.0,
-            8093.72,
+            11393.72,
             6779.35,
             13184.5,
             8289.97
@@ -12997,13 +13045,13 @@
               7239.59,
               7018.0,
               3277.0,
-              8093.72,
+              11393.72,
               6779.35,
               13184.5,
               8289.97
             ]
           },
-          "total": 120478.63
+          "total": 123778.63
         },
         {
           "cat": "Niñera",
@@ -13956,10 +14004,10 @@
         114631.92,
         141369.8,
         123340.39,
-        77930.54,
+        103638.64,
         116894.94,
         136617.44,
-        139849.27
+        146499.27
       ],
       "sin_clasificar": {
         "valores": [

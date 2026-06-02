@@ -165,17 +165,18 @@ def cargar_hoja(excel_path, sheet_name, traducir_2025=False):
 
 # ── saldos por mes ────────────────────────────────────────────────────────────
 
-def calcular_saldos_mov(df, apertura, excluir_cats=("No va",)):
+def calcular_saldos_mov(df, apertura):
     """
-    {periodo: (saldo_inicial, saldo_final)} basado en MOVIMIENTOS (no en la
-    columna Saldo del banco). Incluye TODOS los orígenes (Caja de Ahorro +
-    Tarjeta de crédito, porque la tarjeta también sale de la caja). Excluye las
-    categorías en excluir_cats (por defecto "No va").
+    {periodo: (saldo_inicial, saldo_final)} = SALDO de la Caja de Ahorro,
+    reconstruido sumando los movimientos (sin usar la columna Saldo del banco).
 
-      saldo_final[mes] = apertura + suma acumulada de Monto (excl excluir_cats)
+    Suma TODOS los movimientos (Caja de Ahorro + Tarjeta de crédito),
+    excluyendo SOLO la categoría "No va".
+
+      saldo_final[mes] = apertura + suma acumulada de Monto (excl "No va")
                          hasta el fin de ese mes.
     """
-    d = df[~df["cat"].isin(list(excluir_cats))].sort_values("Fecha")
+    d = df[df["cat"] != "No va"].sort_values("Fecha")
     meses = sorted(df["mes"].dropna().unique().astype(str))
     out = {}
     prev_sf = float(apertura)
@@ -444,8 +445,8 @@ def export_json(excel_path=EXCEL_PATH, output=JSON_OUTPUT, verbose=True):
 
     if verbose: print("Procesando Caja de Ahorro...")
     ca       = cargar_hoja(excel_path, SHEET_CA, traducir_2025=True)
-    # Saldo por movimientos (CA + Tarjeta), excluyendo "No va". Sin usar col Saldo.
-    saldos_ca = calcular_saldos_mov(ca, APERTURA_CA, excluir_cats=("No va",))
+    # Saldo real de la caja: solo movimientos Origen "Caja de Ahorro". Sin col Saldo.
+    saldos_ca = calcular_saldos_mov(ca, APERTURA_CA)
     meses_ca = agg_meses(ca)
     cuadro_ca = build_cuadro(ca, saldos_ca)
 
